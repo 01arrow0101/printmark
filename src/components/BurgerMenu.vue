@@ -12,7 +12,7 @@
     class="nav">
       <ul class="nav-list">
         <li class="nav-list_item">
-          <router-link :to="item.link">{{ item.name }}</router-link>
+          <router-link class="link" :to="item.link">{{ item.name }}</router-link>
         </li>
       </ul>
     </nav>
@@ -21,7 +21,7 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
-import appButton from './appButton.vue';
+import appButton from './Button/appButton.vue';
 const navItems = [
   { name: 'Home', link: '/' },
   { name: 'About', link: '/about' },
@@ -42,6 +42,7 @@ const navItems = [
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 0 16px 16px 0;
 }
 
 .close {
@@ -53,5 +54,9 @@ const navItems = [
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.link {
+  color: $secondary-color;
+  text-decoration: none;
 }
 </style>

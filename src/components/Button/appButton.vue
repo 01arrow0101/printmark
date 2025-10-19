@@ -7,7 +7,7 @@
 <script setup></script>
 
 <style lang="scss" scoped>
-@import '../assets/main.scss';
+@import '/src/assets/main.scss';
 .button {
   display: inline-block;
   padding: 8px 16px;
