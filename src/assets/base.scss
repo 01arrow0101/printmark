@@ -1,0 +1,36 @@
+
+$desktop: 1440px;
+$tablet: 768px;
+$mobile: 540px;
+
+$breakpoint-desktop: "(max-width: #{$desktop})";
+$breakpoint-tablet: "(max-width: #{$tablet})";
+$breakpoint-mobile: "(max-width: #{$mobile})";
+
+$primary-color: #000000;
+$secondary-color: #ffffff;
+$accent-color: #F09830;
+
+$bg-color: #333333;
+
+$font-family-base: 'Inter', sans-serif;
+$font-family-alt: 'Montserrat', sans-serif;
+$font-family-italic: 'Roboto', sans-serif;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-size-base: 18px;
+$font-size-title: 72px;
+$font-size-subtitle: 24px;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+li{
+  list-style: none;
+}

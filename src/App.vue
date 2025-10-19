@@ -1,17 +1,13 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import Header from './components/icons/PrintMarkHeader.vue'
+import { RouterView } from 'vue-router'
+import Header from './components/PrintMarkHeader.vue'
+import BurgerMenu from './components/BurgerMenu.vue';
 </script>
 
 <template>
   <header>
+    <BurgerMenu/>
     <Header />
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
   </header>
 
   <RouterView />

@@ -1,5 +1,5 @@
 <script setup></script>
 
 <template>
-  <main></main>
+  <main>1234</main>
 </template>
