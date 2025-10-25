@@ -2,7 +2,7 @@
 import SectionHero from "@/components/Home/SectionHero.vue";
 // import ProductsSection from '@/components/Products/ProductsSection.vue';
 // import RibbonInfo from '../components/Products/RibbonInfo.vue';
-// import LablesInfo from '../components/Products/LabelsInfo.vue';
+// import LabelsInfo from '../components/Products/LabelsInfo.vue';
 </script>
 
 <template>
@@ -10,6 +10,6 @@ import SectionHero from "@/components/Home/SectionHero.vue";
     <SectionHero />
     <!-- <ProductsSection />   -->
     <!-- <RibbonInfo /> -->
-    <!-- <LablesInfo /> -->
+    <!-- <LabelsInfo /> -->
   </main>
 </template>
