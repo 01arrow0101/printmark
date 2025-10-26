@@ -10,7 +10,7 @@
 @import '/src/assets/main.scss';
 .button {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 16px 32px;
   background-color: $accent-color;
   color: #fff;
   border: none;

@@ -47,18 +47,23 @@
     </div>
     <div class="social">
       <div class="social-icon">
-        <SvgApp/>
+        <div 
+         v-for="icon in socialLinks" :key="icon.name"
+        class="social-icon_link">
+          <a :href="icon.path" target="_blank">
+            <SocialIcon :name="icon.name" folder="/src/assets/img/icons/Social" />
+          </a>
+        </div>
       </div>
     </div>
-    <div class="license">
-      © 2024 PrintMark. Всі права захищені.
-    </div>
+    <div class="license">© 2024 PrintMark. Всі права захищені.</div>
   </div>
 </template>
 
 <script setup>
 import { RouterLink } from "vue-router";
 import Logo from "../AppLogo.vue";
+import SocialIcon from "../Svg/SvgApp.vue";
 
 const address = [
   {
@@ -92,6 +97,12 @@ const labelInfo = [
   { name: "Напівглянець", path: "/products/semi-gloss" },
   { name: "Глянець", path: "/products/gloss" },
   { name: "Мат", path: "/products/mat" },
+];
+
+const socialLinks = [
+  { name: "Youtube", path: "https:/www.youtube.com" },
+  { name: "Instagram", path: "https://www.instagram.com/" },
+  { name: "Telegram", path: "https://www.telegram.com" },
 ];
 </script>
 
@@ -189,6 +200,30 @@ const labelInfo = [
       text-decoration: underline;
     }
   }
+}
+.social {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  .social-icon {
+    display: flex;
+    gap: 24px;
+    .social-icon_link {
+      width: 32px;
+      height: 32px;
+      color: $secondary-color;
+      &:hover {
+        color: $accent-color;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  } 
 }
 .license {
   text-align: center;
