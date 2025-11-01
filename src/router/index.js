@@ -14,6 +14,11 @@ const router = createRouter({
       name: 'about',
       component: () => import('../views/AboutPrintMark.vue'),
     },
+    {
+      path: '/products',
+      name: 'product',
+      component: () => import('../views/ProductPrintMark.vue'),
+    },
   ],
 })
 
