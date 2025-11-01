@@ -159,25 +159,25 @@ const tables = [
 const services = [
   {
     title: "Порезка на Замовлення",
-    image: "src/assets/img/services/custom-cutting.png",
+    image: "src/assets/img/services/порізка.png",
     description:
       "Точна порезка термотрансферних лент и самоклеющихся этикеток по индивидуальным размерам и спецификациям. Оборудование с высокой точностью порезки до 0.01 мм."
   },
   {
     title: "Технічна Підтримка",
-    image: "src/assets/img/services/technical-support.png",
+    image: "src/assets/img/services/підтримка.png",
     description:
       "Консультации по выбору оптимальных материалов и технологий для конкретных задач. Поддержка в решении технических вопросов и оптимизации процессов."
   },
   {
     title: "Сервісне Обслуговування",
-    image: "src/assets/img/services/maintenance.png",
+    image: "src/assets/img/services/обслуговування.png",
     description:
       "Регулярное техническое обслуживание и ремонт оборудования. Гарантия бесперебойной работы и продления срока службы."
   },
   {
     title: "Доставка",
-    image: "src/assets/img/services/delivery.png",
+    image: "src/assets/img/services/доставка.png",
     description:
       "Доставка продукції по всій Україні та за межі. Гарантовані терміни відвантаження та доставки."
   }
