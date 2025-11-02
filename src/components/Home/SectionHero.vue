@@ -24,7 +24,7 @@ import appButton from '../Button/appButton.vue';
   justify-content: center;
   width: 100%;
   height: 80vh;
-  background: url(/src/assets/img/Gemini_Generated_Image_2la1wy2la1wy2la1.png) no-repeat center / cover;
+  background: linear-gradient(rgba(0,0,0,0.3)), url('/src/assets/img/Gemini_Generated_Image_2la1wy2la1wy2la1.png') no-repeat center / cover;
   text-align: center;
 }
 .title-h1 {

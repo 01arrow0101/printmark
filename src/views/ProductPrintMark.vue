@@ -190,7 +190,7 @@ const services = [
 .hero {
   padding: 72px 200px 172px;
   color: $secondary-color;
-  background: url("../assets/img/bg/productPage/product-bg.webp") center / cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.3)) , url("../assets/img/bg/productPage/product-bg.webp") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-start;
