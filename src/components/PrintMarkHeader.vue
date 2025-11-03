@@ -1,6 +1,9 @@
 <template>
   <div class="header">
-    <logo/>
+    <div class="logo">
+      <logo/>
+      <div class="open_menu">X</div>
+    </div>
     <div class="navigation">
       <nav>
         <ul class="nav-list">
@@ -29,6 +32,7 @@ const navItems = [
 @import "../assets/main.scss";
 
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,7 +40,21 @@ const navItems = [
   background-color: $bg-color;
   color: $secondary-color;
 }
-
+.open_menu{
+  position: absolute;
+  top: 16px;
+  right: 32px;
+  display: none;
+  @media(max-width: 768px){
+    display: inline-block;
+  }
+}
+.navigation {
+  display: block;
+  @media (max-width: 768px){
+    display: none;
+  }
+}
 .nav-list{
   display: flex;
   align-items: center;

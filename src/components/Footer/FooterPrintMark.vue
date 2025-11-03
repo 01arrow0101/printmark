@@ -121,9 +121,12 @@ const socialLinks = [
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+  @media (max-width: 768px){
+    flex-direction: column-reverse;
+  }
 }
 .logo {
-  margin-bottom: 32px;
+  // margin-bottom: 32px;
   margin-left: 16px;
 }
 .address-list {
@@ -134,6 +137,11 @@ const socialLinks = [
   flex-direction: column;
   gap: 32px;
   margin-bottom: 32px;
+  @media (max-width: 768px){
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 24px;
+  }
   &_item {
     display: flex;
     gap: 16px;
@@ -209,9 +217,10 @@ const socialLinks = [
     display: flex;
     gap: 24px;
     .social-icon_link {
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
       color: $secondary-color;
+      transition: color .3s ease;
       &:hover {
         color: $accent-color;
       }

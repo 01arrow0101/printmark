@@ -48,7 +48,8 @@ const icons = [
     cursor: pointer;
     &:hover{
       .icon{
-        background: $accent-color;
+        transition: background-color .3s ease;
+        background-color: $accent-color;
         svg{
           color: $bg-color;
         }

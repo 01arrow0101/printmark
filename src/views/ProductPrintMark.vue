@@ -8,14 +8,14 @@
         <p>Іновації в термотрансферній Друці</p>
       </div>
       <div class="button">
-        <app-button>Связаться с нами</app-button>
+        <app-button>Отримати консультацію</app-button>
       </div>
     </div>
   </section>
 
   <section class="our-product">
     <div class="our-product_title">
-      <h2>Наша Продукция</h2>
+      <h2>Наша Продукція</h2>
     </div>
     
     <div class="product-section">

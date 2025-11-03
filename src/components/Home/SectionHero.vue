@@ -5,7 +5,7 @@
       <h2 class="subtitle">Інноваційні технології у сфері термотрнасферного друку та етикетки </h2>
     </div>
     <div class="button">
-      <appButton>Дізнатись більше</appButton>
+      <appButton>Отримати консультацію</appButton>
     </div>
   </div>
 </template>

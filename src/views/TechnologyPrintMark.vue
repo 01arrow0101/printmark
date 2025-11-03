@@ -5,7 +5,9 @@
         <h1>Точна Порізка від <span>PrintMark</span></h1>
       </div>
       <div class="hero_text">
-        <p>Інноваційні рішення у порізці термотрансферних рібонів та етикеток</p>
+        <p>
+          Інноваційні рішення у порізці термотрансферних рібонів та етикеток
+        </p>
       </div>
       <div class="button">
         <app-button>Замовити консультацію</app-button>
@@ -17,16 +19,16 @@
     <div class="our-product_title">
       <h2>Наші Технології Порізки</h2>
     </div>
-    
+
     <div class="product-section">
       <div class="section-header">
         <div class="our-product_text">
           <p><span>Сучасні</span> рішення для точного формування матеріалів</p>
         </div>
         <div class="product-grid">
-          <div 
-            v-for="tech in technologies" 
-            :key="tech.title" 
+          <div
+            v-for="tech in technologies"
+            :key="tech.title"
             class="product-card"
           >
             <div class="card_image">
@@ -47,9 +49,9 @@
           <p><span>Обладнання</span> для високоточної порізки</p>
         </div>
         <div class="product-grid">
-          <div 
-            v-for="equipment in equipment" 
-            :key="equipment.title" 
+          <div
+            v-for="equipment in equipments"
+            :key="equipment.title"
             class="product-card"
           >
             <div class="card_image">
@@ -75,9 +77,13 @@
               Ми виконуємо комплексний контроль якості на всіх етапах порізки:
             </p>
             <ul class="quality-list">
-              <li>Перевірка точності розмірів та відповідності специфікаціям</li>
+              <li>
+                Перевірка точності розмірів та відповідності специфікаціям
+              </li>
               <li>Випробування на міцність країв та відсутність дефектів</li>
-              <li>Автоматизовані системи вимірювання ширини та довжини рулонів</li>
+              <li>
+                Автоматизовані системи вимірювання ширини та довжини рулонів
+              </li>
               <li>Тестування якості намотування рулонів та їх цілісності</li>
             </ul>
           </div>
@@ -93,37 +99,43 @@ import AppButton from "/src/components/Button/appButton.vue";
 const technologies = [
   {
     title: "Високоточна Порізка",
-    image: "src/assets/img/technologies/precision-cutting.png",
-    description: "Використання передових систем різання з точністю до 0.01 мм для термотрансферних стрічок та самоклеючих етикеток. Наше обладнання забезпечує ідеально рівні краї та однакову товщину матеріалу по всій довжині."
+    image: "src/assets/img/tehnology/високоточнаПорізка.png",
+    description:
+      "Використання передових систем різання з точністю до 0.01 мм для термотрансферних стрічок та самоклеючих етикеток. Наше обладнання забезпечує ідеально рівні краї та однакову товщину матеріалу по всій довжині.",
   },
   {
     title: "Рішення для Спеціалізованих Матеріалів",
-    image: "src/assets/img/technologies/heat-resistant.png", // Це зображення може потребувати оновлення, якщо воно було про термостійкість, а не порізку спец. матеріалів
-    description: "Технології порізки, адаптовані для роботи з різними типами матеріалів, включаючи термостійкі, синтетичні та інші спеціалізовані рібони й етикетки, що вимагають особливого підходу."
+    image: "src/assets/img/tehnology/матеріал.png", // Це зображення може потребувати оновлення, якщо воно було про термостійкість, а не порізку спец. матеріалів
+    description:
+      "Технології порізки, адаптовані для роботи з різними типами матеріалів, включаючи термостійкі, синтетичні та інші спеціалізовані рібони й етикетки, що вимагають особливого підходу.",
   },
   {
     title: "Ефективність та Екологічність",
-    image: "src/assets/img/technologies/ecological.png",
-    description: "Оптимізація процесів порізки для мінімізації відходів та використання енергоефективного обладнання. Ми дбаємо про екологічність нашого виробництва, забезпечуючи високоякісні результати."
-  }
+    image: "src/assets/img/tehnology/екологічність.png",
+    description:
+      "Оптимізація процесів порізки для мінімізації відходів та використання енергоефективного обладнання. Ми дбаємо про екологічність нашого виробництва, забезпечуючи високоякісні результати.",
+  },
 ];
 
-const equipment = [
+const equipments = [
   {
     title: "Системи Лазерної та Ротаційної Порізки",
-    image: "src/assets/img/equipment/laser-cutting.png",
-    description: "Сучасні лазерні та ротаційні системи з автоматичним керуванням, призначені для порізки рібонів та етикеток з точністю до 0.01 мм. Забезпечують бездоганні краї та відповідність заданим розмірам."
+    image: "src/assets/img/tehnology/lazer.png",
+    description:
+      "Сучасні лазерні та ротаційні системи з автоматичним керуванням, призначені для порізки рібонів та етикеток з точністю до 0.01 мм. Забезпечують бездоганні краї та відповідність заданим розмірам.",
   },
   {
     title: "Автоматизовані Лінії Перемотування",
-    image: "src/assets/img/equipment/automated-lines.png",
-    description: "Повністю автоматизовані лінії для перемотування та порізки рулонів. Системи моніторингу контролюють якість намотування та щільність, гарантуючи високу продуктивність та стабільність параметрів готової продукції."
+    image: "src/assets/img/tehnology/peremotka.png",
+    description:
+      "Повністю автоматизовані лінії для перемотування та порізки рулонів. Системи моніторингу контролюють якість намотування та щільність, гарантуючи високу продуктивність та стабільність параметрів готової продукції.",
   },
   {
     title: "Інтегровані Системи Контролю",
-    image: "src/assets/img/equipment/quality-control.png",
-    description: "Сучасні інтегровані системи автоматизованого контролю якості з використанням оптичних сенсорів для аналізу точності порізки, відсутності дефектів та відповідності розмірів на всіх етапах виробництва."
-  }
+    image: "src/assets/img/tehnology/control.png",
+    description:
+      "Сучасні інтегровані системи автоматизованого контролю якості з використанням оптичних сенсорів для аналізу точності порізки, відсутності дефектів та відповідності розмірів на всіх етапах виробництва.",
+  },
 ];
 </script>
 
@@ -169,7 +181,9 @@ const equipment = [
 
 /* Hero section specific styles (можливо, потребують доопрацювання для кращого візуального ефекту) */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.5)), url('/src/assets/img/bg/tehnology/bgTehology.png') no-repeat center / cover; 
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5)),
+    url("/src/assets/img/bg/tehnology/bgTehology.png") no-repeat center / cover;
   color: $secondary-color;
   text-align: center;
   padding: 100px 20px;
@@ -183,7 +197,7 @@ const equipment = [
 .hero_title h1 {
   font-size: 3.5rem; /* Збільшити розмір для привабливості */
   margin-bottom: 20px;
-  & span{
+  & span {
     text-transform: uppercase;
     text-shadow: 4px 4px 4px $accent-color;
   }
@@ -233,7 +247,7 @@ const equipment = [
 }
 
 .product-card {
-  background-color: #fff;
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.8));
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -251,6 +265,7 @@ const equipment = [
   height: 200px; /* Фіксована висота для зображень */
   object-fit: contain; /* Зберігаємо пропорції */
   margin-bottom: 20px;
+  border-radius: 8px;
 }
 
 .card_title h3 {

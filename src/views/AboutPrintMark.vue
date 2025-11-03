@@ -149,7 +149,7 @@
 }
 
 .feature-card {
-  background-color: #fff;
+  background: linear-gradient(rgba(255,255,255,0.1), rgba(0,0,0,0.5));
   border-radius: 0.5rem;
   padding: 1.5rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);

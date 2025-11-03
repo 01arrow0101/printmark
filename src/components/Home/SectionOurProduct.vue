@@ -47,7 +47,7 @@
     <div class="section-right">
       <div class="section-right_top">
         <div class="title">
-          <h2 class="title-h2">Наши Партнеры</h2>
+          <h2 class="title-h2">Наші Партнери</h2>
         </div>
         <div class="img mb-50">
           <img src="/src/assets/img/partner/7.webp" alt="7" />
@@ -94,12 +94,18 @@ import appButton from "../Button/appButton.vue";
   display: flex;
   justify-content: center;
   margin-bottom: 72px;
+  @media (max-width: 768px) {
+     flex-direction: column;
+  }
   .section-left,
   .section-right {
     width: 45%;
     padding: 16px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    @media (max-width: 768px){
+      width: 100%;
+    }
   }
   .section-left {
     margin-right: 5%;
@@ -141,6 +147,7 @@ import appButton from "../Button/appButton.vue";
 .img {
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
   img {
     width: 200px;
     height: 200px;
@@ -152,6 +159,9 @@ import appButton from "../Button/appButton.vue";
 .videos {
   display: flex;
   gap: 16px;
+  @media (max-width: 768px){
+    flex-direction: column;
+  }
   img {
     width: 100%;
     height: 250px;
