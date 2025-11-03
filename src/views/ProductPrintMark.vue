@@ -36,7 +36,7 @@
               <h3>{{ ribbon.title }}</h3>
             </div>
             <div class="card_description">
-              <p>{{ ribbon.description }}</p>
+              <!-- <p>{{ ribbon.description }}</p> -->
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
               <h3>{{ table.title }}</h3>
             </div>
             <div class="card_description">
-              <p>{{ table.description }}</p>
+              <!-- <p>{{ table.description }}</p> -->
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@
               <h3>{{ service.title }}</h3>
             </div>
             <div class="card_description">
-              <p>{{ service.description }}</p>
+              <!-- <p>{{ service.description }}</p> -->
             </div>
           </div>
         </div>
