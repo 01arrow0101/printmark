@@ -21,7 +21,7 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
-import appButton from './Button/appButton.vue';
+import appButton from '../Button/appButton.vue';
 const navItems = [
   { name: 'Home', link: '/' },
   { name: 'About', link: '/about' },

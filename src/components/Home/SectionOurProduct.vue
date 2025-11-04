@@ -14,7 +14,7 @@
           зображень на самоклеючих етикетках, бірках, ярликах тощо.
         </div>
         <div class="button">
-          <appButton>Дізнатись більше</appButton>
+          <appButton @click="goTo">Дізнатись більше</appButton>
         </div>
         <div class="img">
           <img src="/src/assets/img/ribbon/1.webp" alt="1" />
@@ -35,7 +35,7 @@
           або призначеною для наклеювання за допомогою клею.
         </div>
         <div class="button">
-          <appButton>Дізнатись більше</appButton>
+          <appButton @click="goTo">Дізнатись більше</appButton>
         </div>
         <div class="img">
           <img src="/src/assets/img/label/4.webp" alt="4" />
@@ -81,7 +81,14 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
 import appButton from "../Button/appButton.vue";
+
+const router = useRouter()
+
+const goTo = ()=>{
+  router.push('/products')
+}
 </script>
 
 <style lang="scss" scoped>

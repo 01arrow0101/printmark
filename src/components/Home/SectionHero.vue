@@ -5,13 +5,18 @@
       <h2 class="subtitle">Інноваційні технології у сфері термотрнасферного друку та етикетки </h2>
     </div>
     <div class="button">
-      <appButton>Отримати консультацію</appButton>
+      <appButton @click="goTo">Отримати консультацію</appButton>
     </div>
   </div>
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
 import appButton from '../Button/appButton.vue';
+const router = useRouter()
+const goTo = ()=>{
+router.push('/contacts')
+}
 
 </script>
 

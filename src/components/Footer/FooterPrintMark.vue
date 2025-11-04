@@ -62,7 +62,7 @@
 
 <script setup>
 import { RouterLink } from "vue-router";
-import Logo from "../AppLogo.vue";
+import Logo from "../Logo/AppLogo.vue";
 import SocialIcon from "../Svg/SvgApp.vue";
 
 const address = [

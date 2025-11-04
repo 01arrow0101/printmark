@@ -8,7 +8,7 @@
       <nav>
         <ul class="nav-list">
           <li v-for="item in navItems" :key="item.name" class="nav-list_item">
-            <router-link :to="item.link" class="item-link">{{ item.name }}</router-link>
+            <router-link :to="item.link" class="item-link" :class="item.active === store.linkIndex ? 'active' : '' ">{{ item.name }}</router-link>
           </li>
         </ul>
       </nav>
@@ -17,19 +17,32 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
+import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { RouterLink } from "vue-router";
-import Logo from "./AppLogo.vue";
+import Logo from "../Logo/AppLogo.vue";
+
+const store = usePrintMarkStore()
+const router = useRouter()
+
+
 const navItems = [
-  { name: "Головна", link: "/" , active : 0},
-  { name: "О Нас", link: "/about", active : 1},
+  { name: "Головна", link: "/main" , active : 0},
+  { name: "Про Нас", link: "/about", active : 1},
   { name: "Продукція", link: "/products", active : 2},
-  { name: "Технології", link: "/Technology", active : 3},
-  { name: "Контакти", link: "/Contact", active : 4},
+  { name: "Технології", link: "/technology", active : 3},
+  { name: "Контакти", link: "/contacts", active : 4},
 ];
+
+
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/main.scss";
+@import "../../assets/main.scss";
+
+.active {
+  color: blue;
+}
 
 .header {
   position: relative;

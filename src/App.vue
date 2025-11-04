@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import Header from './components/PrintMarkHeader.vue'
+import Header from './components/Header/PrintMarkHeader.vue'
 import FooterPrintMark from './components/Footer/FooterPrintMark.vue'
 // import BurgerMenu from './components/BurgerMenu.vue';
 </script>

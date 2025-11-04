@@ -12,7 +12,7 @@ import { RouterLink } from "vue-router";
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/main.scss";
+@import "../../assets/main.scss";
 .logo {
   font-size: 24px;
   color: $secondary-color;

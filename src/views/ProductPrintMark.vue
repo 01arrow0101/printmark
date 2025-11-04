@@ -1,18 +1,5 @@
 <template>
-  <section class="hero">
-    <div class="hero_content">
-      <div class="hero_title">
-        <h1>PrintMark</h1>
-      </div>
-      <div class="hero_text">
-        <p>Іновації в термотрансферній Друці</p>
-      </div>
-      <div class="button">
-        <app-button>Отримати консультацію</app-button>
-      </div>
-    </div>
-  </section>
-
+ <Hero/>
   <section class="our-product">
     <div class="our-product_title">
       <h2>Наша Продукція</h2>
@@ -92,8 +79,7 @@
 </template>
 
 <script setup>
-import AppButton from "/src/components/Button/appButton.vue";
-
+import Hero from '@/components/Products/ProductHeroSection.vue'
 const ribbons = [
   {
     title: "WAX (ВОСК)",
@@ -186,34 +172,6 @@ const services = [
 
 <style lang="scss" scoped>
 @import "../assets/main.scss";
-
-.hero {
-  padding: 72px 200px 172px;
-  color: $secondary-color;
-  background: linear-gradient(rgba(0,0,0,0.3)) , url("../assets/img/bg/productPage/product-bg.webp") center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.hero_content {
-  max-width: 600px;
-}
-
-.hero_title h1 {
-  font-size: $font-size-title;
-  font-weight: $font-weight-bold;
-  font-family: $font-family-alt;
-  text-transform: uppercase;
-  text-shadow: 4px 4px 4px $accent-color;
-  margin-bottom: 32px;
-}
-
-.hero_text p {
-  font-size: $font-size-subtitle;
-  font-weight: $font-weight-medium;
-  margin-bottom: 32px;
-}
 
 .our-product {
   padding: 64px 200px;

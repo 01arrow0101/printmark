@@ -5,7 +5,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
+      path: "/main",
       name: "home",
       component: HomePage,
     },
@@ -20,13 +20,13 @@ const router = createRouter({
       component: () => import("../views/ProductPrintMark.vue"),
     },
     {
-      path: "/Technology",
+      path: "/technology",
       name: "technology",
       component: () => import("../views/TechnologyPrintMark.vue"),
     },
     {
-      path: "/contact",
-      name: "contact",
+      path: "/contacts",
+      name: "contacts",
       component: () => import("../views/Contact.vue"),
     },
   ],
