@@ -15,17 +15,19 @@
 </template>
 
 <script setup>
-import appButton from '../Button/appButton.vue';
-
+import appButton from "../Button/appButton.vue";
 </script>
 
 <style lang="scss" scoped>
-@import '/src/assets/main.scss';
+@import "/src/assets/main.scss";
 
 .hero {
-  padding: 140px ;
+  padding: 140px;
   color: $secondary-color;
-  background: linear-gradient(rgba(0,0,0,0.3)) , url("src/assets/img/bg/productPage/product-bg.webp") center / cover no-repeat;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3)),
+    url("/src/assets/img/bg/productPage/product-bg.webp") center / cover
+      no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -53,5 +55,4 @@ import appButton from '../Button/appButton.vue';
   font-weight: $font-weight-medium;
   margin-bottom: 32px;
 }
-
 </style>

@@ -1,14 +1,16 @@
 <template>
   <div class="header">
     <div class="logo">
-      <logo/>
+      <logo />
       <div class="open_menu">X</div>
     </div>
     <div class="navigation">
       <nav>
         <ul class="nav-list">
           <li v-for="item in navItems" :key="item.name" class="nav-list_item">
-            <router-link :to="item.link" class="item-link" :class="item.active === store.linkIndex ? 'active' : '' ">{{ item.name }}</router-link>
+            <router-link :to="item.link" class="item-link">{{
+              item.name
+            }}</router-link>
           </li>
         </ul>
       </nav>
@@ -17,33 +19,27 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
 import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { RouterLink } from "vue-router";
 import Logo from "../Logo/AppLogo.vue";
 
-const store = usePrintMarkStore()
-const router = useRouter()
-
+const store = usePrintMarkStore();
 
 const navItems = [
-  { name: "Головна", link: "/main" , active : 0},
-  { name: "Про Нас", link: "/about", active : 1},
-  { name: "Продукція", link: "/products", active : 2},
-  { name: "Технології", link: "/technology", active : 3},
-  { name: "Контакти", link: "/contacts", active : 4},
+  { name: "Головна", link: "/", active: 0 },
+  { name: "Про Нас", link: "/about", active: 1 },
+  { name: "Продукція", link: "/products", active: 2 },
+  { name: "Технології", link: "/technology", active: 3 },
+  { name: "Контакти", link: "/contacts", active: 4 },
 ];
-
-
 </script>
 
 <style lang="scss" scoped>
 @import "../../assets/main.scss";
 
-.active {
-  color: blue;
+a.router-link-exact-active {
+  color: $accent-color;
 }
-
 .header {
   position: relative;
   display: flex;
@@ -53,42 +49,42 @@ const navItems = [
   background-color: $bg-color;
   color: $secondary-color;
 }
-.open_menu{
+.open_menu {
   position: absolute;
   top: 16px;
   right: 32px;
   display: none;
-  @media(max-width: 768px){
+  @media (max-width: 768px) {
     display: inline-block;
   }
 }
 .navigation {
   display: block;
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     display: none;
   }
 }
-.nav-list{
+.nav-list {
   display: flex;
   align-items: center;
   gap: 32px;
-  &_item{
-    &hover{
+  &_item {
+    &hover {
       color: $accent-color;
     }
   }
 }
 
-.item-link{
+.item-link {
   color: $secondary-color;
   font-family: $font-family-base;
   font-weight: $font-weight-medium;
   transition: color 0.3s ease;
-  &:hover{
+  &:hover {
     color: $accent-color;
   }
 }
-.active{
+.active {
   color: $accent-color;
 }
 </style>
