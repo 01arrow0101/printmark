@@ -2,16 +2,33 @@
   <section class="product-info-section">
     <div class="container">
       <h1 class="section-title">Повний Каталог Термотрансферних Риббонів</h1>
-      <p class="section-description">Наш асортимент гарантує ідеальну друкування для будь-якого матеріалу та умов експлуатації. Використовуйте наше керівництво для вибору пасуючого типу.</p>
+      <p class="section-description">
+        Наш асортимент гарантує ідеальну друкування для будь-якого матеріалу та
+        умов експлуатації. Використовуйте наше керівництво для вибору пасуючого
+        типу.
+      </p>
 
-      <div v-for="ribbon in detailedRibbons" :key="ribbon.id" class="product-card">
+      <div
+        v-for="ribbon in detailedRibbons"
+        :key="ribbon.id"
+        class="product-card"
+      >
         <div class="card-header">
-          <h2 class="product-title">{{ ribbon.title }} <span :class="['badge', ribbon.type]">{{ ribbon.type.toUpperCase() }}</span></h2>
+          <h2 class="product-title">
+            {{ ribbon.title }}
+            <span :class="['badge', ribbon.type]">{{
+              ribbon.type.toUpperCase()
+            }}</span>
+          </h2>
         </div>
-        
+
         <div class="card-content">
           <div class="image-container">
-            <img :src="ribbon.imageUrl" :alt="ribbon.title" class="product-image">
+            <img
+              :src="ribbon.imageUrl"
+              :alt="ribbon.title"
+              class="product-image"
+            />
           </div>
           <div class="product-details">
             <p class="product-description">{{ ribbon.fullDescription }}</p>
@@ -20,7 +37,9 @@
               <li>**Стійкість:** {{ ribbon.resistance }}</li>
               <li>**Застосування:** {{ ribbon.application }}</li>
             </ul>
-            <a href="#" class="action-button">Замовити зразки та консультацію</a>
+            <a href="#" class="action-button"
+              >Замовити зразки та консультацію</a
+            >
           </div>
         </div>
       </div>
@@ -46,7 +65,8 @@
           </tbody>
         </table>
         <p class="note-text">
-          *Таблиця допоможе вам швидко підібрати риббон до типу етикетки. Для отримання консультації зв'яжіться з нашим спеціалістом.*
+          *Таблиця допоможе вам швидко підібрати риббон до типу етикетки. Для
+          отримання консультації зв'яжіться з нашим спеціалістом.*
         </p>
       </div>
     </div>
@@ -54,44 +74,51 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
+
+const path = `${import.meta.env.BASE_URL}`;
 
 const detailedRibbons = ref([
   {
     id: 1,
-    type: 'wax',
-    title: 'Воскові Риббони',
-    imageUrl: '/printmark/img/ribbon/wax.png',
-    fullDescription: 'Економічний і найпопулярніший варіант для друкування на паперових носіях. Забезпечує високу швидкість друкування і відмінний контраст.',
-    compatibility: 'Папір (матовий, напівглянцевий, термотрансферний).',
-    resistance: 'Низька (вразливий до вологи, тертя і спирту).',
-    application: 'Маркування товарів у сухому середовищі, логістика, цінники.'
+    type: "wax",
+    title: "Воскові Риббони",
+    imageUrl: `${path}/img/ribbon/wax.png`,
+    fullDescription:
+      "Економічний і найпопулярніший варіант для друкування на паперових носіях. Забезпечує високу швидкість друкування і відмінний контраст.",
+    compatibility: "Папір (матовий, напівглянцевий, термотрансферний).",
+    resistance: "Низька (вразливий до вологи, тертя і спирту).",
+    application: "Маркування товарів у сухому середовищі, логістика, цінники.",
   },
   {
     id: 2,
-    type: 'wax-resin',
-    title: 'Воск-Смола Риббони',
-    imageUrl: '/printmark/img/ribbon/wax-resin.png',
-    fullDescription: 'Універсальне рішення. Через додавання смоли, друк стає значно стійкішим до змащення і пошкоджень.',
-    compatibility: 'Папір (глянцевий, синтетичні етикетки).',
-    resistance: 'Середня (стійкий до помірного тертя і вологи).',
-    application: 'Транспортна логістика, фармацевтика, маркування продукції з тривалим строком зберігання.'
+    type: "wax-resin",
+    title: "Воск-Смола Риббони",
+    imageUrl: `${path}` + "/img/ribbon/wax-resin.png",
+    fullDescription:
+      "Універсальне рішення. Через додавання смоли, друк стає значно стійкішим до змащення і пошкоджень.",
+    compatibility: "Папір (глянцевий, синтетичні етикетки).",
+    resistance: "Середня (стійкий до помірного тертя і вологи).",
+    application:
+      "Транспортна логістика, фармацевтика, маркування продукції з тривалим строком зберігання.",
   },
   {
     id: 3,
-    type: 'resin',
-    title: 'Смоляні Риббони',
-    imageUrl: 'img/ribbon/resin.png',
-    fullDescription: 'Максимально стійкі риббони, необхідні для маркування в екстремальних умовах. Друк не стирається навіть при впливі розчинників і високих температур.',
-    compatibility: 'Синтетичні матеріали (ПП, ПЕТ, ПВХ, нейлон).',
-    resistance: 'Висока (стійкий до агресивної хімії, температури, стирання).',
-    application: 'Автомобільна промисловість, хімічне виробництво, електроніка.'
-  }
+    type: "resin",
+    title: "Смоляні Риббони",
+    imageUrl: `${path}` + "/img/ribbon/resin.png",
+    fullDescription:
+      "Максимально стійкі риббони, необхідні для маркування в екстремальних умовах. Друк не стирається навіть при впливі розчинників і високих температур.",
+    compatibility: "Синтетичні матеріали (ПП, ПЕТ, ПВХ, нейлон).",
+    resistance: "Висока (стійкий до агресивної хімії, температури, стирання).",
+    application:
+      "Автомобільна промисловість, хімічне виробництво, електроніка.",
+  },
 ]);
 </script>
 
 <style lang="scss" scoped>
-@import '/src/assets/main.scss';
+@import "/src/assets/main.scss";
 
 .product-info-section {
   padding: 40px 0;
@@ -248,11 +275,11 @@ const detailedRibbons = ref([
   .card-content {
     flex-direction: column;
   }
-  
+
   .image-container {
     height: 150px;
   }
-  
+
   .responsive-table {
     display: block;
     overflow-x: auto;

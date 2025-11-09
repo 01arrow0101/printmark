@@ -17,9 +17,9 @@
           <appButton @click="goToRibbon">Дізнатись більше</appButton>
         </div>
         <div class="img">
-          <img src="/src/assets/img/ribbon/1.webp" alt="1" />
-          <img src="/src/assets/img/ribbon/2.webp" alt="2" />
-          <img src="/src/assets/img/ribbon/3.webp" alt="3" />
+          <img src="/img/ribbon/1.webp" alt="1" />
+          <img src="/img/ribbon/2.webp" alt="2" />
+          <img src="/img/ribbon/3.webp" alt="3" />
         </div>
       </div>
       <div class="section-left_bottom">
@@ -68,10 +68,10 @@
           <h2 class="title-h2">Ознайомчі Відео</h2>
         </div>
         <div class="videos">
-          <video class="video" controls style="width: 400px;">
+          <video class="video" controls style="width: 400px">
             <source src="/src/assets/video/1.mp4" type="video/mp4" />
           </video>
-          <video class="video" controls style="width: 400px;">
+          <video class="video" controls style="width: 400px">
             <source src="/src/assets/video/2.mp4" type="video/mp4" />
           </video>
         </div>
@@ -84,17 +84,17 @@
 import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { useRouter } from "vue-router";
 import appButton from "../Button/appButton.vue";
-const store = usePrintMarkStore()
+const store = usePrintMarkStore();
 
-const router = useRouter()
+const router = useRouter();
 
-const goToRibbon = ()=>{
-  router.push('/products/ribbons/')
-}
-const goToLabel = ()=>{
-  store.showProduct = 2
-  router.push('/products/labels/')
-}
+const goToRibbon = () => {
+  router.push("/products/ribbons/");
+};
+const goToLabel = () => {
+  store.showProduct = 2;
+  router.push("/products/labels/");
+};
 </script>
 
 <style lang="scss" scoped>
@@ -108,7 +108,7 @@ const goToLabel = ()=>{
   justify-content: center;
   margin-bottom: 72px;
   @media (max-width: 768px) {
-     flex-direction: column;
+    flex-direction: column;
   }
   .section-left,
   .section-right {
@@ -116,7 +116,7 @@ const goToLabel = ()=>{
     padding: 16px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    @media (max-width: 768px){
+    @media (max-width: 768px) {
       width: 100%;
     }
   }
@@ -172,7 +172,7 @@ const goToLabel = ()=>{
 .videos {
   display: flex;
   gap: 16px;
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     flex-direction: column;
   }
   img {
