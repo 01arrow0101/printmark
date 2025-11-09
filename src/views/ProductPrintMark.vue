@@ -1,16 +1,15 @@
-  <script setup>
-  import HeroSection from "@/components/Products/ProductHeroSection.vue";
-  import OurProductsSection from "@/components/Products/OurProducts.vue";
-  import RibbonInfo from "@/components/Products/RibbonInfo.vue";
-  import LabelsInfo from "@/components/Products/LabelsInfo.vue";
-  </script>
-  
+<script setup>
+import { RouterView } from "vue-router";
+import { useRoute } from "vue-router";
+import HeroSection from "@/components/Products/ProductHeroSection.vue";
+import OurProductsSection from "@/components/Products/OurProducts.vue";
+const route = useRoute()
+</script>
+
 <template>
   <HeroSection />
-  <OurProductsSection/>
-  <RibbonInfo />
-   <LabelsInfo />
+    <OurProductsSection v-if="route.path === '/products'" />
+    <RouterView/>
 </template>
-
 
 <style lang="scss" scoped></style>

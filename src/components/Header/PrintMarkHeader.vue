@@ -19,11 +19,9 @@
 </template>
 
 <script setup>
-import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { RouterLink } from "vue-router";
 import Logo from "../Logo/AppLogo.vue";
 
-const store = usePrintMarkStore();
 
 const navItems = [
   { name: "Головна", link: "/", active: 0 },
@@ -32,6 +30,8 @@ const navItems = [
   { name: "Технології", link: "/technology", active: 3 },
   { name: "Контакти", link: "/contacts", active: 4 },
 ];
+
+
 </script>
 
 <style lang="scss" scoped>

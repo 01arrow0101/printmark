@@ -18,6 +18,19 @@ const router = createRouter({
       path: "/products",
       name: "product",
       component: () => import("../views/ProductPrintMark.vue"),
+      children: [
+        {
+          path: "ribbons",
+          name: "Ribbons",
+          component: () => import("@/components/Products/RibbonInfo.vue"),
+        },
+      ],
+    },
+
+    {
+      path: "/products/labels",
+      name: "Labels",
+      component: () => import("@/components/Products/LabelsInfo.vue"),
     },
     {
       path: "/technology",
