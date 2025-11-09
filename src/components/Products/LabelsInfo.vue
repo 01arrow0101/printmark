@@ -1,42 +1,44 @@
 <template>
-  <section class="full-info-section labels-page">
+  <section class="product-info-section">
     <div class="container">
-      <h1 class="page-title">Самоклеящиеся Этикетки для Термотрансферной Печати</h1>
-      <p class="page-intro">Мы — ваш эксперт в производстве чистых и пре-принт рулонных этикеток, идеально адаптированных для работы с вашими термотрансферными принтерами и нашими риббонами.</p>
+      <h1 class="section-title">Самоклейні Етикетки для Термотрансферної Друкування</h1>
+      <p class="section-description">Ми — ваш експерт у виробництві чистих і пре-принт рулонних етикеток, ідеально адаптованих для роботи з вашими термотрансферними принтерами та нашими риббонами.</p>
 
       <div class="materials-block">
-        <h2 class="block-title">Материалы: Выбор для Любых Условий</h2>
+        <h2 class="block-title">Матеріали: Вибір для Любих Умов</h2>
         <div class="material-grid">
-          
-          <div v-for="material in labelMaterials" :key="material.type" class="material-card">
-            <div class="material-icon">{{ material.icon }}</div>
-            <h3>{{ material.type }}</h3>
-            <p>{{ material.description }}</p>
-            <ul class="application-list">
-              <li>**Применение:** {{ material.application }}</li>
-            </ul>
+          <div v-for="material in labelMaterials" :key="material.type" class="product-card">
+            <div class="card-header">
+              <h3 class="product-title">{{ material.type }}</h3>
+            </div>
+            <div class="card-content">
+              <div class="material-icon">{{ material.icon }}</div>
+              <p class="product-description">{{ material.description }}</p>
+              <ul class="spec-list">
+                <li>**Застосування:** {{ material.application }}</li>
+              </ul>
+            </div>
           </div>
-
         </div>
       </div>
 
       <div class="services-block">
-        <h2 class="block-title">Наши Услуги и Комплексное Снабжение</h2>
-        <ul class="services-list">
-          <li v-for="service in services" :key="service.title">
-            <h4>{{ service.title }}</h4>
-            <p>{{ service.description }}</p>
-          </li>
-        </ul>
+        <h2 class="block-title">Наші Послуги та Комплексне Снабження</h2>
+        <div class="service-grid">
+          <div v-for="service in services" :key="service.title" class="service-card">
+            <h4 class="service-title">{{ service.title }}</h4>
+            <p class="service-description">{{ service.description }}</p>
+          </div>
+        </div>
       </div>
 
       <div class="cta-form-block">
         <div class="form-placeholder">
-          <h3>Рассчитать Стоимость Тиража</h3>
-          <p>Заполните форму, и мы оперативно подготовим точный расчет вашего заказа на рулонные этикетки. Гарантируем совместимость с вашим принтером.</p>
-          </div>
+          <h3>Розрахувати Вартість Тиражу</h3>
+          <p>Заповніть форму, і ми оперативно підготуємо точний розрахунок вашого замовлення на рулонні етикетки. Гарантуємо сумісність з вашим принтером.</p>
+          <a href="#" class="action-button">Замовити розрахунок</a>
+        </div>
         <div class="image-placeholder">
-           <!-- <img src="path/to/clean-label-production.jpg" alt="Производство этикеток"> -->
         </div>
       </div>
     </div>
@@ -48,63 +50,188 @@ import { ref } from 'vue';
 
 const labelMaterials = ref([
   {
-    type: 'Бумажные (ТермоТОП/Полуглянец)',
+    type: 'Паперові (ТермоТОП/Полуглянець)',
     icon: '🗞️',
-    description: 'Экономичная основа, требующая защиты от влаги и трения. Идеально для риббонов WAX.',
-    application: 'Логистика, складской учет, сухие продукты питания.'
+    description: 'Економічна основа, що вимагає захисту від вологи та тертя. Ідеально для риббонів WAX.',
+    application: 'Логістика, складський облік, сухі харчові продукти.'
   },
   {
-    type: 'Синтетические (ПП/ПЭТ)',
+    type: 'Синтетичні (ПП/ПЕТ)',
     icon: '💧',
-    description: 'Не рвутся, устойчивы к воде, жиру и химикатам. Требуют риббонов RESIN или WAX/RESIN.',
-    application: 'Косметика, бытовая химия, маркировка электроники.'
+    description: 'Не рвуться, стійкі до води, жиру та хімікатів. Вимагають риббонів RESIN або WAX/RESIN.',
+    application: 'Косметика, побутова хімія, маркування електроніки.'
   },
   {
-    type: 'Специальные (Пломбы/Текстиль)',
+    type: 'Спеціальні (Пломби/Текстиль)',
     icon: '🔒',
-    description: 'Для специфических задач, таких как контроль вскрытия (VOID) или маркировка одежды.',
-    application: 'Гарантийный контроль, инвентаризация, легкая промышленность.'
+    description: 'Для спеціфічних завдань, таких як контроль відкриття (VOID) або маркування одягу.',
+    application: 'Гарантійний контроль, інвентаризація, легка промисловість.'
   }
 ]);
 
-// Скорректировано: убрана флексопечать
 const services = ref([
   {
-    title: 'Чистые Этикетки на Заказ',
-    description: 'Производство рулонов всех стандартных и нестандартных размеров, с точной намоткой и диаметром втулки под любую модель вашего принтера.'
+    title: 'Чисті Етикетки на Замовлення',
+    description: 'Виробництво рулонів усіх стандартних і нестандартних розмірів, з точним намотуванням і діаметром втулки під будь-яку модель вашого принтера.'
   },
   {
-    title: 'Пре-принт (Монохромный/Простой)',
-    description: 'Предварительное нанесение постоянной информации (логотип, рамки) для экономии вашего времени. Вы самостоятельно допечатываете переменную информацию.'
+    title: 'Пре-принт (Монохромний/Простий)',
+    description: 'Попереднє нанесення постійної інформації (логотип, рамки) для економії вашого часу. Ви самостійно допечатуєте змінну інформацію.'
   },
   {
-    title: 'Контроль Качества Подложки',
-    description: 'Мы гарантируем идеальную нарезку и отсутствие дефектов, исключающих застревание и повреждение термоголовок вашего оборудования.'
+    title: 'Контроль Якості Підкладки',
+    description: 'Ми гарантуємо ідеальне нарізання і відсутність дефектів, що виключають застрягання і пошкодження термоголовок вашого обладнання.'
   }
 ]);
 </script>
 
-<style scoped>
-/* Стили из предыдущего ответа для LabelsFullInfo.vue */
-.materials-block, .services-block { margin-bottom: 50px; }
-.block-title { font-size: 26px; font-weight: 600; color: #004d40; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-.material-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.material-card { background-color: #f8f8f8; padding: 25px; border-radius: 8px; }
-.material-icon { font-size: 30px; margin-bottom: 10px; }
-.material-card h3 { font-size: 18px; font-weight: 600; color: #333; margin-bottom: 8px; }
-.material-card p { font-size: 15px; color: #666; margin-bottom: 10px; }
-.application-list { font-size: 14px; color: #004d40; }
-.services-list { list-style: none; padding: 0; }
-.services-list li { margin-bottom: 25px; border-left: 3px solid #004d40; padding-left: 15px; }
-.services-list h4 { font-size: 18px; font-weight: 600; color: #333; margin-bottom: 5px; }
-.services-list p { font-size: 15px; color: #555; }
-.cta-form-block { display: flex; background-color: #e0f2f1; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
-.form-placeholder { flex: 1; padding: 40px; }
-.form-placeholder h3 { font-size: 28px; color: #004d40; margin-bottom: 10px; }
-.form-placeholder p { color: #555; margin-bottom: 20px; }
-.cta-form-block .image-placeholder { flex: 1; min-height: 250px; background-color: #004d40; }
-.cta-form-block .image-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+<style lang="scss" scoped>
+@import '/src/assets/main.scss';
+
+.product-info-section {
+  padding: 40px 0;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.section-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.materials-block, .services-block {
+  margin-bottom: 50px;
+}
+
+.block-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: $accent-color;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.material-grid, .service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.material-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: $accent-color;
+}
+
+.product-description {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.spec-list {
+  list-style: disc;
+  margin-left: 20px;
+  font-size: 14px;
+  color: $accent-color;
+}
+
+.service-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.service-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: 15px;
+  color: #555;
+}
+
+.cta-form-block {
+  display: flex;
+  background-color: #e0f2f1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-placeholder {
+  flex: 1;
+  padding: 40px;
+}
+
+.form-placeholder h3 {
+  font-size: 28px;
+  color: $accent-color;
+  margin-bottom: 10px;
+}
+
+.form-placeholder p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: $accent-color;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: lighten($accent-color, 10%);
+}
+
+.image-placeholder {
+  flex: 1;
+  min-height: 250px;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(255,255,255,0.3)), url('img/label/labels.png') no-repeat bottom / cover;
+}
+
 @media (max-width: 900px) {
-  .cta-form-block { flex-direction: column; }
+  .cta-form-block {
+    flex-direction: column;
+  }
 }
 </style>

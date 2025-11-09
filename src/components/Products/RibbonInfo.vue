@@ -1,35 +1,53 @@
 <template>
-  <section class="full-info-section ribbons-page">
+  <section class="product-info-section">
     <div class="container">
-      <h1 class="page-title">Полный Каталог Термотрансферных Риббонов</h1>
-      <p class="page-intro">Наш ассортимент гарантирует идеальную печать для любого материала и условий эксплуатации. Используйте наше руководство для выбора подходящего типа.</p>
+      <h1 class="section-title">Повний Каталог Термотрансферних Риббонів</h1>
+      <p class="section-description">Наш асортимент гарантує ідеальну друкування для будь-якого матеріалу та умов експлуатації. Використовуйте наше керівництво для вибору пасуючого типу.</p>
 
-      <div v-for="ribbon in detailedRibbons" :key="ribbon.id" class="ribbon-detail-block">
-        <div class="ribbon-detail-header">
-          <h2 class="ribbon-type-title">{{ ribbon.title }} <span :class="['type-badge', ribbon.type]">{{ ribbon.type.toUpperCase() }}</span></h2>
+      <div v-for="ribbon in detailedRibbons" :key="ribbon.id" class="product-card">
+        <div class="card-header">
+          <h2 class="product-title">{{ ribbon.title }} <span :class="['badge', ribbon.type]">{{ ribbon.type.toUpperCase() }}</span></h2>
         </div>
         
-        <div class="content-wrapper">
-          <div class="image-placeholder">
-            <img :src="ribbon.imageUrl" :alt="ribbon.title">
+        <div class="card-content">
+          <div class="image-container">
+            <img :src="ribbon.imageUrl" :alt="ribbon.title" class="product-image">
           </div>
-          <div class="description-text">
-            <p>{{ ribbon.fullDescription }}</p>
-            <ul>
-              <li>**Совместимость:** {{ ribbon.compatibility }}</li>
-              <li>**Стойкость:** {{ ribbon.resistance }}</li>
-              <li>**Применение:** {{ ribbon.application }}</li>
+          <div class="product-details">
+            <p class="product-description">{{ ribbon.fullDescription }}</p>
+            <ul class="spec-list">
+              <li>**Сумісність:** {{ ribbon.compatibility }}</li>
+              <li>**Стійкість:** {{ ribbon.resistance }}</li>
+              <li>**Застосування:** {{ ribbon.application }}</li>
             </ul>
-            <a href="#" class="btn-cta">Заказать образцы и консультацию</a>
+            <a href="#" class="action-button">Замовити зразки та консультацію</a>
           </div>
         </div>
       </div>
 
-      <h3 class="table-title">Таблица Совместимости</h3>
+      <h3 class="table-title">Таблиця Сумісності</h3>
       <div class="compatibility-table">
-          <p>
-            *Таблица поможет вам быстро подобрать риббон к типу этикетки. Для получения консультации свяжитесь с нашим специалистом.*
-          </p>
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Тип Риббону</th>
+              <th>Сумісність</th>
+              <th>Стійкість</th>
+              <th>Застосування</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="ribbon in detailedRibbons" :key="ribbon.id">
+              <td class="ribbon-type">{{ ribbon.title }}</td>
+              <td>{{ ribbon.compatibility }}</td>
+              <td>{{ ribbon.resistance }}</td>
+              <td>{{ ribbon.application }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note-text">
+          *Таблиця допоможе вам швидко підібрати риббон до типу етикетки. Для отримання консультації зв'яжіться з нашим спеціалістом.*
+        </p>
       </div>
     </div>
   </section>
@@ -42,57 +60,202 @@ const detailedRibbons = ref([
   {
     id: 1,
     type: 'wax',
-    title: 'Восковые Риббоны',
-    imageUrl: 'path/to/wax-ribbon-detailed.jpg',
-    fullDescription: 'Экономичный и самый популярный вариант для печати на бумажных носителях. Обеспечивает высокую скорость печати и отличный контраст.',
-    compatibility: 'Бумага (матовая, полуглянец, термотрансферная).',
-    resistance: 'Низкая (чувствителен к влаге, трению и спирту).',
-    application: 'Маркировка товаров в сухой среде, логистика, ценники.'
+    title: 'Воскові Риббони',
+    imageUrl: 'img/ribbon/wax.png',
+    fullDescription: 'Економічний і найпопулярніший варіант для друкування на паперових носіях. Забезпечує високу швидкість друкування і відмінний контраст.',
+    compatibility: 'Папір (матовий, напівглянцевий, термотрансферний).',
+    resistance: 'Низька (вразливий до вологи, тертя і спирту).',
+    application: 'Маркування товарів у сухому середовищі, логістика, цінники.'
   },
   {
     id: 2,
     type: 'wax-resin',
-    title: 'Воск-Смола Риббоны',
+    title: 'Воск-Смола Риббони',
     imageUrl: 'path/to/wax-resin-ribbon-detailed.jpg',
-    fullDescription: 'Универсальное решение. Благодаря добавлению смолы, отпечаток становится значительно более стойким к смазыванию и царапинам.',
-    compatibility: 'Бумага (глянцевая, синтетические этикетки).',
-    resistance: 'Средняя (устойчив к умеренному трению и влаге).',
-    application: 'Транспортная логистика, фармацевтика, маркировка продукции с длительным сроком хранения.'
+    fullDescription: 'Універсальне рішення. Через додавання смоли, друк стає значно стійкішим до змащення і пошкоджень.',
+    compatibility: 'Папір (глянцевий, синтетичні етикетки).',
+    resistance: 'Середня (стійкий до помірного тертя і вологи).',
+    application: 'Транспортна логістика, фармацевтика, маркування продукції з тривалим строком зберігання.'
   },
   {
     id: 3,
     type: 'resin',
-    title: 'Смоляные Риббоны',
+    title: 'Смоляні Риббони',
     imageUrl: 'path/to/resin-ribbon-detailed.jpg',
-    fullDescription: 'Максимально стойкие риббоны, необходимые для маркировки в экстремальных условиях. Отпечаток не стирается даже при воздействии растворителей и высоких температур.',
-    compatibility: 'Синтетические материалы (ПП, ПЭТ, ПВХ, нейлон).',
-    resistance: 'Высокая (устойчив к агрессивной химии, температуре, стирке).',
-    application: 'Автомобильная промышленность, химическое производство, электроника.'
+    fullDescription: 'Максимально стійкі риббони, необхідні для маркування в екстремальних умовах. Друк не стирається навіть при впливі розчинників і високих температур.',
+    compatibility: 'Синтетичні матеріали (ПП, ПЕТ, ПВХ, нейлон).',
+    resistance: 'Висока (стійкий до агресивної хімії, температури, стирання).',
+    application: 'Автомобільна промисловість, хімічне виробництво, електроніка.'
   }
 ]);
 </script>
 
-<style scoped>
-/* Стили из предыдущего ответа для RibbonsFullInfo.vue */
-.full-info-section { padding: 50px 0; }
-.page-title { font-size: 32px; font-weight: 700; color: #004d40; margin-bottom: 10px; }
-.page-intro { font-size: 16px; color: #555; margin-bottom: 40px; }
-.ribbon-detail-block { margin-bottom: 50px; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
-.ribbon-detail-header { border-bottom: 2px solid #004d40; padding-bottom: 10px; margin-bottom: 20px; }
-.ribbon-type-title { font-size: 24px; font-weight: 600; color: #333; display: flex; align-items: center; }
-.type-badge { background-color: #004d40; color: white; padding: 4px 10px; border-radius: 4px; font-size: 14px; margin-left: 15px; }
-.content-wrapper { display: flex; gap: 30px; }
-.image-placeholder { flex: 1; min-width: 250px; height: 200px; background-color: #e0f2f1; border-radius: 6px; overflow: hidden; }
-.image-placeholder img { width: 100%; height: 100%; object-fit: cover; }
-.description-text { flex: 2; }
-.description-text p { margin-bottom: 15px; line-height: 1.6; }
-.description-text ul { list-style: disc; margin-left: 20px; }
-.btn-cta { display: inline-block; padding: 10px 20px; background-color: #004d40; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; transition: background-color 0.3s; }
-.btn-cta:hover { background-color: #00796b; }
-.table-title { font-size: 22px; font-weight: 600; margin-top: 40px; margin-bottom: 15px; }
-.compatibility-table { border: 1px dashed #ccc; padding: 20px; border-radius: 6px; }
+<style lang="scss" scoped>
+@import '/src/assets/main.scss';
+
+.product-info-section {
+  padding: 40px 0;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.section-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.product-card {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.card-header {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.product-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  margin-left: 15px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: $accent-color;
+  color: white;
+}
+
+.card-content {
+  display: flex;
+  gap: 30px;
+}
+
+.image-container {
+  flex: 1;
+  min-width: 250px;
+  height: 200px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-details {
+  flex: 2;
+}
+
+.product-description {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.spec-list {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: $accent-color;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: lighten($accent-color, 10%);
+}
+
+.table-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.compatibility-table {
+  border: 1px dashed #ccc;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.responsive-table thead {
+  background-color: #f5f5f5;
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.responsive-table th {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.responsive-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.responsive-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.ribbon-type {
+  font-weight: 500;
+  color: $accent-color;
+}
+
+.note-text {
+  color: #666;
+  font-size: 14px;
+}
+
 @media (max-width: 768px) {
-  .content-wrapper { flex-direction: column; }
-  .image-placeholder { height: 150px; }
+  .card-content {
+    flex-direction: column;
+  }
+  
+  .image-container {
+    height: 150px;
+  }
+  
+  .responsive-table {
+    display: block;
+    overflow-x: auto;
+  }
 }
 </style>

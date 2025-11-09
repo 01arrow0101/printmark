@@ -10,7 +10,7 @@
         </p>
       </div>
       <div class="button">
-        <app-button>Замовити консультацію</app-button>
+        <app-button @click="goTo">Замовити консультацію</app-button>
       </div>
     </div>
   </section>
@@ -94,7 +94,10 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
 import AppButton from "/src/components/Button/appButton.vue";
+
+const router = useRouter()
 
 const technologies = [
   {
@@ -137,6 +140,10 @@ const equipments = [
       "Сучасні інтегровані системи автоматизованого контролю якості з використанням оптичних сенсорів для аналізу точності порізки, відсутності дефектів та відповідності розмірів на всіх етапах виробництва.",
   },
 ];
+
+const goTo = ()=>{
+  router.push('/contacts')
+}
 </script>
 
 <style lang="scss" scoped>

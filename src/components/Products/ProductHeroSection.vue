@@ -8,14 +8,20 @@
         <p>Іновації в термотрансферній Друці</p>
       </div>
       <div class="button">
-        <app-button>Отримати консультацію</app-button>
+        <app-button @click="goTo">Отримати консультацію</app-button>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
 import appButton from "../Button/appButton.vue";
+
+const router  = useRouter()
+const goTo = () =>{
+  router.push('/contacts')
+}
 </script>
 
 <style lang="scss" scoped>
