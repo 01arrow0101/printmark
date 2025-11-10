@@ -1,13 +1,17 @@
 <template>
-  <div class="button">
+  <div class="button" :class="className">
     <span class="text"><slot></slot></span>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+defineProps({
+  className: String,
+});
+</script>
 
 <style lang="scss" scoped>
-@import '/src/assets/main.scss';
+@import "/src/assets/main.scss";
 .button {
   display: inline-block;
   padding: 16px 32px;

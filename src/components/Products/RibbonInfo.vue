@@ -1,4 +1,5 @@
 <template>
+  <ButtonBack @action="router.go(-1)"/>
   <section class="product-info-section">
     <div class="container">
       <h1 class="section-title">Повний Каталог Термотрансферних Риббонів</h1>
@@ -74,7 +75,10 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
 import { ref } from "vue";
+import ButtonBack from "@/UI/ButtonBack.vue";
+const router = useRouter();
 
 const path = `${import.meta.env.BASE_URL}`;
 

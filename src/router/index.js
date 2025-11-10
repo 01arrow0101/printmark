@@ -24,13 +24,12 @@ const router = createRouter({
           name: "Ribbons",
           component: () => import("@/components/Products/RibbonInfo.vue"),
         },
+        {
+          path: "labels",
+          name: "Labels",
+          component: () => import("@/components/Products/LabelsInfo.vue"),
+        },
       ],
-    },
-
-    {
-      path: "/products/labels",
-      name: "Labels",
-      component: () => import("@/components/Products/LabelsInfo.vue"),
     },
     {
       path: "/technology",
@@ -43,6 +42,9 @@ const router = createRouter({
       component: () => import("../views/Contact.vue"),
     },
   ],
+  scrollBehavior(to, from, savePosition) {
+    return { top: 0, behavior: "smooth" };
+  },
 });
 
 export default router;

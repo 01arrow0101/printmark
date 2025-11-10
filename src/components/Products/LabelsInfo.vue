@@ -1,4 +1,5 @@
 <template>
+  <ButtonBack @action="router.go(-1)" />
   <section class="product-info-section">
     <div class="container">
       <h1 class="section-title">
@@ -64,6 +65,9 @@
 
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+import ButtonBack from "@/UI/ButtonBack.vue";
+const router = useRouter();
 const labelMaterials = ref([
   {
     type: "Паперові (ТермоТОП/Полуглянець)",

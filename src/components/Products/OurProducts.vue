@@ -26,6 +26,11 @@
             </div>
           </div>
         </div>
+        <div class="button">
+          <appButton @click="goTo('ribbons')"
+            >Дізнатися більше</appButton
+          >
+        </div>
       </div>
 
       <div class="section-header">
@@ -44,6 +49,11 @@
               <!-- <p>{{ table.description }}</p> -->
             </div>
           </div>
+        </div>
+                <div class="button">
+          <appButton @click="goTo('labels')"
+            >Дізнатися більше</appButton
+          >
         </div>
       </div>
 
@@ -74,6 +84,10 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
+import appButton from "../Button/appButton.vue";
+
+const router = useRouter();
 const path = `${import.meta.env.BASE_URL}`;
 const ribbons = [
   {
@@ -161,6 +175,10 @@ const services = [
       "Доставка продукції по всій Україні та за межі. Гарантовані терміни відвантаження та доставки.",
   },
 ];
+
+const goTo = (path)=>{
+    router.push(`/products/${path}`)
+}
 </script>
 
 <style lang="scss" scoped>
