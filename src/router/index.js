@@ -42,7 +42,7 @@ const router = createRouter({
       component: () => import("../views/Contact.vue"),
     },
   ],
-  scrollBehavior(to, from, savePosition) {
+  scrollBehavior() {
     return { top: 0, behavior: "smooth" };
   },
 });
