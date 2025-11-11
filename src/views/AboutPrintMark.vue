@@ -2,7 +2,7 @@
   <section class="about-section">
     <div class="container">
       <div class="header-content">
-        <h1 class="title">Про компанію <span>PrintMark</span></h1>
+        <h1 class="hero-title"><span>Про компанію</span>PrintMark</h1>
         <h2 class="subtitle">Професійний поріз термотрансферної стрічки та самоклеючих етикеток</h2>
         <p class="description">
          Ми спеціалізуємося на точному різанні термотрансферних стрічок і самоклеючих етикеток, 
@@ -106,17 +106,15 @@
   margin-bottom: 4rem;
 }
 
-.title {
-  font-size: $font-size-title;
-  font-weight: $font-weight-bold;
-  font-family: $font-family-alt;
+.hero-title {
+  color: $accent-color;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 50px;
-  color: $primary-color;
+  text-shadow: 4px 4px 4px $primary-color;
   & span{
-    color: $accent-color;
-    text-shadow: 4px 4px 4px $primary-color;
+    font-size: 44px;
+    color: $primary-color;
+    font-size: $font-size-title;
+    text-shadow: none;
   }
 }
 

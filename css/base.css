@@ -18,10 +18,12 @@ li {
   color: #ffffff;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   text-shadow: #f09830 2px 2px 4px;
+  margin-bottom: 32px;
 }
-@media ((max-width: 768px)) {
+@media ((max-width: 767.98px)) {
   .hero-title {
     font-size: 44px;
   }
@@ -33,7 +35,7 @@ li {
   color: #000000;
   font-family: "Montserrat", sans-serif;
 }
-@media ((max-width: 768px)) {
+@media ((max-width: 767.98px)) {
   .title {
     font-size: 32px;
   }
@@ -44,4 +46,10 @@ li {
   font-weight: 700;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
+  margin-bottom: 50px;
+}
+@media ((max-width: 767.98px)) {
+  .subtitle {
+    margin-bottom: 32px;
+  }
 }/*# sourceMappingURL=base.css.map */

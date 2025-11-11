@@ -31,18 +31,9 @@ const goTo = () => {
   width: 100%;
   height: 80vh;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.3)),
+    $bg-gradient,
     url("/src/assets/img/Gemini_Generated_Image_2la1wy2la1wy2la1.png") no-repeat
       center / cover;
   text-align: center;
-}
-.hero-title {
-  margin-bottom: 32px;
-}
-.subtitle {
-  margin-bottom: 50px;
-  @media ($breakpoint-tablet){
-  margin-bottom: 32px;
-  }
 }
 </style>

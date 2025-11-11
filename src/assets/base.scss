@@ -1,6 +1,6 @@
-$desktop: 1440px;
-$tablet: 768px;
-$mobile: 540px;
+$desktop: 1439.98px;
+$tablet: 767.98px;
+$mobile: 539.98px;
 
 $breakpoint-desktop: "(max-width: #{$desktop})";
 $breakpoint-tablet: "(max-width: #{$tablet})";
@@ -12,8 +12,9 @@ $accent-color: #f09830;
 
 $bg-color: #333333;
 
-$card-gradient: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
-$btn-gradient: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+$bg-gradient: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.1));
+
+$btn-gradient: linear-gradient(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.8));
 
 $font-family-base: "Inter", sans-serif;
 $font-family-alt: "Montserrat", sans-serif;
@@ -46,10 +47,12 @@ li {
   color: $secondary-color;
   font-weight: $font-weight-bold;
   font-family: $font-family-alt;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   text-shadow: $accent-color 2px 2px 4px;
-  @media ($breakpoint-tablet){
-  font-size: $font-size-title;
+  margin-bottom: 32px;
+  @media ($breakpoint-tablet) {
+    font-size: $font-size-title;
   }
 }
 .title {
@@ -57,8 +60,8 @@ li {
   font-weight: $font-weight-bold;
   color: $primary-color;
   font-family: $font-family-alt;
-  @media ($breakpoint-tablet){
-  font-size: 32px; 
+  @media ($breakpoint-tablet) {
+    font-size: 32px;
   }
 }
 .subtitle {
@@ -66,4 +69,8 @@ li {
   font-weight: $font-weight-bold;
   color: $secondary-color;
   font-family: $font-family-alt;
+  margin-bottom: 50px;
+  @media ($breakpoint-tablet){
+  margin-bottom: 32px; 
+  }
 }

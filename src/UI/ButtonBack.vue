@@ -1,18 +1,17 @@
 <template>
   <div class="btn-back">
-    <AppButton className="back" @click="$emit('action')">
-      <--- назад</AppButton
-    >
+    <AppButton className="back" @click="$emit('action')"> <--- назад</AppButton>
   </div>
 </template>
 
 <script setup>
-import AppButton from '@/components/Button/appButton.vue';
-defineEmits(['action'])
+import AppButton from "@/components/Button/appButton.vue";
+defineEmits(["action"]);
 </script>
 
 <style lang="scss" scoped>
-.btn-back{
+@import '@/assets/main';
+.btn-back {
   position: sticky;
   top: 10px;
   margin-right: 32px;
@@ -28,6 +27,7 @@ defineEmits(['action'])
   align-items: center;
   border-radius: 16px;
   padding: 16px 8px;
-  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.8));
+  background: $btn-gradient;
+  text-shadow: $bg-color 2px 2px 2px;
 }
 </style>

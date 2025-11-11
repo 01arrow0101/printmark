@@ -2,7 +2,7 @@
   <div class="header">
     <div class="logo">
       <logo />
-      <div class="open_menu">X</div>
+      <div @click="showMenu" class="open_menu">X</div>
     </div>
     <div class="navigation">
       <nav>
@@ -20,8 +20,10 @@
 
 <script setup>
 import { RouterLink } from "vue-router";
+import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import Logo from "../Logo/AppLogo.vue";
 
+const store = usePrintMarkStore();
 const navItems = [
   { name: "Головна", link: "/" },
   { name: "Про Нас", link: "/about" },
@@ -29,10 +31,12 @@ const navItems = [
   { name: "Технології", link: "/technology" },
   { name: "Контакти", link: "/contacts" },
 ];
+
+const showMenu = () => (store.showBurgerMenu = true);
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/main.scss";
+@import "@/assets/main.scss";
 
 a.router-link-exact-active {
   color: $accent-color;
