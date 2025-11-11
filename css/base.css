@@ -11,4 +11,37 @@ a {
 
 li {
   list-style: none;
+}
+
+.hero-title {
+  font-size: 72px;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-shadow: #f09830 2px 2px 4px;
+}
+@media ((max-width: 768px)) {
+  .hero-title {
+    font-size: 44px;
+  }
+}
+
+.title {
+  font-size: 44px;
+  font-weight: 700;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+}
+@media ((max-width: 768px)) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
 }/*# sourceMappingURL=base.css.map */

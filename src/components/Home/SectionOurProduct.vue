@@ -109,6 +109,7 @@ const goToLabel = () => {
   margin-bottom: 72px;
   @media (max-width: 768px) {
     flex-direction: column;
+    margin-bottom: 50px;
   }
   .section-left,
   .section-right {
@@ -139,6 +140,7 @@ const goToLabel = () => {
     font-weight: $font-weight-bold;
     font-family: $font-family-alt;
     margin-bottom: 16px;
+    
   }
   .title-h3 {
     font-size: $font-size-subtitle;
@@ -167,6 +169,10 @@ const goToLabel = () => {
     background-color: $bg-color;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    @media (max-width: 767.98px){
+    width: 100px;
+    height: 100px; 
+    }
   }
 }
 .videos {

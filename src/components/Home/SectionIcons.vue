@@ -39,12 +39,18 @@ const icons = [
   flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
+  @media ($breakpoint-tablet){
+  gap: 24px; 
+  }
   &_item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     max-width: 150px;
+    @media ($breakpoint-tablet){
+    max-width: 100px; 
+    }
     cursor: pointer;
     &:hover{
       .icon{
@@ -64,9 +70,11 @@ const icons = [
       margin-bottom: 16px;
       background: $bg-color;
       border-radius: 8px;
+      @media ($breakpoint-tablet){
+      width: 50px;
+      height: 50px; 
+      }
       svg {
-        // width: 100%;
-        // height: 100%;
         color: $secondary-color
       }
     }

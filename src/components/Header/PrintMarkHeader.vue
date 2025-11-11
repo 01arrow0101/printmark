@@ -22,16 +22,13 @@
 import { RouterLink } from "vue-router";
 import Logo from "../Logo/AppLogo.vue";
 
-
 const navItems = [
-  { name: "Головна", link: "/", active: 0 },
-  { name: "Про Нас", link: "/about", active: 1 },
-  { name: "Продукція", link: "/products", active: 2 },
-  { name: "Технології", link: "/technology", active: 3 },
-  { name: "Контакти", link: "/contacts", active: 4 },
+  { name: "Головна", link: "/" },
+  { name: "Про Нас", link: "/about" },
+  { name: "Продукція", link: "/products" },
+  { name: "Технології", link: "/technology" },
+  { name: "Контакти", link: "/contacts" },
 ];
-
-
 </script>
 
 <style lang="scss" scoped>
@@ -48,19 +45,23 @@ a.router-link-exact-active {
   padding: 16px 32px;
   background-color: $bg-color;
   color: $secondary-color;
+  @media ($breakpoint-tablet) {
+    width: 100vw;
+    padding: 16px;
+  }
 }
 .open_menu {
   position: absolute;
   top: 16px;
   right: 32px;
   display: none;
-  @media (max-width: 768px) {
+  @media ($breakpoint-tablet) {
     display: inline-block;
   }
 }
 .navigation {
   display: block;
-  @media (max-width: 768px) {
+  @media ($breakpoint-tablet) {
     display: none;
   }
 }
@@ -83,8 +84,5 @@ a.router-link-exact-active {
   &:hover {
     color: $accent-color;
   }
-}
-.active {
-  color: $accent-color;
 }
 </style>
