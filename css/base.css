@@ -13,6 +13,49 @@ li {
   list-style: none;
 }
 
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+@media ((max-width: 767.98px)) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+.p-section {
+  padding-top: 72px;
+}
+@media ((max-width: 767.98px)) {
+  .p-section {
+    padding-top: 50px;
+  }
+}
+@media ((max-width: 539.98px)) {
+  .p-section {
+    padding-top: 32px;
+  }
+}
+
+.m-section {
+  margin-bottom: 72px;
+}
+@media ((max-width: 767.98px)) {
+  .m-section {
+    margin-bottom: 50px;
+  }
+}
+@media ((max-width: 539.98px)) {
+  .m-section {
+    margin-bottom: 32px;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
 .hero-title {
   font-size: 72px;
   color: #ffffff;

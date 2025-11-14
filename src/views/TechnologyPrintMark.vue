@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <!-- <section class="hero">
     <div class="hero_content">
       <div class="hero_title">
         <h1>Точна Порізка від <span>PrintMark</span></h1>
@@ -13,7 +13,18 @@
         <app-button @click="goTo">Замовити консультацію</app-button>
       </div>
     </div>
-  </section>
+  </section> -->
+
+  <HeroSection class-title="y">
+    <template #title
+      >Точна Порізка від
+      <span>PrintMark</span>
+    </template>
+    <template #subtitle
+      >Інноваційні рішення у порізці термотрансферних рібонів та
+      етикеток</template
+    >
+  </HeroSection>
 
   <section class="our-technologies">
     <div class="our-product_title">
@@ -95,9 +106,10 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import HeroSection from "@/components/Layout/HeroSection.vue";
 import AppButton from "/src/components/Button/appButton.vue";
 
-const router = useRouter()
+const router = useRouter();
 
 const technologies = [
   {
@@ -141,15 +153,18 @@ const equipments = [
   },
 ];
 
-const goTo = ()=>{
-  router.push('/contacts')
-}
+const goTo = () => {
+  router.push("/contacts");
+};
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/main.scss";
 
-/* Збережено існуючі стилі, вони є загальними і не конфліктують з новою логікою */
+.y h1{
+  color:aqua;
+}
+/* Збережено існуючі сти.y{лі, вони є загальними і не конфліктують з новою логікою */
 .quality-section {
   background-color: #f3f4f6;
   padding: 48px 0;
@@ -191,9 +206,9 @@ const goTo = ()=>{
   background:
     linear-gradient(rgba(0, 0, 0, 0.5)),
     url("/src/assets/img/bg/tehnology/bgTehology.png") no-repeat center / cover;
-  color: $secondary-color;
-  text-align: center;
-  padding: 100px 20px;
+  // color: $secondary-color;
+  // text-align: center;
+  // padding: 100px 20px;
 }
 
 .hero_content {
@@ -201,7 +216,7 @@ const goTo = ()=>{
   margin: 0 auto;
 }
 
-.hero_title h1 {
+.hero-title1  {
   font-size: 3.5rem; /* Збільшити розмір для привабливості */
   margin-bottom: 20px;
   & span {

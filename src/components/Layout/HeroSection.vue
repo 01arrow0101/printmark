@@ -1,9 +1,11 @@
 <template>
-  <div class="hero">
-    <div class="title">
-      <h1 class="hero-title">PrintMark</h1>
+  <div class="hero" :class="className">
+    <div class="title" :class="classTitle">
+      <h1 class="hero-title">
+        <slot name="title">PrintMark</slot>
+      </h1>
       <h2 class="subtitle">
-        Інноваційні технології у сфері термотрнасферного друку та етикетки
+        <slot name="subtitle"></slot>
       </h2>
     </div>
     <div class="button">
@@ -19,7 +21,12 @@ const router = useRouter();
 const goTo = () => {
   router.push("/contacts");
 };
-
+defineProps(
+  {
+    className: String,
+  },
+  { classTitle: String }
+);
 </script>
 
 <style lang="scss" scoped>
@@ -31,6 +38,10 @@ const goTo = () => {
   justify-content: center;
   max-width: 100%;
   height: 80vh;
+  background:
+    $bg-gradient,
+    url("/src/assets/img/Gemini_Generated_Image_2la1wy2la1wy2la1.png") no-repeat
+      center / cover;
   text-align: center;
   @media ($breakpoint-tablet) {
     height: auto;

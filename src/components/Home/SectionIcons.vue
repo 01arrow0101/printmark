@@ -1,5 +1,6 @@
 <template>
-  <div class="icons">
+<div class="container">
+    <div class="icons p-section m-section">
     <ul class="svg-list">
       <li v-for="icon in icons" :key="icon.name" >
         <router-link class="svg-list_item" :to="icon.path">
@@ -11,6 +12,7 @@
       </li>
     </ul>
   </div>
+</div>
 </template>
 
 <script setup>
@@ -29,11 +31,7 @@ const icons = [
 
 <style lang="scss" scoped>
 @import "/src/assets/main.scss";
-.icons {
- width: 100%;
- margin: 0 auto;
- padding: 72px 0;
-}
+
 .svg-list {
   display: flex;
   flex-wrap: wrap;

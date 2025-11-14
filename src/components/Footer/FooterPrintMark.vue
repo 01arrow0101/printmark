@@ -3,7 +3,7 @@
     <div class="logo">
       <Logo />
     </div>
-    <div class="container">
+    <div class="content">
       <address>
         <ul class="address-list">
           <li
@@ -21,7 +21,7 @@
       </address>
       <div class="products">
         <h2 class="title_h2">Продукція</h2>
-        <div class="content">
+        <div class="products-content">
           <div class="ribbon">
             <h3 class="title_h3">Ріббони</h3>
             <div
@@ -110,23 +110,29 @@ const socialLinks = [
 @import "/src/assets/main.scss";
 
 .footer-print-mark {
-  width: 100%;
+  max-width: 100%;
   background-color: $bg-color;
   display: flex;
   flex-direction: column;
   padding: 72px 16px;
+  @media ($breakpoint-tablet){
+  padding: 50px 16px; 
+  }
+  @media ($breakpoint-mobile){
+  padding: 32px 16px; 
+  }
 }
-.container {
+.content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap:32px;
   padding: 16px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     flex-direction: column-reverse;
   }
 }
 .logo {
-  // margin-bottom: 32px;
   margin-left: 16px;
 }
 .address-list {
@@ -137,11 +143,6 @@ const socialLinks = [
   flex-direction: column;
   gap: 32px;
   margin-bottom: 32px;
-  @media (max-width: 768px){
-    margin: 0;
-    margin-top: 50px;
-    margin-bottom: 24px;
-  }
   &_item {
     display: flex;
     gap: 16px;
@@ -170,9 +171,15 @@ const socialLinks = [
     margin-left: 16px;
   }
 }
-.content {
-  display: flex;
-  gap: 64px;
+.products{
+  &-content{
+    display: flex;
+    gap: 50px;
+  }
+}
+.ribbon,.label{
+  max-width: 200px;
+  width: 100%;
 }
 .title_h2 {
   font-size: $font-size-subtitle;

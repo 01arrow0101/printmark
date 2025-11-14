@@ -42,6 +42,7 @@ a.router-link-exact-active {
   color: $accent-color;
 }
 .header {
+  max-width: 100%;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -50,7 +51,7 @@ a.router-link-exact-active {
   background-color: $bg-color;
   color: $secondary-color;
   @media ($breakpoint-tablet) {
-    width: 100vw;
+    max-width: 100vw;
     padding: 16px;
   }
 }

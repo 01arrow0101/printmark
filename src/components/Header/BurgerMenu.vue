@@ -41,7 +41,7 @@ const navItems = [
   position: fixed;
   top: 0;
   left: 0;
-  width: 50vw;
+  width: 55vw;
   height: 100vh;
 
   display: flex;
@@ -54,6 +54,9 @@ const navItems = [
   border-radius: 0 16px 16px 0;
   background: $bg-color;
   z-index: 1000;
+  @media ($breakpoint-mobile){
+  width: 97vw; 
+  }
 }
 
 .close {
