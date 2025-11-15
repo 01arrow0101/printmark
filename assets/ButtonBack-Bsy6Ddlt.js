@@ -1,1 +1,0 @@
-import{f as e,g as t,m as n,n as r,p as i,t as a,u as o}from"./index-DLx37s-H.js";var s={class:`btn-back`},c=r({__name:`ButtonBack`,emits:[`action`],setup(r){return(r,c)=>(n(),o(`div`,s,[i(a,{className:`back`,onClick:c[0]||=e=>r.$emit(`action`)},{default:t(()=>[...c[1]||=[e(` <--- назад`,-1)]]),_:1})]))}},[[`__scopeId`,`data-v-a6292220`]]);export{c as t};
