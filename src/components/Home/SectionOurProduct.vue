@@ -3,10 +3,10 @@
     <div class="section m-section">
       <div class="section-left">
         <div class="section-left_top">
-          <div class="title">
-            <h2 class="title-h2">Наша продукція</h2>
-            <div class="h3 title-h3">
-              <span>Ріббони</span> (Термотрансферна Стрічка)
+          <div class="section-left_title">
+            <h2 class="title">Наша продукція</h2>
+            <div class="subtitle">
+              Ріббони <span>(Термотрансферна Стрічка)</span>
             </div>
           </div>
           <div class="text">
@@ -24,9 +24,9 @@
           </div>
         </div>
         <div class="section-left_bottom">
-          <div class="title">
-            <div class="h3 title-h3">
-              <span>Самоклеюча Етикетка</span> (Рулони)
+          <div class="section-left_title">
+            <div class="subtitle">
+              Самоклеюча Етикетка <span>(Рулони)</span>
             </div>
           </div>
           <div class="text">
@@ -47,8 +47,8 @@
       </div>
       <div class="section-right">
         <div class="section-right_top">
-          <div class="title">
-            <h2 class="title-h2">Наші Партнери</h2>
+          <div class="section-right_title">
+            <h2 class="title">Наші Партнери</h2>
           </div>
           <div class="img m-section">
             <img src="/src/assets/img/partner/7.webp" alt="7" />
@@ -65,8 +65,8 @@
           </div>
         </div>
         <div class="section-right_bottom">
-          <div class="title">
-            <h2 class="title-h2 center">Ознайомчі Відео</h2>
+          <div class="section-right_title">
+            <h2 class="title center">Ознайомчі Відео</h2>
           </div>
           <div class="videos">
             <video class="video" controls style="width: 400px">
@@ -124,26 +124,21 @@ const goToLabel = () => {
     }
   }
 }
-.title {
+.section-left_title,
+.section-right_title {
   margin-bottom: 24px;
-  .title-h2 {
-    font-size: 44px;
-    font-weight: $font-weight-bold;
-    font-family: $font-family-alt;
+  .title {
     margin-bottom: 16px;
   }
-  .title-h3 {
-    font-size: $font-size-subtitle;
-    font-weight: $font-weight-medium;
-    font-family: $font-family-alt;
+  .subtitle {
+    color: $primary-color;
     span {
-      font-weight: $font-weight-bold;
+      font-weight: $font-weight-normal;
     }
   }
 }
+
 .text {
-  font-size: $font-size-base;
-  font-family: $font-family-base;
   margin-bottom: 24px;
 }
 .button {

@@ -1,8 +1,8 @@
 <template>
   <div class="hero" :class="className">
-    <div class="title" :class="classTitle">
-      <h1 class="hero-title">
-        <slot name="title">PrintMark</slot>
+    <div class="title">
+      <h1 class="hero-title" :class="title">
+        <slot name="title" >PrintMark</slot>
       </h1>
       <h2 class="subtitle">
         <slot name="subtitle"></slot>
@@ -21,12 +21,10 @@ const router = useRouter();
 const goTo = () => {
   router.push("/contacts");
 };
-defineProps(
-  {
-    className: String,
-  },
-  { classTitle: String }
-);
+defineProps({
+  className: String,
+  title: String,
+});
 </script>
 
 <style lang="scss" scoped>
@@ -48,4 +46,5 @@ defineProps(
     padding: 24px 16px;
   }
 }
+
 </style>

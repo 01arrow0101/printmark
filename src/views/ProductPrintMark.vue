@@ -7,7 +7,7 @@ const route = useRoute();
 </script>
 
 <template>
-  <HeroSection class-name="bg">Іновації в термотрансферній Друці</HeroSection>
+  <HeroSection class-name="bg"><template #subtitle>Іновації в термотрансферній Друці</template></HeroSection>
   <OurProductsSection v-if="route.path === '/products'" />
   <RouterView />
 </template>

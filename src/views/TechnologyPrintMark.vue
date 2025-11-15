@@ -1,24 +1,7 @@
 <template>
-  <!-- <section class="hero">
-    <div class="hero_content">
-      <div class="hero_title">
-        <h1>Точна Порізка від <span>PrintMark</span></h1>
-      </div>
-      <div class="hero_text">
-        <p>
-          Інноваційні рішення у порізці термотрансферних рібонів та етикеток
-        </p>
-      </div>
-      <div class="button">
-        <app-button @click="goTo">Замовити консультацію</app-button>
-      </div>
-    </div>
-  </section> -->
-
-  <HeroSection class-title="y">
-    <template #title
-      >Точна Порізка від
-      <span>PrintMark</span>
+  <HeroSection>
+    <template #title>
+      <span class="hero-title-first">Точна Порізка від</span> PrintMark
     </template>
     <template #subtitle
       >Інноваційні рішення у порізці термотрансферних рібонів та
@@ -105,11 +88,7 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
 import HeroSection from "@/components/Layout/HeroSection.vue";
-import AppButton from "/src/components/Button/appButton.vue";
-
-const router = useRouter();
 
 const technologies = [
   {
@@ -152,17 +131,16 @@ const equipments = [
       "Сучасні інтегровані системи автоматизованого контролю якості з використанням оптичних сенсорів для аналізу точності порізки, відсутності дефектів та відповідності розмірів на всіх етапах виробництва.",
   },
 ];
-
-const goTo = () => {
-  router.push("/contacts");
-};
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/main.scss";
 
-.y h1{
-  color:aqua;
+.hero-title-first {
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+  text-shadow: none;
+  font-size: 44px;
 }
 /* Збережено існуючі сти.y{лі, вони є загальними і не конфліктують з новою логікою */
 .quality-section {
@@ -216,7 +194,7 @@ const goTo = () => {
   margin: 0 auto;
 }
 
-.hero-title1  {
+.hero-title1 {
   font-size: 3.5rem; /* Збільшити розмір для привабливості */
   margin-bottom: 20px;
   & span {

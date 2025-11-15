@@ -7,7 +7,7 @@
         <div class="icon">
           <SvgIcon :name="icon.name" folder="/src/assets/img/icons" />
         </div>
-        <p class="text">{{ icon.text }}</p>
+        <p class="icon-text">{{ icon.text }}</p>
         </router-link>
       </li>
     </ul>
@@ -68,6 +68,10 @@ const icons = [
       margin-bottom: 16px;
       background: $bg-color;
       border-radius: 8px;
+      &-text{
+        font-family: $font-family-italic;
+        font-weight: $font-weight-medium;
+      }
       @media ($breakpoint-tablet){
       width: 50px;
       height: 50px; 
