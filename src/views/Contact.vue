@@ -1,27 +1,27 @@
 <template>
   <section class="contact-page">
     <div class="container">
-      <h1 class="contact-title">Зв'яжіться з <span>PrintMark</span></h1>
-      <p class="contact-subtitle">
+      <h1 class="contact-title hero-title">Зв'яжіться з <span>PrintMark</span></h1>
+      <p class="contact-subtitle subtitle">
         Наші спеціалісти готові надати вам консультацію та прийняти замовлення
         на точну порізку рібонів та етикеток.
       </p>
 
       <div class="contact-grid">
         <div class="contact-info">
-          <h2 class="info-title">Основні дані</h2>
+          <h2 class="title">Основні дані</h2>
 
           <div class="info-item">
             <span class="icon">📍</span>
             <p class="address">
               **Адреса виробництва та офісу:**<br />
-              вулиця Вінстона Черчилля, 84, корпус 26, 1-й поверх, Київ, 02000
+              вулиця Вінстона Черчилля, 84, корпус 26, 1-й поверх, Київ, 02094
             </p>
           </div>
 
           <div class="info-item">
             <span class="icon">📞</span>
-            <p>**Телефон:** <a href="tel:+380445009236">+380 44 500 9236</a></p>
+            <p>**Телефон:** <a href="tel:0445016381">0445016381</a></p>
           </div>
 
           <div class="info-item">
@@ -43,13 +43,13 @@
         </div>
 
         <div class="map-container">
-          <h2 class="map-title">Карта проїзду</h2>
+          <h2 class="title">Карта проїзду</h2>
           <p class="map-description">
             Ви легко знайдете нас за вказаною адресою.
           </p>
           <div class="map-placeholder">
             <a
-              href="https://maps.google.com/?cid=18372677808494003513&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ"
+              href="https://maps.app.goo.gl/H5cjv5zVsTWGe56W7"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -67,7 +67,7 @@
 </script>
 
 <style lang="scss" scoped>
-@import "../assets//main.scss";
+@import "@/assets//main.scss";
 /* Стилі для компонента "Контакти" */
 $secondary-color: #333; // Темний текст
 $background-color: #f8f9fa; // Світло-сірий фон
@@ -77,16 +77,12 @@ $background-color: #f8f9fa; // Світло-сірий фон
   background-color: #fff;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .contact-title {
-  font-size: 3rem;
   text-align: center;
   color: $secondary-color;
   margin-bottom: 10px;
+  text-shadow: none;
+  letter-spacing: normal;
   & span{
     color: $accent-color;
     text-transform: uppercase;
@@ -95,7 +91,6 @@ $background-color: #f8f9fa; // Світло-сірий фон
 }
 
 .contact-subtitle {
-  font-size: 1.2rem;
   text-align: center;
   color: #6c757d;
   margin-bottom: 60px;
@@ -111,9 +106,7 @@ $background-color: #f8f9fa; // Світло-сірий фон
   }
 }
 
-.info-title,
-.map-title {
-  font-size: 2rem;
+.title {
   color: $accent-color;
   margin-bottom: 30px;
 }
@@ -130,13 +123,13 @@ $background-color: #f8f9fa; // Світло-сірий фон
   border-left: 3px solid $accent-color;
 
   .icon {
-    font-size: 1.5rem;
+    font-size: 24px;
     margin-right: 15px;
     line-height: 1.5;
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: 24px;
     line-height: 1.6;
     color: $secondary-color;
 
@@ -161,14 +154,14 @@ $background-color: #f8f9fa; // Світло-сірий фон
 .map-description {
   margin-bottom: 20px;
   color: #555;
-  font-size: 1rem;
+  font-size: 24px;
 }
 
 .map-placeholder {
   width: 100%;
   height: 400px;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.5)), url("/src/assets/img/map/карта.png");
+    linear-gradient(rgba(0, 0, 0, 0.5)), url("/src/assets/img/map/map.png");
   border-radius: 5px;
   display: flex;
   align-items: center;

@@ -4,16 +4,23 @@ import OurTehnologies from "@/components/About/OurTehnologies.vue";
 </script>
 
 <template>
-  <section class="about-section">
+  <section class="about-section p-section m-section">
     <div class="container">
-      <div class="header-content">
-        <h1 class="hero-title"><span>Про компанію</span>PrintMark</h1>
+      <div class="header-content m-section">
+        <h1 class="hero-title"><span>Про компанію <br/></span>PrintMark</h1>
         <h2 class="subtitle">
           Професійний поріз термотрансферної стрічки та самоклеючих етикеток
         </h2>
         <p class="description">
-          Ми спеціалізуємося на точному різанні термотрансферних стрічок і
-          самоклеючих етикеток, забезпечення високої якості та точності для
+           <span>Українська компанія Прінтмарк </span> — це молода виробничо-торгова фірма, що
+          динамічно розвивається, з великим досвідом роботи працівників компанії
+          в галузі маркування. Компанія створена групою однодумців із метою
+          практичного застосування накопиченого досвіду для комплексного
+          задоволення потреб ринку маркувальної продукції й аксесуарів. Основним
+          напрямком діяльності компанії є забезпечення клієнтів якісними
+          витратними матеріалами та обладнанням для термо- і термотрансферного
+          друку. <br/> Ми спеціалізуємося на точному різанні термотрансферних стрічок
+          і самоклеючих етикеток, забезпечення високої якості та точності для
           різних галузей промисловості.
         </p>
       </div>
@@ -29,13 +36,11 @@ import OurTehnologies from "@/components/About/OurTehnologies.vue";
 @import "@/assets/main.scss";
 
 .about-section {
-  padding: 5rem 1rem;
   background-color: #f9fafb;
 }
 
 .header-content {
   text-align: center;
-  margin-bottom: 4rem;
 }
 
 .hero-title {
@@ -58,8 +63,13 @@ import OurTehnologies from "@/components/About/OurTehnologies.vue";
 
 .description {
   color: $primary-color;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
+  & span{
+    font-size:$font-size-subtitle;
+    font-family: $font-size-title;
+    font-weight: $font-weight-bold;
+  }
 }
 
 .tech-section {

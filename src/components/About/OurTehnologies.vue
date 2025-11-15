@@ -10,7 +10,7 @@
 
     <div class="tech-grid">
       <div class="tech-card">
-        <h3 class="card-title">Процес розрізання термотрансферної стрічки</h3>
+        <h3 class="subtitle">Процес розрізання термотрансферної стрічки</h3>
         <p class="card-text">
           Ми використовуємо високоточні машини для різання, щоб забезпечити
           рівномірну товщину і чисті краї. Всі стрічки перевірені на адгезію і
@@ -18,7 +18,7 @@
         </p>
       </div>
       <div class="tech-card">
-        <h3 class="card-title">Виготовлення самоклеючих етикеток</h3>
+        <h3 class="subtitle">Виготовлення самоклеючих етикеток</h3>
         <p class="card-text">
           Виготовляємо етикетки з різних матеріалів (ПВХ, папір, полімери) з
           різними видами клею для різних поверхонь і умов експлуатації.
@@ -59,16 +59,12 @@
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  font-family: $font-family-alt;
-  color: $primary-color;
+.subtitle {
+  color:$primary-color;
   margin-bottom: 1rem;
 }
 
 .card-text {
-  font-size: 1rem;
   color: $primary-color;
 }
 </style>

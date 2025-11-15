@@ -1,80 +1,82 @@
 <template>
-  <section class="our-product">
-    <div class="our-product_title">
-      <h2>Наша Продукція</h2>
-    </div>
-
-    <div class="product-section">
-      <div class="section-header">
-        <div class="our-product_text">
-          <p><span>Ріббони</span> ( Термотрансферна стрічка)</p>
-        </div>
-        <div class="product-grid">
-          <div
-            v-for="ribbon in ribbons"
-            :key="ribbon.title"
-            class="product-card"
-          >
-            <div class="card_image">
-              <img :src="ribbon.image" :alt="ribbon.title" />
-            </div>
-            <div class="card_title">
-              <h3>{{ ribbon.title }}</h3>
-            </div>
-            <div class="card_description">
-              <!-- <p>{{ ribbon.description }}</p> -->
+  <section class="our-product p-section  m-section">
+    <div class="container">
+      <div class="our-product_title">
+        <h2 class="title">Наша Продукція</h2>
+      </div>
+  
+      <div class="product-section">
+        <div class="section-header">
+          <div class="our-product_text">
+            <p class="subtitle">Ріббони <span>( Термотрансферна стрічка)</span></p>
+          </div>
+          <div class="product-grid mb-32">
+            <div
+              v-for="ribbon in ribbons"
+              :key="ribbon.title"
+              class="product-card"
+            >
+              <div class="card_image">
+                <img :src="ribbon.image" :alt="ribbon.title" />
+              </div>
+              <div class="card-title">
+                <h3 class="subtitle">{{ ribbon.title }}</h3>
+              </div>
+              <div class="card_description">
+                <!-- <p>{{ ribbon.description }}</p> -->
+              </div>
             </div>
           </div>
-        </div>
-        <div class="button">
-          <appButton @click="goTo('ribbons')"
-            >Дізнатися більше</appButton
-          >
-        </div>
-      </div>
-
-      <div class="section-header">
-        <div class="our-product_text">
-          <p><span>Самоклеюча Етикетка</span> (Рулони)</p>
-        </div>
-        <div class="product-grid">
-          <div v-for="table in tables" :key="table.title" class="product-card">
-            <div class="card_image">
-              <img :src="table.image" :alt="table.title" />
-            </div>
-            <div class="card_title">
-              <h3>{{ table.title }}</h3>
-            </div>
-            <div class="card_description">
-              <!-- <p>{{ table.description }}</p> -->
-            </div>
+          <div class="button">
+            <appButton @click="goTo('ribbons')"
+              >Дізнатися більше</appButton
+            >
           </div>
         </div>
-                <div class="button">
-          <appButton @click="goTo('labels')"
-            >Дізнатися більше</appButton
-          >
-        </div>
-      </div>
-
-      <div class="section-header">
-        <div class="our-product_text">
-          <p><span>Услуги</span> і Спеціалізація</p>
-        </div>
-        <div class="product-grid">
-          <div
-            v-for="service in services"
-            :key="service.title"
-            class="product-card"
-          >
-            <div class="card_image">
-              <img :src="service.image" :alt="service.title" />
+  
+        <div class="section-header">
+          <div class="our-product_text">
+            <p class="subtitle">Самоклеюча Етикетка <span>(Рулони)</span></p>
+          </div>
+          <div class="product-grid mb-32">
+            <div v-for="table in tables" :key="table.title" class="product-card">
+              <div class="card_image">
+                <img :src="table.image" :alt="table.title" />
+              </div>
+              <div class="card-title">
+                <h3 class="subtitle">{{ table.title }}</h3>
+              </div>
+              <div class="card_description">
+                <!-- <p>{{ table.description }}</p> -->
+              </div>
             </div>
-            <div class="card_title">
-              <h3>{{ service.title }}</h3>
-            </div>
-            <div class="card_description">
-              <!-- <p>{{ service.description }}</p> -->
+          </div>
+                  <div class="button">
+            <appButton @click="goTo('labels')"
+              >Дізнатися більше</appButton
+            >
+          </div>
+        </div>
+  
+        <div class="section-header">
+          <div class="our-product_text">
+            <p class="title">Послуги та Спеціалізація</p>
+          </div>
+          <div class="product-grid">
+            <div
+              v-for="service in services"
+              :key="service.title"
+              class="product-card"
+            >
+              <div class="card_image">
+                <img :src="service.image" :alt="service.title" />
+              </div>
+              <div class="card-title">
+                <h3 class="subtitle">{{ service.title }}</h3>
+              </div>
+              <div class="card_description">
+                <!-- <p>{{ service.description }}</p> -->
+              </div>
             </div>
           </div>
         </div>
@@ -184,20 +186,20 @@ const goTo = (path)=>{
 <style lang="scss" scoped>
 @import "/src/assets/main.scss";
 
+.mb-32{
+  margin-bottom: 32px;
+}
 .our-product {
-  padding: 64px 200px;
   background-color: #f9fafb;
   text-align: center;
   overflow-x: hidden;
 }
 
-.our-product_title h2 {
-  font-size: $font-size-subtitle;
-  font-weight: $font-weight-bold;
-  font-family: $font-family-alt;
-  text-transform: uppercase;
-  color: $primary-color;
-  margin-bottom: 32px;
+.our-product_title {
+  .title{
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
 }
 
 .product-section {
@@ -208,16 +210,14 @@ const goTo = (path)=>{
 
 .section-header {
   text-align: center;
-  margin-bottom: 48px;
 }
 
 .our-product_text p {
-  font-size: $font-size-base;
   color: $primary-color;
   margin-bottom: 32px;
   & span {
     color: $primary-color;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-normal;
   }
 }
 
@@ -226,7 +226,8 @@ const goTo = (path)=>{
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  margin-top: 32px;
+  // padding-top: 32px;
+  // margin-bottom: 32px;
 }
 
 .product-card {
@@ -254,13 +255,12 @@ const goTo = (path)=>{
   }
 }
 
-.card_title {
+.card-title {
   margin-bottom: 16px;
-  h3 {
-    font-size: $font-size-subtitle;
-    font-weight: $font-weight-bold;
+  .subtitle{
     color: $primary-color;
     padding: 0 16px;
+    margin: 0;
   }
 }
 
@@ -274,48 +274,48 @@ const goTo = (path)=>{
 }
 
 // Media Queries
-@media (max-width: 1200px) {
-  .hero {
-    padding: 64px 100px 120px;
-  }
-}
+// @media (max-width: 1200px) {
+//   .hero {
+//     padding: 64px 100px 120px;
+//   }
+// }
 
-@media (max-width: 992px) {
-  .hero {
-    padding: 48px 64px 96px;
-  }
-  .card_description p {
-    font-size: $font-size-base;
-  }
-}
+// @media (max-width: 992px) {
+//   .hero {
+//     padding: 48px 64px 96px;
+//   }
+//   .card_description p {
+//     font-size: $font-size-base;
+//   }
+// }
 
-@media (max-width: 768px) {
-  .hero {
-    padding: 32px 40px 80px;
-  }
-  .hero_title h1 {
-    font-size: 2.5rem;
-  }
-  .hero_text p {
-    font-size: 1.2rem;
-  }
-  .product-grid {
-    margin-top: 24px;
-  }
-}
+// @media (max-width: 768px) {
+//   .hero {
+//     padding: 32px 40px 80px;
+//   }
+//   .hero_title h1 {
+//     font-size: 2.5rem;
+//   }
+//   .hero_text p {
+//     font-size: 1.2rem;
+//   }
+//   .product-grid {
+//     margin-top: 24px;
+//   }
+// }
 
-@media (max-width: 480px) {
-  .hero {
-    padding: 24px 20px 64px;
-  }
-  .hero_title h1 {
-    font-size: 2rem;
-  }
-  .hero_text p {
-    font-size: 1rem;
-  }
-  .card_description p {
-    font-size: 0.95rem;
-  }
-}
+// @media (max-width: 480px) {
+//   .hero {
+//     padding: 24px 20px 64px;
+//   }
+//   .hero_title h1 {
+//     font-size: 2rem;
+//   }
+//   .hero_text p {
+//     font-size: 1rem;
+//   }
+//   .card_description p {
+//     font-size: 0.95rem;
+//   }
+// }
 </style>

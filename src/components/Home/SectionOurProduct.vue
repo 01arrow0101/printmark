@@ -150,15 +150,19 @@ const goToLabel = () => {
   @media ($breakpoint-desktop) {
     justify-content: center;
   }
+  @media ($breakpoint-mobile){
+  flex-wrap: wrap; 
+  }
   img {
     max-width: 200px;
-    height: 200px;
     background-color: $bg-color;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     @media ($breakpoint-tablet) {
       width: 150px;
-      height: 150px;
+    }
+    @media ($breakpoint-mobile){
+    width: 200px;
     }
   }
 }

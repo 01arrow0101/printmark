@@ -1,7 +1,7 @@
 <template>
   <HeroSection>
     <template #title>
-      <span class="hero-title-first">Точна Порізка від</span> PrintMark
+      <span class="hero-title-first">Точна Порізка від <br /></span> PrintMark
     </template>
     <template #subtitle
       >Інноваційні рішення у порізці термотрансферних рібонів та
@@ -9,77 +9,88 @@
     >
   </HeroSection>
 
-  <section class="our-technologies">
-    <div class="our-product_title">
-      <h2>Наші Технології Порізки</h2>
-    </div>
-
-    <div class="product-section">
-      <div class="section-header">
-        <div class="our-product_text">
-          <p><span>Сучасні</span> рішення для точного формування матеріалів</p>
-        </div>
-        <div class="product-grid">
-          <div
-            v-for="tech in technologies"
-            :key="tech.title"
-            class="product-card"
-          >
-            <div class="card_image">
-              <img :src="tech.image" :alt="tech.title" />
-            </div>
-            <div class="card_title">
-              <h3>{{ tech.title }}</h3>
-            </div>
-            <div class="card_description">
-              <p>{{ tech.description }}</p>
-            </div>
-          </div>
-        </div>
+  <section class="our-technologies p-section m-section">
+    <div class="container">
+      <div class="our-product_title">
+        <h2 class="title">Наші Технології Порізки</h2>
       </div>
 
-      <div class="section-header">
-        <div class="our-product_text">
-          <p><span>Обладнання</span> для високоточної порізки</p>
-        </div>
-        <div class="product-grid">
-          <div
-            v-for="equipment in equipments"
-            :key="equipment.title"
-            class="product-card"
-          >
-            <div class="card_image">
-              <img :src="equipment.image" :alt="equipment.title" />
-            </div>
-            <div class="card_title">
-              <h3>{{ equipment.title }}</h3>
-            </div>
-            <div class="card_description">
-              <p>{{ equipment.description }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section-header">
-        <div class="our-product_text">
-          <p><span>Контроль</span> якості порізаної продукції</p>
-        </div>
-        <div class="quality-section">
-          <div class="quality-content">
-            <p class="quality-text">
-              Ми виконуємо комплексний контроль якості на всіх етапах порізки:
+      <div class="product-section">
+        <div class="section-header">
+          <div class="our-product_text">
+            <p class="title">
+              Сучасні
+              <span class="subtitle"
+                >рішення для точного формування матеріалів</span
+              >
             </p>
-            <ul class="quality-list">
-              <li>
-                Перевірка точності розмірів та відповідності специфікаціям
-              </li>
-              <li>Випробування на міцність країв та відсутність дефектів</li>
-              <li>
-                Автоматизовані системи вимірювання ширини та довжини рулонів
-              </li>
-              <li>Тестування якості намотування рулонів та їх цілісності</li>
-            </ul>
+          </div>
+          <div class="product-grid m-section">
+            <div
+              v-for="tech in technologies"
+              :key="tech.title"
+              class="product-card"
+            >
+              <div class="card_image">
+                <img :src="tech.image" :alt="tech.title" />
+              </div>
+              <div class="card_title">
+                <h3>{{ tech.title }}</h3>
+              </div>
+              <div class="card_description">
+                <p>{{ tech.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <div class="our-product_text">
+            <p class="title">
+              Обладнання <span class="subtitle">для високоточної порізки</span>
+            </p>
+          </div>
+          <div class="product-grid m-section">
+            <div
+              v-for="equipment in equipments"
+              :key="equipment.title"
+              class="product-card"
+            >
+              <div class="card_image">
+                <img :src="equipment.image" :alt="equipment.title" />
+              </div>
+              <div class="card_title">
+                <h3>{{ equipment.title }}</h3>
+              </div>
+              <div class="card_description">
+                <p>{{ equipment.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <div class="our-product_text">
+            <p class="title">
+              Контроль <span class="subtitle">якості порізаної продукції</span>
+            </p>
+          </div>
+          <div class="quality-section">
+            <div class="quality-content">
+              <p class="quality-text">
+                Ми виконуємо комплексний контроль якості на всіх етапах порізки:
+              </p>
+              <ul class="quality-list">
+                <li>
+                  Перевірка точності розмірів та відповідності специфікаціям
+                </li>
+                <li>Випробування на міцність країв та відсутність дефектів</li>
+                <li>
+                  Автоматизовані системи вимірювання ширини та довжини рулонів
+                </li>
+                <li>Тестування якості намотування рулонів та їх цілісності</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -145,9 +156,7 @@ const equipments = [
 /* Збережено існуючі сти.y{лі, вони є загальними і не конфліктують з новою логікою */
 .quality-section {
   background-color: #f3f4f6;
-  padding: 48px 0;
   border-radius: 16px;
-  margin-top: 64px;
 }
 
 .quality-content {
@@ -184,23 +193,6 @@ const equipments = [
   background:
     linear-gradient(rgba(0, 0, 0, 0.5)),
     url("/src/assets/img/bg/tehnology/bgTehology.png") no-repeat center / cover;
-  // color: $secondary-color;
-  // text-align: center;
-  // padding: 100px 20px;
-}
-
-.hero_content {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-.hero-title1 {
-  font-size: 3.5rem; /* Збільшити розмір для привабливості */
-  margin-bottom: 20px;
-  & span {
-    text-transform: uppercase;
-    text-shadow: 4px 4px 4px $accent-color;
-  }
 }
 
 .hero_text p {
@@ -213,27 +205,24 @@ const equipments = [
 }
 
 /* Загальні стилі для секцій та карток, які у вас вже були */
-.our-technologies {
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
-.our-product_title h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 60px;
-  color: $primary-color;
+.our-product_title {
+  margin-bottom: 50px;
+  @media ($breakpoint-mobile){
+  margin-bottom: 32px; 
+  }
+  .title {
+    text-align: center;
+    color: $primary-color;
+  }
 }
 
 .our-product_text {
   text-align: center;
-  margin-bottom: 40px;
-  p {
-    font-size: 1.8rem;
-    color: $secondary-color;
-    span {
-      font-weight: bold;
+  margin-bottom: 32px;
+  .title {
+    color: $accent-color;
+    .subtitle {
       color: $primary-color;
     }
   }
@@ -243,7 +232,6 @@ const equipments = [
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  margin-bottom: 60px;
 }
 
 .product-card {
@@ -261,9 +249,9 @@ const equipments = [
 }
 
 .card_image img {
-  max-width: 100%;
+  width: 100%;
   height: 200px; /* Фіксована висота для зображень */
-  object-fit: contain; /* Зберігаємо пропорції */
+  object-fit: cover; /* Зберігаємо пропорції */
   margin-bottom: 20px;
   border-radius: 8px;
 }

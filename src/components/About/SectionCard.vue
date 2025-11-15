@@ -1,6 +1,6 @@
 <template>
   <div class="features-grid">
-    <div class="feature-card" v-for="card in cards" :key="card.title">
+    <div class="feature-card m-section" v-for="card in cards" :key="card.title">
       <div class="icon">
         <SvgApp :folder="card.icon" :name="card.name" />
       </div>
@@ -51,7 +51,6 @@ $card-gradient: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-bottom: 4rem;
   @media ($breakpoint-tablet) {
     grid-template-columns: repeat(1, 1fr);
   }
