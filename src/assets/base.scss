@@ -83,6 +83,23 @@ li {
   @media ($breakpoint-tablet) {
     font-size: $font-size-title;
   }
+  @media ($breakpoint-mobile) {
+    letter-spacing: normal;
+  }
+  @media (max-width: 479.98px) {
+    font-size: 32px;
+  }
+  & span {
+    @media ($breakpoint-tablet) {
+      font-size: $font-size-title;
+    }
+    @media ($breakpoint-mobile) {
+      letter-spacing: normal;
+    }
+    @media (max-width: 479.98px) {
+      font-size: 32px;
+    }
+  }
 }
 .title {
   font-size: $font-size-title;

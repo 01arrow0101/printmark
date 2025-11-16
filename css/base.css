@@ -71,6 +71,31 @@ li {
     font-size: 44px;
   }
 }
+@media ((max-width: 539.98px)) {
+  .hero-title {
+    letter-spacing: normal;
+  }
+}
+@media (max-width: 479.98px) {
+  .hero-title {
+    font-size: 32px;
+  }
+}
+@media ((max-width: 767.98px)) {
+  .hero-title span {
+    font-size: 44px;
+  }
+}
+@media ((max-width: 539.98px)) {
+  .hero-title span {
+    letter-spacing: normal;
+  }
+}
+@media (max-width: 479.98px) {
+  .hero-title span {
+    font-size: 32px;
+  }
+}
 
 .title {
   font-size: 44px;

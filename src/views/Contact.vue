@@ -1,5 +1,5 @@
 <template>
-  <section class="contact-page">
+  <section class="contact-page p-section m-section">
     <div class="container">
       <h1 class="contact-title hero-title">Зв'яжіться з <span>PrintMark</span></h1>
       <p class="contact-subtitle subtitle">
@@ -73,7 +73,6 @@ $secondary-color: #333; // Темний текст
 $background-color: #f8f9fa; // Світло-сірий фон
 
 .contact-page {
-  padding: 80px 20px;
   background-color: #fff;
 }
 
@@ -93,26 +92,25 @@ $background-color: #f8f9fa; // Світло-сірий фон
 .contact-subtitle {
   text-align: center;
   color: #6c757d;
-  margin-bottom: 60px;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 72px;
 
   @media (max-width: 992px) {
     grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  @media ($breakpoint-mobile){
+  gap: 32px; 
   }
 }
 
 .title {
   color: $accent-color;
   margin-bottom: 30px;
-}
-
-.contact-info {
-  padding: 20px 0;
 }
 
 .info-item {
@@ -146,7 +144,6 @@ $background-color: #f8f9fa; // Світло-сірий фон
 
 .map-container {
   background-color: $background-color;
-  padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -166,6 +163,7 @@ $background-color: #f8f9fa; // Світло-сірий фон
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 16px;
 
   a {
     padding: 12px 25px;
