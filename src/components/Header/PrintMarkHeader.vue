@@ -1,21 +1,23 @@
 <template>
-  <div class="header">
+  <header class="header">
     <div class="logo">
-      <logo />
-      <div @click="showMenu" class="open_menu">X</div>
+      <Logo />
     </div>
-    <div class="navigation">
-      <nav>
-        <ul class="nav-list">
-          <li v-for="item in navItems" :key="item.name" class="nav-list_item">
-            <router-link :to="item.link" class="item-link">{{
-              item.name
-            }}</router-link>
-          </li>
-        </ul>
-      </nav>
+    <div class="open-menu">
+      <button class="burger-btn" @click="showMenu" aria-label="Open menu">
+        <span class="line"></span>
+      </button>
     </div>
-  </div>
+    <nav class="navigation">
+      <ul class="nav-list">
+        <li v-for="item in navItems" :key="item.name" class="nav-list_item">
+          <router-link :to="item.link" class="item-link">{{
+            item.name
+          }}</router-link>
+        </li>
+      </ul>
+    </nav>
+  </header>
 </template>
 
 <script setup>
@@ -38,9 +40,6 @@ const showMenu = () => (store.showBurgerMenu = true);
 <style lang="scss" scoped>
 @import "@/assets/main.scss";
 
-a.router-link-exact-active {
-  color: $accent-color;
-}
 .header {
   max-width: 100%;
   position: relative;
@@ -55,21 +54,71 @@ a.router-link-exact-active {
     padding: 16px;
   }
 }
-.open_menu {
-  position: absolute;
-  top: 16px;
-  right: 32px;
+.open-menu {
   display: none;
+  position: relative;
   @media ($breakpoint-tablet) {
     display: inline-block;
   }
 }
+
+.burger-btn {
+  width: 32px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+
+  & .line {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $secondary-color;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: $secondary-color;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  &::before {
+    top: -4px;
+  }
+
+  &::after {
+    bottom: -4px;
+  }
+
+  &:hover {
+    & .line,
+    &::before,
+    &::after {
+      background: $accent-color;
+    }
+  }
+}
+
 .navigation {
   display: block;
   @media ($breakpoint-tablet) {
     display: none;
   }
 }
+
 .nav-list {
   display: flex;
   align-items: center;
@@ -89,5 +138,9 @@ a.router-link-exact-active {
   &:hover {
     color: $accent-color;
   }
+}
+
+a.router-link-exact-active {
+  color: $accent-color;
 }
 </style>

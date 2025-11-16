@@ -1,6 +1,6 @@
 <template>
   <div class="button" :class="className">
-    <span class="text"><slot></slot></span>
+    <slot></slot>
   </div>
 </template>
 
@@ -23,14 +23,11 @@ defineProps({
   text-align: center;
   text-decoration: none;
   font-size: $font-size-base;
+  font-weight: $font-weight-bold;
   transition: background-color 0.3s ease;
 
   &:hover {
     background-color: darken($accent-color, 10%);
-  }
-
-  .text {
-    font-weight: $font-weight-bold;
   }
 }
 </style>
