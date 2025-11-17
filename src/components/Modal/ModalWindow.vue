@@ -11,11 +11,11 @@
         <slot>
           <!-- Default content example -->
           <div class="modal-hero">
-            <!-- <img 
-              src="/img/modal-hero.png" 
-              alt="Modal Hero" 
+            <img
+              src="/src/assets/img/Gemini_Generated_Image_5saua15saua15sau.png"
+              alt="Modal Hero"
               class="hero-image"
-            /> -->
+            />
           </div>
           <h4 class="section-subtitle">Заповніть форму</h4>
           <form class="modal-form">
@@ -155,13 +155,14 @@ const closeModal = () => {
 }
 
 .modal-hero {
+  width: 100%;
+  height: 200px;
   text-align: center;
   margin-bottom: 24px;
+  overflow: hidden;
 }
 
 .hero-image {
-  max-width: 100%;
-  height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
