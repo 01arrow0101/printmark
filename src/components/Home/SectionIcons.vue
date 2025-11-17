@@ -2,8 +2,9 @@
 <div class="container">
     <div class="icons p-section m-section">
     <ul class="svg-list">
-      <li v-for="icon in icons" :key="icon.name" >
-        <router-link class="svg-list_item" :to="icon.path">
+      <li v-for="icon in icons" :key="icon.name" @click="store.showModal = true">
+        <router-link class="svg-list_item">
+
         <div class="icon">
           <SvgIcon :name="icon.name" folder="/src/assets/img/icons" />
         </div>
@@ -16,8 +17,11 @@
 </template>
 
 <script setup>
-import { RouterLink } from "vue-router";
+// import { RouterLink } from "vue-router";
 import SvgIcon from "@/components/Svg/SvgApp.vue";
+import { usePrintMarkStore } from "@/stores/PrintMarkStore";
+
+const store = usePrintMarkStore()
 
 const icons = [
   { name: "производство ", text: "Особисте виробництво", path: "/poizvodstvo" },
