@@ -12,7 +12,7 @@
       </p>
 
       <div class="materials-block">
-        <h2 class="block-title">Матеріали: Вибір для Любих Умов</h2>
+        <h2 class="subtitle">Матеріали: Вибір для Любих Умов</h2>
         <div class="material-grid">
           <div
             v-for="material in labelMaterials"
@@ -20,7 +20,12 @@
             class="product-card"
           >
             <div class="card-header">
-              <h3 class="product-title">{{ material.type }}</h3>
+              <h3 class="product-title">
+                {{ material.title }}
+                <span :class="['badge', material.type]">
+                  {{ material.type }}</span
+                >
+              </h3>
             </div>
             <div class="card-content">
               <div class="material-icon">{{ material.icon }}</div>
@@ -34,7 +39,7 @@
       </div>
 
       <div class="services-block">
-        <h2 class="block-title">Наші Послуги та Комплексне Снабження</h2>
+        <h2 class="subtitle">Наші Послуги та Комплексне Снабження</h2>
         <div class="service-grid">
           <div
             v-for="service in services"
@@ -55,7 +60,7 @@
             замовлення на рулонні етикетки. Гарантуємо сумісність з вашим
             принтером.
           </p>
-          <a href="#" class="action-button">Замовити розрахунок</a>
+          <appButton @click="router.push('/contacts')">Замовити розрахунок</appButton>
         </div>
         <div class="image-placeholder"></div>
       </div>
@@ -67,24 +72,28 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import ButtonBack from "@/UI/ButtonBack.vue";
+import appButton from "../Button/appButton.vue";
 const router = useRouter();
 const labelMaterials = ref([
   {
-    type: "Паперові (ТермоТОП/Полуглянець)",
+    title: "Паперові",
+    type: "ТермоТОП/Полуглянець",
     icon: "🗞️",
     description:
       "Економічна основа, що вимагає захисту від вологи та тертя. Ідеально для риббонів WAX.",
     application: "Логістика, складський облік, сухі харчові продукти.",
   },
   {
-    type: "Синтетичні (ПП/ПЕТ)",
+    title: "Синтетичні",
+    type: "(ПП/ПЕТ)",
     icon: "💧",
     description:
       "Не рвуться, стійкі до води, жиру та хімікатів. Вимагають риббонів RESIN або WAX/RESIN.",
     application: "Косметика, побутова хімія, маркування електроніки.",
   },
   {
-    type: "Спеціальні (Пломби/Текстиль)",
+    title: "Спеціальні",
+    type: "(Пломби/Текстиль)",
     icon: "🔒",
     description:
       "Для спеціфічних завдань, таких як контроль відкриття (VOID) або маркування одягу.",
@@ -136,10 +145,8 @@ const services = ref([
   margin-bottom: 50px;
 }
 
-.block-title {
-  font-size: 26px;
-  font-weight: 600;
-  color: $accent-color;
+.subtitle {
+  color: #333;
   margin-bottom: 30px;
   border-bottom: 1px solid #eee;
   padding-bottom: 10px;
@@ -171,11 +178,18 @@ const services = ref([
 }
 
 .product-title {
-  font-size: 18px;
   font-weight: 600;
   color: #333;
 }
-
+.badge {
+  margin-left: 15px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: $accent-color;
+  color: white;
+  text-wrap-mode: nowrap;
+}
 .material-icon {
   font-size: 30px;
   margin-bottom: 10px;

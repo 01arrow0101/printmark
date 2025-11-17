@@ -6,5 +6,8 @@
   font-size: $font-size-base;
   font-family: $font-family-base;
   margin: 0 auto;
+  @media ($breakpoint-mobile){
+  font-size: 16px; 
+  }
 }
 

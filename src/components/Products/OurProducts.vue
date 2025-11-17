@@ -183,6 +183,9 @@ const goTo = (path) => {
 <style lang="scss" scoped>
 @import "/src/assets/main.scss";
 
+.mb-32{
+  margin-bottom: 32px;
+}
 .our-product {
   background-color: #f9fafb;
   text-align: center;

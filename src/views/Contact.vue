@@ -1,7 +1,7 @@
 <template>
   <section class="contact-page p-section m-section">
     <div class="container">
-      <h1 class="contact-title hero-title">Зв'яжіться з <span>PrintMark</span></h1>
+      <h1 class="hero-title"><span>Зв'яжіться з</span> PrintMark</h1>
       <p class="contact-subtitle subtitle">
         Наші спеціалісти готові надати вам консультацію та прийняти замовлення
         на точну порізку рібонів та етикеток.
@@ -76,16 +76,18 @@ $background-color: #f8f9fa; // Світло-сірий фон
   background-color: #fff;
 }
 
-.contact-title {
+.hero-title {
   text-align: center;
-  color: $secondary-color;
   margin-bottom: 10px;
   text-shadow: none;
   letter-spacing: normal;
-  & span{
-    color: $accent-color;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 2px #000;
+  color: $accent-color;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px #000;
+  & span {
+    font-size: 36px;
+    color: $secondary-color;
+    text-shadow: none;
   }
 }
 
@@ -103,8 +105,8 @@ $background-color: #f8f9fa; // Світло-сірий фон
     grid-template-columns: 1fr;
     gap: 50px;
   }
-  @media ($breakpoint-mobile){
-  gap: 32px; 
+  @media ($breakpoint-mobile) {
+    gap: 32px;
   }
 }
 

@@ -8,7 +8,7 @@ import OurTehnologies from "@/components/About/OurTehnologies.vue";
     <div class="container">
       <div class="header-content m-section">
         <h1 class="hero-title">
-          <span>Про компанію <br /></span>PrintMark
+          <span>Про компанію </span>PrintMark
         </h1>
         <h2 class="subtitle">
           Професійний поріз термотрансферної стрічки та самоклеючих етикеток
@@ -53,8 +53,9 @@ import OurTehnologies from "@/components/About/OurTehnologies.vue";
   color: $accent-color;
   letter-spacing: 0.05em;
   text-shadow: 4px 4px 4px $primary-color;
+  text-wrap-mode: wrap;
   & span {
-    font-size: 44px;
+    font-size: 36px;
     color: $primary-color;
     font-size: $font-size-title;
     text-shadow: none;

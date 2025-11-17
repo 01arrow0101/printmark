@@ -26,8 +26,8 @@ $font-weight-medium: 500;
 $font-weight-bold: 700;
 
 $font-size-base: 18px;
-$font-size-hero-title: 72px;
-$font-size-title: 44px;
+$font-size-hero-title: 64px;
+$font-size-title: 36px;
 $font-size-subtitle: 24px;
 
 * {
@@ -118,5 +118,8 @@ li {
   margin-bottom: 50px;
   @media ($breakpoint-tablet) {
     margin-bottom: 32px;
+  }
+  @media ($breakpoint-mobile){
+  font-size: 20px; 
   }
 }

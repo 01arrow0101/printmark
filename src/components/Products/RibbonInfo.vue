@@ -2,8 +2,8 @@
   <ButtonBack @action="router.go(-1)"/>
   <section class="product-info-section">
     <div class="container">
-      <h1 class="section-title">Повний Каталог Термотрансферних Риббонів</h1>
-      <p class="section-description">
+      <h1 class="title">Повний Каталог Термотрансферних Риббонів</h1>
+      <p class="description">
         Наш асортимент гарантує ідеальну друкування для будь-якого матеріалу та
         умов експлуатації. Використовуйте наше керівництво для вибору пасуючого
         типу.
@@ -15,7 +15,7 @@
         class="product-card"
       >
         <div class="card-header">
-          <h2 class="product-title">
+          <h2 class="subtitle">
             {{ ribbon.title }}
             <span :class="['badge', ribbon.type]">{{
               ribbon.type.toUpperCase()
@@ -38,14 +38,12 @@
               <li>**Стійкість:** {{ ribbon.resistance }}</li>
               <li>**Застосування:** {{ ribbon.application }}</li>
             </ul>
-            <a href="#" class="action-button"
-              >Замовити зразки та консультацію</a
-            >
+           <appButton @click="router.push('/contacts')">Замовити зразки та консультацію</appButton>
           </div>
         </div>
       </div>
 
-      <h3 class="table-title">Таблиця Сумісності</h3>
+      <h3 class="subtitle">Таблиця Сумісності</h3>
       <div class="compatibility-table">
         <table class="responsive-table">
           <thead>
@@ -78,6 +76,7 @@
 import { useRouter } from "vue-router";
 import { ref } from "vue";
 import ButtonBack from "@/UI/ButtonBack.vue";
+import appButton from "../Button/appButton.vue";
 const router = useRouter();
 
 const path = `${import.meta.env.BASE_URL}`;
@@ -128,14 +127,12 @@ const detailedRibbons = ref([
   padding: 40px 0;
 }
 
-.section-title {
-  font-size: 28px;
-  font-weight: 700;
+.title {
   color: #2c3e50;
   margin-bottom: 15px;
 }
 
-.section-description {
+.description {
   font-size: 16px;
   color: #555;
   margin-bottom: 30px;
@@ -155,12 +152,12 @@ const detailedRibbons = ref([
   margin-bottom: 20px;
 }
 
-.product-title {
-  font-size: 22px;
-  font-weight: 600;
+.subtitle {
   color: #333;
   display: flex;
   align-items: center;
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .badge {
@@ -204,6 +201,7 @@ const detailedRibbons = ref([
   list-style: disc;
   margin-left: 20px;
   margin-bottom: 20px;
+  color: $accent-color;
 }
 
 .action-button {
@@ -220,13 +218,6 @@ const detailedRibbons = ref([
   background-color: lighten($accent-color, 10%);
 }
 
-.table-title {
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  color: #2c3e50;
-}
 
 .compatibility-table {
   border: 1px dashed #ccc;
@@ -271,8 +262,8 @@ const detailedRibbons = ref([
 }
 
 .note-text {
-  color: #666;
-  font-size: 14px;
+  color: $accent-color;
+  font-size: 16px;
 }
 
 @media (max-width: 768px) {

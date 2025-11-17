@@ -1,7 +1,7 @@
 <template>
   <HeroSection>
     <template #title>
-      <span class="hero-title-first">Точна Порізка від <br /></span> PrintMark
+      <span class="hero-title-first">Точна Порізка від</span> PrintMark
     </template>
     <template #subtitle
       >Інноваційні рішення у порізці термотрансферних рібонів та
@@ -150,10 +150,10 @@ const equipments = [
 @import "../assets/main.scss";
 
 .hero-title-first {
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 0.03em;
   text-shadow: none;
-  font-size: 44px;
+  font-size: 36px;
 }
 /* Збережено існуючі сти.y{лі, вони є загальними і не конфліктують з новою логікою */
 .quality-section {

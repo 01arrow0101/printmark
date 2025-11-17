@@ -57,7 +57,7 @@ li {
 }
 
 .hero-title {
-  font-size: 72px;
+  font-size: 64px;
   color: #ffffff;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
@@ -68,7 +68,7 @@ li {
 }
 @media ((max-width: 767.98px)) {
   .hero-title {
-    font-size: 44px;
+    font-size: 36px;
   }
 }
 @media ((max-width: 539.98px)) {
@@ -83,7 +83,7 @@ li {
 }
 @media ((max-width: 767.98px)) {
   .hero-title span {
-    font-size: 44px;
+    font-size: 36px;
   }
 }
 @media ((max-width: 539.98px)) {
@@ -98,7 +98,7 @@ li {
 }
 
 .title {
-  font-size: 44px;
+  font-size: 36px;
   font-weight: 700;
   color: #000000;
   font-family: "Montserrat", sans-serif;
@@ -119,5 +119,10 @@ li {
 @media ((max-width: 767.98px)) {
   .subtitle {
     margin-bottom: 32px;
+  }
+}
+@media ((max-width: 539.98px)) {
+  .subtitle {
+    font-size: 20px;
   }
 }/*# sourceMappingURL=base.css.map */
