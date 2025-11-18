@@ -1,19 +1,22 @@
 <template>
-<div class="container">
+  <div class="container">
     <div class="icons p-section m-section">
-    <ul class="svg-list">
-      <li v-for="icon in icons" :key="icon.name" @click="store.showModal = true">
-        <router-link class="svg-list_item">
-
-        <div class="icon">
-          <SvgIcon :name="icon.name" folder="/src/assets/img/icons" />
-        </div>
-        <p class="icon-text">{{ icon.text }}</p>
-        </router-link>
-      </li>
-    </ul>
+      <ul class="svg-list">
+        <li
+          v-for="icon in icons"
+          :key="icon.name"
+          @click="store.showModal = true"
+        >
+          <router-link class="svg-list_item" :to="icon.path">
+            <div class="icon">
+              <SvgIcon :name="icon.name" folder="@/assets/img/icons" />
+            </div>
+            <p class="icon-text">{{ icon.text }}</p>
+          </router-link>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
 </template>
 
 <script setup>
@@ -21,15 +24,23 @@ import { RouterLink } from "vue-router";
 import SvgIcon from "@/components/Svg/SvgApp.vue";
 import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 
-const store = usePrintMarkStore()
+const store = usePrintMarkStore();
 
 const icons = [
   { name: "производство ", text: "Особисте виробництво", path: "/poizvodstvo" },
-  { name: "этикетка ", text: "Рулонні Етикетки на замовлення", path:'/eteketka' },
-  { name: "рибоны", text: "Широкий асортимент Ріббонов", path: '/ribbons' },
-  { name: "размер", text: "Індивідуальні розміри та намотування", path: '/sizes' },
-  { name: "сертификат", text: "Контроль сировини" , path: '/certificates'},
-  { name: "доставка", text: "Оперативна Логістика", path: '/delivery' },
+  {
+    name: "этикетка ",
+    text: "Рулонні Етикетки на замовлення",
+    path: "/eteketka",
+  },
+  { name: "рибоны", text: "Широкий асортимент Ріббонов", path: "/ribbons" },
+  {
+    name: "размер",
+    text: "Індивідуальні розміри та намотування",
+    path: "/sizes",
+  },
+  { name: "сертификат", text: "Контроль сировини", path: "/certificates" },
+  { name: "доставка", text: "Оперативна Логістика", path: "/delivery" },
 ];
 </script>
 
@@ -41,8 +52,8 @@ const icons = [
   flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
-  @media ($breakpoint-tablet){
-  gap: 24px; 
+  @media ($breakpoint-tablet) {
+    gap: 24px;
   }
   &_item {
     display: flex;
@@ -50,15 +61,15 @@ const icons = [
     align-items: center;
     text-align: center;
     max-width: 150px;
-    @media ($breakpoint-tablet){
-    max-width: 100px; 
+    @media ($breakpoint-tablet) {
+      max-width: 100px;
     }
     cursor: pointer;
-    &:hover{
-      .icon{
-        transition: background-color .3s ease;
+    &:hover {
+      .icon {
+        transition: background-color 0.3s ease;
         background-color: $accent-color;
-        svg{
+        svg {
           color: $bg-color;
         }
       }
@@ -72,16 +83,16 @@ const icons = [
       margin-bottom: 16px;
       background: $bg-color;
       border-radius: 8px;
-      &-text{
+      &-text {
         font-family: $font-family-italic;
         font-weight: $font-weight-medium;
       }
-      @media ($breakpoint-tablet){
-      width: 50px;
-      height: 50px; 
+      @media ($breakpoint-tablet) {
+        width: 50px;
+        height: 50px;
       }
       svg {
-        color: $secondary-color
+        color: $secondary-color;
       }
     }
   }
