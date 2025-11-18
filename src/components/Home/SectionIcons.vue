@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-// import { RouterLink } from "vue-router";
+import { RouterLink } from "vue-router";
 import SvgIcon from "@/components/Svg/SvgApp.vue";
 import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 
