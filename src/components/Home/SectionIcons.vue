@@ -9,7 +9,7 @@
         >
           <router-link class="svg-list_item" :to="icon.path">
             <div class="icon">
-              <SvgIcon :name="icon.name" folder="@/assets/img/icons" />
+              <SvgIcon :name="icon.name" folder="/src/assets/img/icons" />
             </div>
             <p class="icon-text">{{ icon.text }}</p>
           </router-link>
@@ -27,19 +27,23 @@ import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 const store = usePrintMarkStore();
 
 const icons = [
-  { name: "производство ", text: "Особисте виробництво", path: "/poizvodstvo" },
+  { name: "производство ", text: "Особисте виробництво", path: "/technology" },
   {
     name: "этикетка ",
     text: "Рулонні Етикетки на замовлення",
-    path: "/eteketka",
+    path: "/produts/label",
   },
-  { name: "рибоны", text: "Широкий асортимент Ріббонов", path: "/ribbons" },
+  {
+    name: "рибоны",
+    text: "Широкий асортимент Ріббонов",
+    path: "/products/ribbon",
+  },
   {
     name: "размер",
     text: "Індивідуальні розміри та намотування",
     path: "/sizes",
   },
-  { name: "сертификат", text: "Контроль сировини", path: "/certificates" },
+  { name: "сертификат", text: "Контроль сировини", path: "/technology" },
   { name: "доставка", text: "Оперативна Логістика", path: "/delivery" },
 ];
 </script>
