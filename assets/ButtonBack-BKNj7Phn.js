@@ -1,1 +1,0 @@
-import{f as e,g as t,h as n,i as r,m as i,n as a,v as o}from"./index-DjZjiVQo.js";var s={class:`btn-back`},c=r({__name:`ButtonBack`,emits:[`action`],setup(r){return(r,c)=>(t(),e(`div`,s,[n(a,{className:`back`,onClick:c[0]||=e=>r.$emit(`action`)},{default:o(()=>[...c[1]||=[i(` <--- назад`,-1)]]),_:1})]))}},[[`__scopeId`,`data-v-8da64851`]]);export{c as t};
