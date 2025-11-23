@@ -23,6 +23,26 @@ const router = createRouter({
           path: "ribbons",
           name: "Ribbons",
           component: () => import("@/components/Products/RibbonInfo.vue"),
+          children: [
+            {
+              path: "wax",
+              name: "Wax",
+              component: () =>
+                import("@/components/Products/Ribbon/RibbonWax.vue"),
+            },
+            {
+              path: "wax-resin",
+              name: "Wax-Resin",
+              component: () =>
+                import("@/components/Products/Ribbon/RibbonWaxResin.vue"),
+            },
+            {
+              path: "resin",
+              name: "Resin",
+              component: () =>
+                import("@/components/Products/Ribbon/RibbonResin.vue"),
+            },
+          ],
         },
         {
           path: "labels",

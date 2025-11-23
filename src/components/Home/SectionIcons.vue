@@ -5,7 +5,6 @@
         <li
           v-for="icon in icons"
           :key="icon.name"
-          @click="store.showModal = true"
         >
           <router-link class="svg-list_item" :to="icon.path">
             <div class="icon">
@@ -31,12 +30,12 @@ const icons = [
   {
     name: "этикетка ",
     text: "Рулонні Етикетки на замовлення",
-    path: "/produts/label",
+    path: "/produts/labels",
   },
   {
     name: "рибоны",
     text: "Широкий асортимент Ріббонов",
-    path: "/products/ribbon",
+    path: "/products/ribbons",
   },
   {
     name: "размер",

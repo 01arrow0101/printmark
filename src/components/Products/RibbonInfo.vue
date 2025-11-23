@@ -1,83 +1,96 @@
 <template>
-  <ButtonBack @action="router.go(-1)"/>
-  <section class="product-info-section">
-    <div class="container">
-      <h1 class="title">Повний Каталог Термотрансферних Риббонів</h1>
-      <p class="description">
-        Наш асортимент гарантує ідеальну друкування для будь-якого матеріалу та
-        умов експлуатації. Використовуйте наше керівництво для вибору пасуючого
-        типу.
-      </p>
-
-      <div
-        v-for="ribbon in detailedRibbons"
-        :key="ribbon.id"
-        class="product-card"
-      >
-        <div class="card-header">
-          <h2 class="subtitle">
-            {{ ribbon.title }}
-            <span :class="['badge', ribbon.type]">{{
-              ribbon.type.toUpperCase()
-            }}</span>
-          </h2>
-        </div>
-
-        <div class="card-content">
-          <div class="image-container">
-            <img
-              :src="ribbon.imageUrl"
-              :alt="ribbon.title"
-              class="product-image"
-            />
-          </div>
-          <div class="product-details">
-            <p class="product-description">{{ ribbon.fullDescription }}</p>
-            <ul class="spec-list">
-              <li>**Сумісність:** {{ ribbon.compatibility }}</li>
-              <li>**Стійкість:** {{ ribbon.resistance }}</li>
-              <li>**Застосування:** {{ ribbon.application }}</li>
-            </ul>
-           <appButton @click="router.push('/contacts')">Замовити зразки та консультацію</appButton>
-          </div>
-        </div>
-      </div>
-
-      <h3 class="subtitle">Таблиця Сумісності</h3>
-      <div class="compatibility-table">
-        <table class="responsive-table">
-          <thead>
-            <tr>
-              <th>Тип Риббону</th>
-              <th>Сумісність</th>
-              <th>Стійкість</th>
-              <th>Застосування</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="ribbon in detailedRibbons" :key="ribbon.id">
-              <td class="ribbon-type">{{ ribbon.title }}</td>
-              <td>{{ ribbon.compatibility }}</td>
-              <td>{{ ribbon.resistance }}</td>
-              <td>{{ ribbon.application }}</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="note-text">
-          *Таблиця допоможе вам швидко підібрати риббон до типу етикетки. Для
-          отримання консультації зв'яжіться з нашим спеціалістом.*
+  <div v-if="route.path === '/products/ribbons'" class="ribbon-info-page">
+    <ButtonBack @action="router.go(-1)" />
+    <section class="product-info-section">
+      <div class="container">
+        <h1 class="title">Повний Каталог Термотрансферних Риббонів</h1>
+        <p class="description">
+          Наш асортимент гарантує ідеальну друкування для будь-якого матеріалу
+          та умов експлуатації. Використовуйте наше керівництво для вибору
+          пасуючого типу.
         </p>
+
+        <div
+          v-for="ribbon in detailedRibbons"
+          :key="ribbon.id"
+          class="product-card"
+        >
+          <div class="card-header">
+            <h2 class="subtitle">
+              {{ ribbon.title }}
+              <span :class="['badge', ribbon.type]">{{
+                ribbon.type.toUpperCase()
+              }}</span>
+            </h2>
+          </div>
+
+          <div class="card-content">
+            <div class="image-container">
+              <img
+                :src="ribbon.imageUrl"
+                :alt="ribbon.title"
+                class="product-image"
+              />
+            </div>
+            <div class="product-details">
+              <p class="product-description">{{ ribbon.fullDescription }}</p>
+              <ul class="spec-list">
+                <li>**Сумісність:** {{ ribbon.compatibility }}</li>
+                <li>**Стійкість:** {{ ribbon.resistance }}</li>
+                <li>**Застосування:** {{ ribbon.application }}</li>
+              </ul>
+              <div class="btns">
+                <appButton @click="router.push('/contacts')"
+                  >Замовити зразки та консультацію</appButton
+                >
+                <appButton @click="router.push(ribbon.path)"
+                  >Дізнатися більше</appButton
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="subtitle">Таблиця Сумісності</h3>
+        <div class="compatibility-table">
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Тип Риббону</th>
+                <th>Сумісність</th>
+                <th>Стійкість</th>
+                <th>Застосування</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="ribbon in detailedRibbons" :key="ribbon.id">
+                <td class="ribbon-type">{{ ribbon.title }}</td>
+                <td>{{ ribbon.compatibility }}</td>
+                <td>{{ ribbon.resistance }}</td>
+                <td>{{ ribbon.application }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="note-text">
+            *Таблиця допоможе вам швидко підібрати риббон до типу етикетки. Для
+            отримання консультації зв'яжіться з нашим спеціалістом.*
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
+  <router-view />
 </template>
 
 <script setup>
+import { RouterView } from "vue-router";
 import { useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 import { ref } from "vue";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "../Button/appButton.vue";
 const router = useRouter();
+const route = useRoute();
 
 const path = `${import.meta.env.BASE_URL}`;
 
@@ -92,6 +105,7 @@ const detailedRibbons = ref([
     compatibility: "Папір (матовий, напівглянцевий, термотрансферний).",
     resistance: "Низька (вразливий до вологи, тертя і спирту).",
     application: "Маркування товарів у сухому середовищі, логістика, цінники.",
+    path: "/products/ribbons/wax",
   },
   {
     id: 2,
@@ -104,6 +118,7 @@ const detailedRibbons = ref([
     resistance: "Середня (стійкий до помірного тертя і вологи).",
     application:
       "Транспортна логістика, фармацевтика, маркування продукції з тривалим строком зберігання.",
+      path: "/products/ribbons/wax-resin",
   },
   {
     id: 3,
@@ -116,6 +131,7 @@ const detailedRibbons = ref([
     resistance: "Висока (стійкий до агресивної хімії, температури, стирання).",
     application:
       "Автомобільна промисловість, хімічне виробництво, електроніка.",
+      path: "/products/ribbons/resin",
   },
 ]);
 </script>
@@ -123,6 +139,11 @@ const detailedRibbons = ref([
 <style lang="scss" scoped>
 @import "/src/assets/main.scss";
 
+.btns {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
 .product-info-section {
   padding: 40px 0;
 }
@@ -217,7 +238,6 @@ const detailedRibbons = ref([
 .action-button:hover {
   background-color: lighten($accent-color, 10%);
 }
-
 
 .compatibility-table {
   border: 1px dashed #ccc;

@@ -47,11 +47,16 @@
     </div>
     <div class="social">
       <div class="social-icon">
-        <div 
-         v-for="icon in socialLinks" :key="icon.name"
-        class="social-icon_link">
+        <div
+          v-for="icon in socialLinks"
+          :key="icon.name"
+          class="social-icon_link"
+        >
           <a :href="icon.path" target="_blank">
-            <SocialIcon :name="icon.name" folder="/src/assets/img/icons/Social" />
+            <SocialIcon
+              :name="icon.name"
+              folder="/src/assets/img/icons/Social"
+            />
           </a>
         </div>
       </div>
@@ -84,9 +89,9 @@ const address = [
 ];
 
 const ribbonInfo = [
-  { name: "Wax", path: "/products/wax" },
-  { name: "Wax/Resin", path: "/products/wax-resin" },
-  { name: "Resin", path: "/products/resin" },
+  { name: "Wax", path: "/products/ribbons/wax" },
+  { name: "Wax/Resin", path: "/products/ribbons/wax-resin" },
+  { name: "Resin", path: "/products/ribbons/resin" },
 ];
 
 const labelInfo = [
@@ -115,20 +120,20 @@ const socialLinks = [
   display: flex;
   flex-direction: column;
   padding: 72px 16px;
-  @media ($breakpoint-tablet){
-  padding: 50px 16px; 
+  @media ($breakpoint-tablet) {
+    padding: 50px 16px;
   }
-  @media ($breakpoint-mobile){
-  padding: 32px 16px; 
+  @media ($breakpoint-mobile) {
+    padding: 32px 16px;
   }
 }
 .content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap:32px;
+  gap: 32px;
   padding: 16px;
-  @media (max-width: 992px){
+  @media (max-width: 992px) {
     flex-direction: column-reverse;
   }
 }
@@ -171,13 +176,14 @@ const socialLinks = [
     margin-left: 16px;
   }
 }
-.products{
-  &-content{
+.products {
+  &-content {
     display: flex;
     gap: 50px;
   }
 }
-.ribbon,.label{
+.ribbon,
+.label {
   max-width: 200px;
   width: 100%;
 }
@@ -227,7 +233,7 @@ const socialLinks = [
       width: 40px;
       height: 40px;
       color: $secondary-color;
-      transition: color .3s ease;
+      transition: color 0.3s ease;
       &:hover {
         color: $accent-color;
       }
@@ -239,7 +245,7 @@ const socialLinks = [
         height: 100%;
       }
     }
-  } 
+  }
 }
 .license {
   text-align: center;
