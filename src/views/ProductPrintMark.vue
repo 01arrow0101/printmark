@@ -7,7 +7,11 @@ const route = useRoute();
 </script>
 
 <template>
-  <HeroSection class-name="bg"><template #subtitle>Іновації в термотрансферній Друці</template></HeroSection>
+  <HeroSection class-name="bg"
+    ><template #subtitle
+      >Іновації в термотрансферній Друці</template
+    ></HeroSection
+  >
   <OurProductsSection v-if="route.path === '/products'" />
   <RouterView />
 </template>
@@ -16,9 +20,13 @@ const route = useRoute();
 @import "@/assets/main.scss";
 .bg {
   color: $secondary-color;
+  // background:
+  //   $bg-gradient,
+  //   url("/src/assets/img/bg/productPage/product-bg.webp") no-repeat center /
+  //     cover;
   background:
     $bg-gradient,
-    url("/src/assets/img/bg/productPage/product-bg.webp") no-repeat center /
-      cover;
+    url("/src/assets/img/Gemini_Generated_Image_5saua15saua15sau.png") no-repeat
+      center / cover;
 }
 </style>

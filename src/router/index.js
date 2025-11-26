@@ -87,6 +87,11 @@ const router = createRouter({
       name: "contacts",
       component: () => import("../views/Contact.vue"),
     },
+    {
+      path: "/delivery",
+      name: "delivery",
+      component: () => import("../views/DeliveryPrintMark.vue"),
+    },
   ],
   scrollBehavior() {
     return { top: 0, behavior: "smooth" };
