@@ -48,6 +48,32 @@ const router = createRouter({
           path: "labels",
           name: "Labels",
           component: () => import("@/components/Products/LabelsInfo.vue"),
+          children: [
+            {
+              path: "semi-gloss",
+              name: "Semi-Gloss",
+              component: () =>
+                import("@/components/Products/Label/SemiGlossLabel.vue"),
+            },
+            {
+              path: "polypropylene",
+              name: "Polypropylene",
+              component: () =>
+                import("@/components/Products/Label/PolypropyleneLabel.vue"),
+            },
+            {
+              path: "thermo-eco",
+              name: "Thermo-Eco",
+              component: () =>
+                import("@/components/Products/Label/ThermoEcoLabel.vue"),
+            },
+            {
+              path: "thermo-top",
+              name: "Thermo-Top",
+              component: () =>
+                import("@/components/Products/Label/ThermoTopLabel.vue"),
+            },
+          ],
         },
       ],
     },

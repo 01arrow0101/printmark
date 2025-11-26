@@ -95,13 +95,10 @@ const ribbonInfo = [
 ];
 
 const labelInfo = [
-  { name: "Термо ЕКО", path: "/products/thermo-eco" },
-  { name: "Термо Преміум", path: "/products/thermo-premium" },
-  { name: "Термо Супер Преміум", path: "/products/thermo-super-premium" },
-  { name: "Термо ТОП", path: "/products/thermo-top" },
-  { name: "Напівглянець", path: "/products/semi-gloss" },
-  { name: "Глянець", path: "/products/gloss" },
-  { name: "Мат", path: "/products/mat" },
+  { name: "Термо ЕКО", path: "/products/labels/thermo-eco" },
+  { name: "Термо ТОП", path: "/products/labels/thermo-top" },
+  { name: "Поліпропілен", path: "/products/labels/polypropylene" },
+  { name: "Напівглянцевий Папір", path: "/products/labels/semi-gloss" },
 ];
 
 const socialLinks = [

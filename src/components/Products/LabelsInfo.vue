@@ -1,78 +1,91 @@
 <template>
-  <ButtonBack @action="router.go(-1)" />
-  <section class="product-info-section">
-    <div class="container">
-      <h1 class="section-title">
-        Самоклейні Етикетки для Термотрансферної Друкування
-      </h1>
-      <p class="section-description">
-        Ми — ваш експерт у виробництві чистих і пре-принт рулонних етикеток,
-        ідеально адаптованих для роботи з вашими термотрансферними принтерами та
-        нашими риббонами.
-      </p>
+  <div v-if="route.path === '/products/labels'">
+    <ButtonBack @action="router.go(-1)" />
+    <section class="product-info-section">
+      <div class="container">
+        <h1 class="section-title">
+          Самоклейні Етикетки для Термотрансферної Друкування
+        </h1>
+        <p class="section-description">
+          Ми — ваш експерт у виробництві чистих і пре-принт рулонних етикеток,
+          ідеально адаптованих для роботи з вашими термотрансферними принтерами
+          та нашими риббонами.
+        </p>
 
-      <div class="materials-block">
-        <h2 class="subtitle">Матеріали: Вибір для Любих Умов</h2>
-        <div class="material-grid">
-          <div
-            v-for="material in labelMaterials"
-            :key="material.type"
-            class="product-card"
-          >
-            <div class="card-header">
-              <h3 class="product-title">
-                {{ material.title }}
-                <span :class="['badge', material.type]">
-                  {{ material.type }}</span
-                >
-              </h3>
-            </div>
-            <div class="card-content">
-              <div class="material-icon">{{ material.icon }}</div>
-              <p class="product-description">{{ material.description }}</p>
-              <ul class="spec-list">
-                <li>**Застосування:** {{ material.application }}</li>
-              </ul>
+        <div class="materials-block">
+          <h2 class="subtitle">Матеріали: Вибір для Любих Умов</h2>
+          <div class="material-grid">
+            <div
+              v-for="material in labelMaterials"
+              :key="material.type"
+              class="product-card"
+            >
+              <div class="card-header">
+                <h3 class="product-title">
+                  {{ material.title }}
+                  <span :class="['badge', material.type]">
+                    {{ material.type }}</span
+                  >
+                </h3>
+              </div>
+              <div class="card-content">
+                <div class="material-icon">{{ material.icon }}</div>
+                <p class="product-description">{{ material.description }}</p>
+                <ul class="spec-list">
+                  <li>**Застосування:** {{ material.application }}</li>
+                </ul>
+                <div class="button">
+                  <appButton @click="router.push(material.path)"
+                    >Детальніше</appButton
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="services-block">
-        <h2 class="subtitle">Наші Послуги та Комплексне Снабження</h2>
-        <div class="service-grid">
-          <div
-            v-for="service in services"
-            :key="service.title"
-            class="service-card"
-          >
-            <h4 class="service-title">{{ service.title }}</h4>
-            <p class="service-description">{{ service.description }}</p>
+        <div class="services-block">
+          <h2 class="subtitle">Наші Послуги та Комплексне Снабження</h2>
+          <div class="service-grid">
+            <div
+              v-for="service in services"
+              :key="service.title"
+              class="service-card"
+            >
+              <h4 class="service-title">{{ service.title }}</h4>
+              <p class="service-description">{{ service.description }}</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="cta-form-block">
-        <div class="form-placeholder">
-          <h3>Розрахувати Вартість Тиражу</h3>
-          <p>
-            Заповніть форму, і ми оперативно підготуємо точний розрахунок вашого
-            замовлення на рулонні етикетки. Гарантуємо сумісність з вашим
-            принтером.
-          </p>
-          <appButton @click="router.push('/contacts')">Замовити розрахунок</appButton>
+        <div class="cta-form-block">
+          <div class="form-placeholder">
+            <h3>Розрахувати Вартість Тиражу</h3>
+            <p>
+              Заповніть форму, і ми оперативно підготуємо точний розрахунок
+              вашого замовлення на рулонні етикетки. Гарантуємо сумісність з
+              вашим принтером.
+            </p>
+            <appButton @click="router.push('/contacts')"
+              >Замовити розрахунок</appButton
+            >
+          </div>
+          <div class="image-placeholder"></div>
         </div>
-        <div class="image-placeholder"></div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
+  <router-view />
 </template>
 
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import { useRoute } from "vue-router";
+import { RouterView } from "vue-router";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "../Button/appButton.vue";
+const route = useRoute();
 const router = useRouter();
 const labelMaterials = ref([
   {
@@ -82,6 +95,7 @@ const labelMaterials = ref([
     description:
       "Економічна основа, що вимагає захисту від вологи та тертя. Ідеально для риббонів WAX.",
     application: "Логістика, складський облік, сухі харчові продукти.",
+    path: "/products/labels/semi-gloss",
   },
   {
     title: "Синтетичні",
@@ -90,6 +104,7 @@ const labelMaterials = ref([
     description:
       "Не рвуться, стійкі до води, жиру та хімікатів. Вимагають риббонів RESIN або WAX/RESIN.",
     application: "Косметика, побутова хімія, маркування електроніки.",
+    path: "/products/labels/polypropylene",
   },
   {
     title: "Спеціальні",
@@ -98,6 +113,7 @@ const labelMaterials = ref([
     description:
       "Для спеціфічних завдань, таких як контроль відкриття (VOID) або маркування одягу.",
     application: "Гарантійний контроль, інвентаризація, легка промисловість.",
+    path: "/products/labels/thermo-top",
   },
 ]);
 
@@ -204,6 +220,7 @@ const services = ref([
 .spec-list {
   list-style: disc;
   margin-left: 20px;
+  margin-bottom: 32px;
   font-size: 14px;
   color: $accent-color;
 }
