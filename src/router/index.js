@@ -92,6 +92,21 @@ const router = createRouter({
       name: "delivery",
       component: () => import("../views/DeliveryPrintMark.vue"),
     },
+    {
+      path: "/production",
+      name: "production",
+      component: () => import("../views/ProductionPrintMark.vue"),
+    },
+    {
+      path: "/custom-sizing",
+      name: "custom-sizing",
+      component: () => import("../views/CustomSizingPrintMark.vue"),
+    },
+    {
+      path: "/certificates",
+      name: "certificates",
+      component: () => import("../views/CertificatesPrintMark.vue"),
+    },
   ],
   scrollBehavior() {
     return { top: 0, behavior: "smooth" };
