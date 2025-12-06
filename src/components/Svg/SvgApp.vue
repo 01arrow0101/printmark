@@ -7,13 +7,13 @@ const icons = import.meta.glob("@/assets/img/**/*.svg", { eager: true });
 const props = defineProps({
   name: { type: String, required: true },
   className: { type: String, required: false },
-  folder: { type: String, required: true }
+  folder: { type: String, required: true },
 });
 
 // Формуємо коректний шлях до SVG
 const icon = computed(() => {
   const path = `${props.folder}/${props.name}.svg`;
-  console.log("Шлях до іконки:", path); // Дебаг-лог
+  // console.log("Шлях до іконки:", path); // Дебаг-лог
 
   return icons[path]?.default || null;
 });

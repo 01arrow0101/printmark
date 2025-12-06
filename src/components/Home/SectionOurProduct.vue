@@ -18,9 +18,9 @@
             <appButton @click="goToRibbon">Дізнатись більше</appButton>
           </div>
           <div class="img">
-            <img src="/img/ribbon/1.webp" alt="1" />
-            <img src="/img/ribbon/2.webp" alt="2" />
-            <img src="/img/ribbon/3.webp" alt="3" />
+            <img src="/src/assets/img/ribbon/1.webp" alt="1" />
+            <img src="/src/assets/img/ribbon/2.webp" alt="2" />
+            <img src="/src/assets/img/ribbon/3.webp" alt="3" />
           </div>
         </div>
         <div class="section-left_bottom">
@@ -70,10 +70,10 @@
           </div>
           <div class="videos">
             <video class="video" controls style="width: 400px">
-              <source src="/src/assets/video/1.mp4" type="video/mp4" />
+              <source src="/video/1.mp4" type="video/mp4" />
             </video>
             <video class="video" controls style="width: 400px">
-              <source src="/src/assets/video/2.mp4" type="video/mp4" />
+              <source src="/video/2.mp4" type="video/mp4" />
             </video>
           </div>
         </div>
@@ -150,8 +150,8 @@ const goToLabel = () => {
   @media ($breakpoint-desktop) {
     justify-content: center;
   }
-  @media ($breakpoint-mobile){
-  flex-wrap: wrap; 
+  @media ($breakpoint-mobile) {
+    flex-wrap: wrap;
   }
   img {
     max-width: 200px;
@@ -161,8 +161,8 @@ const goToLabel = () => {
     @media ($breakpoint-tablet) {
       width: 150px;
     }
-    @media ($breakpoint-mobile){
-    width: 200px;
+    @media ($breakpoint-mobile) {
+      width: 200px;
     }
   }
 }

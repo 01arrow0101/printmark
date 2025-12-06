@@ -8,7 +8,9 @@
       <div class="product-section">
         <div class="section-header">
           <div class="our-product_text">
-            <p class="subtitle">Ріббони <span>(Термотрансферна стрічка)</span></p>
+            <p class="subtitle">
+              Ріббони <span>(Термотрансферна стрічка)</span>
+            </p>
           </div>
           <div class="product-grid mb-32">
             <div
@@ -37,7 +39,11 @@
             <p class="subtitle">Самоклеюча Етикетка <span>(Рулони)</span></p>
           </div>
           <div class="product-grid mb-32">
-            <div v-for="table in tables" :key="table.title" class="product-card">
+            <div
+              v-for="table in tables"
+              :key="table.title"
+              class="product-card"
+            >
               <div class="card_image">
                 <img :src="table.image" :alt="table.title" />
                 <div class="card-overlay">
@@ -85,64 +91,92 @@
 import { useRouter } from "vue-router";
 import appButton from "../Button/appButton.vue";
 
-const router = useRouter();
-const path = `${import.meta.env.BASE_URL}`;
+// 1. Динамічний імпорт усіх зображень
+// Створюємо мапу, яка містить публічні URL всіх файлів у /src/assets/img/
+const allAssetsMap = import.meta.glob(
+  // Увага: переконайтеся, що шлях відповідає вашим асетам!
+  "/src/assets/img/**/*.{png,jpg,jpeg}",
+  {
+    eager: true,
+    as: "url",
+  }
+);
 
+/**
+ * Функція для отримання оптимізованого публічного URL ассету.
+ * @param {string} relativePath - Шлях до файлу відносно /src/assets/img/, наприклад, 'ribbon/wax.png'
+ * @returns {string} Оптимізований публічний URL або порожня строка, якщо ассет не знайдено.
+ */
+const getOptimizedAssetUrl = (relativePath) => {
+  // Ключ для пошуку у мапі завжди починається з кореня '/src/'
+  const key = `/src/assets/img/${relativePath}`;
+
+  const url = allAssetsMap[key];
+  if (!url) {
+    console.warn(`Ассет не знайдено в мапі glob: ${key}`);
+    return "";
+  }
+  return url;
+};
+
+const router = useRouter();
+
+// 2. Оновлення масивів: використання getOptimizedAssetUrl()
 const ribbons = [
   {
     title: "WAX (ВОСК)",
-    image: `${path}/img/ribbon/wax.png`,
+    image: getOptimizedAssetUrl("ribbon/wax.png"), // <-- Використовуємо функцію
     description:
       "Восковая лента с небольшой добавкой смолы. Идеально подходит для печати на бумажных этикетках. Обеспечивает хорошее качество печати при низкой стоимости. Подходит для краткосрочного использования в розничной торговле и логистике. Температурный диапазон: -20°C до +60°C.",
   },
   {
     title: "WAX/RESIN (ВОСК/СМОЛА)",
-    image: `${path}/img/ribbon/wax-resin.png`,
+    image: getOptimizedAssetUrl("ribbon/wax-resin.png"), // <-- Використовуємо функцію
     description:
       "Универсальная смесь воска и синтетических смол (50/50). Обеспечивает повышенную стойкость к истиранию и химическим воздействиям. Подходит для печати на полимерных этикетках. Используется в условиях средней сложности, таких как промышленность и фармацевтика. Температурный диапазон: -10°C до +80°C.",
   },
   {
     title: "RESIN (СМОЛА)",
-    image: `${path}/img/ribbon/resin.png`,
+    image: getOptimizedAssetUrl("ribbon/resin.png"),
     description:
-      "Синтетическая смола с минимальным содержанием воска. Высококачественная лента для печати на синтетических этикетках (ПВХ, полиэстер, полипропилен). Обеспечивает превосходную стойкость к истиранию, химическим веществам и экстремальным температурам. Идеальна для долгосрочного использования в сложных условиях. Температурный диапазон: -30°C до +120°C.",
+      "Синтетическая смола с минимальным содержанием воска. Высококачественная лента для печати на синтетических этикетках (ПВХ, полиэстер, полипропилен). Обеспечивает превосходную стойкость к истиранию, химическим веществам и экстремальным температурам. Идеальна для долгосрочного использования в сложных условиях. Температурный діапазон: -30°C до +120°C.",
   },
 ];
 
 const tables = [
   {
     title: "Паперові Етикетки (WAX)",
-    image: `${path}/img/label/paper-labels.png`,
+    image: getOptimizedAssetUrl("label/paper-labels.png"),
     description:
       "Паперові самоклеючі етикетки з восковим клеєм. Низька вартість, добре адгезія, але менш стійкі до вологи. Використовуються в роздрібній торгівлі, упаковці продуктів та логістиці. Матеріал: папір, клей: WAX.",
   },
   {
     title: "Синтетичні Етикетки (RESIN)",
-    image: `${path}/img/label/synthetic-labels.png`,
+    image: getOptimizedAssetUrl("label/synthetic-labels.png"),
     description:
       "Самоклеючі етикетки на синтетичній основі з клеєм на основі смоли. Висока стійкість до вологи, хімічних речовин і екстремальних температур. Використовуються в промисловості, фармацевтиці та логістиці. Матеріал: полиестер, клей: RESIN.",
   },
   {
     title: "Високотемпературні Етикетки",
-    image: `${path}/img/label/heat-resistant-labels.png`,
+    image: getOptimizedAssetUrl("label/heat-resistant-labels.png"),
     description:
       "Самоклеючі етикетки, стійкі до високих температур (до 200°C). Використовуються для маркування продуктів, що піддаються термічній обробці. Матеріал: термостійкий полиестер, клей: спеціальний RESIN.",
   },
   {
     title: "Водонепроникні Етикетки",
-    image: `${path}/img/label/waterproof-labels.png`,
+    image: getOptimizedAssetUrl("label/waterproof-labels.png"),
     description:
       "Самоклеючі етикетки з водонепроникним покриттям. Стійкі до вологи, миття і хімічних чисток. Використовуються в ванних кімнатах, на кухнях, у лабораторіях та на відкритому повітрі. Матеріал: водонепроникний полиестер.",
   },
   {
     title: "Етикетки для Складського Маркування",
-    image: `${path}/img/label/warehouse-labels.png`,
+    image: getOptimizedAssetUrl("label/warehouse-labels.png"),
     description:
       "Самоклеючі етикетки для складського маркування. Виготовлені з міцних матеріалів із клеєм, що забезпечує тривалу адгезію. Використовуються для маркування палет, контейнерів, ящиків та інших об'єктів на складах. Матеріал: полиестер, клей: WAX/RESIN.",
   },
   {
     title: "Етикетки для Електроніки",
-    image: `${path}/img/label/electronics-labels.png`,
+    image: getOptimizedAssetUrl("label/electronics-labels.png"),
     description:
       "Самоклеючі етикетки, створені спеціально для маркування електронних компонентів. Мають низький профіль, не впливають на електричні властивості поверхні і витримують випробування на вібрацію та вологу. Матеріал: тонкий полиестер.",
   },
@@ -151,25 +185,25 @@ const tables = [
 const services = [
   {
     title: "Порезка на Замовлення",
-    image: `${path}/img/services/порізка.png`,
+    image: getOptimizedAssetUrl("services/порізка.png"),
     description:
       "Точна порезка термотрансферних лент и самоклеющихся этикеток по индивидуальным размерам и спецификациям. Оборудование с высокой точностью порезки до 0.01 мм.",
   },
   {
     title: "Технічна Підтримка",
-    image: `${path}/img/services/підтримка.png`,
+    image: getOptimizedAssetUrl("services/підтримка.png"),
     description:
       "Консультации по выбору оптимальных материалов и технологий для конкретных задач. Поддержка в решении технических вопросов и оптимизации процессов.",
   },
   {
     title: "Сервісне Обслуговування",
-    image: `${path}/img/services/обслуговування.png`,
+    image: getOptimizedAssetUrl("services/обслуговування.png"),
     description:
       "Регулярное техническое обслуживание и ремонт оборудования. Гарантия бесперебойной работы и продления срока службы.",
   },
   {
     title: "Доставка",
-    image: `${path}/img/services/доставка.png`,
+    image: getOptimizedAssetUrl("services/доставка.png"),
     description:
       "Доставка продукції по всій Україні та за межі. Гарантовані терміни відвантаження та доставки.",
   },
@@ -183,7 +217,7 @@ const goTo = (path) => {
 <style lang="scss" scoped>
 @import "/src/assets/main.scss";
 
-.mb-32{
+.mb-32 {
   margin-bottom: 32px;
 }
 .our-product {
@@ -245,14 +279,14 @@ const goTo = (path) => {
   overflow: hidden;
   border-radius: 16px;
   transition: all 0.3s ease;
-  
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
-  
+
   &:hover img {
     transform: scale(2);
   }
@@ -271,7 +305,7 @@ const goTo = (path) => {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  
+
   .card_image:hover & {
     opacity: 1;
   }
