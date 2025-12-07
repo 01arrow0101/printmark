@@ -83,6 +83,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useRoute } from "vue-router";
 import { RouterView } from "vue-router";
+import backgrounIMG from "@/assets/img/label/4.webp";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "../Button/appButton.vue";
 const route = useRoute();
@@ -287,7 +288,7 @@ const services = ref([
   min-height: 250px;
   background:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3)),
-    url("/img/label/labels.png") no-repeat bottom / cover;
+    url("/src/assets/img/label/labels.png") no-repeat bottom / cover;
 }
 
 @media (max-width: 900px) {

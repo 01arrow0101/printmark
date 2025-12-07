@@ -14,29 +14,29 @@
       <nav class="label-tabs">
         <button
           class="tab-item"
-          :class="{ active: currentLabel === 'thermo-eco' }"
-          @click="handleTabClick('thermo-eco')"
+          :class="{ active: store.currentTab === 'thermo-eco' }"
+          @click="store.setTab('thermo-eco')"
         >
           Термо ЕКО
         </button>
         <button
           class="tab-item"
-          :class="{ active: currentLabel === 'thermo-top' }"
-          @click="handleTabClick('thermo-top')"
+          :class="{ active: store.currentTab === 'thermo-top' }"
+          @click="store.setTab('thermo-top')"
         >
           Термо ТОП
         </button>
         <button
           class="tab-item"
-          :class="{ active: currentLabel === 'semi-gloss' }"
-          @click="handleTabClick('semi-gloss')"
+          :class="{ active: store.currentTab === 'semi-gloss' }"
+          @click="store.setTab('semi-gloss')"
         >
           Напівглянець
         </button>
         <button
           class="tab-item"
-          :class="{ active: currentLabel === 'polypropylene' }"
-          @click="handleTabClick('polypropylene')"
+          :class="{ active: store.currentTab === 'polypropylene' }"
+          @click="store.setTab('polypropylene')"
         >
           Поліпропілен
         </button>
@@ -133,31 +133,16 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { ref } from "vue";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "@/components/Button/appButton.vue";
 const router = useRouter();
-
-const path = `${import.meta.env.BASE_URL}`;
+const store = usePrintMarkStore();
+const folder = store.getOptimizedAssetUrl;
 
 // 1. Стан для активного таба
-const currentLabel = ref("semi-gloss"); // Встановлюємо цей таб як активний
-
-// 2. Логіка переходу (Вам потрібно адаптувати шляхи!)
-const handleTabClick = (type) => {
-  currentLabel.value = type;
-  // ПРИКЛАД: Використовуйте Vue Router для переходу
-  const routes = {
-    "thermo-eco": "/products/labels/thermo-eco",
-    "thermo-top": "/products/labels/thermo-top",
-    "semi-gloss": "/products/labels/semi-gloss",
-    polypropylene: "/products/labels/polypropylene",
-    // 'polyester': '/labels/polyester'
-  };
-  if (routes[type]) {
-    router.push(routes[type]);
-  }
-};
+store.currentTab = "semi-gloss"; // Встановлюємо цей таб як активни
 
 // Груповання тексту для Напівглянцевого Паперу
 const info = {
@@ -187,7 +172,7 @@ const detailedLabels = ref([
   {
     type: "semi-gloss-paper",
     title: "Напівглянцевий Папір",
-    imageUrl: `${path}` + "/img/label/SemiGloss.png", // Припускаємо, що у вас є зображення
+    imageUrl: folder("label/SemiGloss.png"), // Припускаємо, що у вас є зображення
     material: "Папір (Semi-Gloss)",
     adhesive: "Стандартний Акриловий (Permanent)",
     resistance: "Низька (лише для сухих умов, чутливий до вологи).",
@@ -264,7 +249,7 @@ $accent-color: #3498db;
 .image-container {
   flex: 1;
   min-width: 250px;
-  height: 200px;
+  height: auto;
   border-radius: 6px;
   overflow: hidden;
 }

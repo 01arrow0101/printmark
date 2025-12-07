@@ -14,22 +14,22 @@
       <nav class="tabs">
         <button
           class="tab-item"
-          :class="{ active: currentLabel === 'wax' }"
-          @click="handleTabClick('wax')"
+          :class="{ active: store.currentTab === 'wax' }"
+          @click="store.setTab('wax')"
         >
           WAX
         </button>
         <button
           class="tab-item"
-          :class="{ active: currentLabel === 'wax-resin' }"
-          @click="handleTabClick('wax-resin')"
+          :class="{ active: store.currentTab === 'wax-resin' }"
+          @click="store.setTab('wax-resin')"
         >
           WAX-RESIN
         </button>
         <button
           class="tab-item"
-          :class="{ active: currentLabel === 'resin' }"
-          @click="handleTabClick('resin')"
+          :class="{ active: store.currentTab === 'resin' }"
+          @click="store.setTab('resin')"
         >
           RESIN
         </button>
@@ -140,29 +140,18 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { ref } from "vue";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "@/components/Button/appButton.vue";
 const router = useRouter();
-
-const path = `${import.meta.env.BASE_URL}`;
+const store = usePrintMarkStore();
+const folder = store.getOptimizedAssetUrl;
 
 // 1. Стан для активного таба
-const currentLabel = ref("wax"); // Встановлюємо цей таб як активний
+store.currentTab = 'wax'; // Встановлюємо цей таб як активний
 
-// 2. Логіка переходу (Вам потрібно адаптувати шляхи!)
-const handleTabClick = (type) => {
-  currentLabel.value = type;
-  // ПРИКЛАД: Використовуйте Vue Router для переходу
-  const routes = {
-    wax: "/products/ribbons/wax",
-    "wax-resin": "/products/ribbons/wax-resin",
-    resin: "/products/ribbons/resin",
-  };
-  if (routes[type]) {
-    router.push(routes[type]);
-  }
-};
+
 
 // Груповання тексту
 const info = {
@@ -193,7 +182,7 @@ const detailedRibbons = ref([
     id: 1,
     type: "wax",
     title: "Воскові Риббони",
-    imageUrl: `${path}/img/ribbon/wax.png`,
+    imageUrl: folder("ribbon/wax.png"),
     compatibility: "Папір (матовий, напівглянцевий, термотрансферний).",
     resistance: "Низька (вразливий до вологи, тертя і спирту).",
     application: "Маркування товарів у сухому середовищі, логістика, цінники.",
@@ -272,7 +261,7 @@ const detailedRibbons = ref([
 .image-container {
   flex: 1;
   min-width: 250px;
-  height: 200px;
+  height: auto;
   border-radius: 6px;
   overflow: hidden;
 }

@@ -99,26 +99,27 @@
 </template>
 
 <script setup>
+import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import HeroSection from "@/components/Layout/HeroSection.vue";
-
-const path = `${import.meta.env.BASE_URL}`;
+const store = usePrintMarkStore();
+const folder = store.getOptimizedAssetUrl;
 
 const technologies = [
   {
     title: "Високоточна Порізка",
-    image: `${path}/img/tehnology/високоточнаПорізка.png`,
+    image: folder("tehnology/високоточнаПорізка.png"),
     description:
       "Використання передових систем різання з точністю до 0.01 мм для термотрансферних стрічок та самоклеючих етикеток. Наше обладнання забезпечує ідеально рівні краї та однакову товщину матеріалу по всій довжині.",
   },
   {
     title: "Рішення для Спеціалізованих Матеріалів",
-    image: `${path}/img/tehnology/матеріал.png`, // Це зображення може потребувати оновлення, якщо воно було про термостійкість, а не порізку спец. матеріалів
+    image: folder("tehnology/матеріал.png"), // Це зображення може потребувати оновлення, якщо воно було про термостійкість, а не порізку спец. матеріалів
     description:
       "Технології порізки, адаптовані для роботи з різними типами матеріалів, включаючи термостійкі, синтетичні та інші спеціалізовані рібони й етикетки, що вимагають особливого підходу.",
   },
   {
     title: "Ефективність та Екологічність",
-    image: `${path}/img/tehnology/екологічність.png`,
+    image: folder("tehnology/екологічність.png"),
     description:
       "Оптимізація процесів порізки для мінімізації відходів та використання енергоефективного обладнання. Ми дбаємо про екологічність нашого виробництва, забезпечуючи високоякісні результати.",
   },
@@ -127,19 +128,19 @@ const technologies = [
 const equipments = [
   {
     title: "Системи Лазерної та Ротаційної Порізки",
-    image: `${path}/img/tehnology/lazer.png`,
+    image: folder("tehnology/lazer.png"),
     description:
       "Сучасні лазерні та ротаційні системи з автоматичним керуванням, призначені для порізки рібонів та етикеток з точністю до 0.01 мм. Забезпечують бездоганні краї та відповідність заданим розмірам.",
   },
   {
     title: "Автоматизовані Лінії Перемотування",
-    image: `${path}/img/tehnology/peremotka.png`,
+    image: folder("tehnology/peremotka.png"),
     description:
       "Повністю автоматизовані лінії для перемотування та порізки рулонів. Системи моніторингу контролюють якість намотування та щільність, гарантуючи високу продуктивність та стабільність параметрів готової продукції.",
   },
   {
     title: "Інтегровані Системи Контролю",
-    image: `${path}/img/tehnology/control.png`,
+    image: folder("tehnology/control.png"),
     description:
       "Сучасні інтегровані системи автоматизованого контролю якості з використанням оптичних сенсорів для аналізу точності порізки, відсутності дефектів та відповідності розмірів на всіх етапах виробництва.",
   },
@@ -210,8 +211,8 @@ const equipments = [
 
 .our-product_title {
   margin-bottom: 50px;
-  @media ($breakpoint-mobile){
-  margin-bottom: 32px; 
+  @media ($breakpoint-mobile) {
+    margin-bottom: 32px;
   }
   .title {
     text-align: center;

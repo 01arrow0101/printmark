@@ -91,11 +91,11 @@ const store = usePrintMarkStore();
 const router = useRouter();
 
 const goToRibbon = () => {
-  router.push("/products/ribbons/");
+  router.push("/products/ribbons");
 };
 const goToLabel = () => {
   store.showProduct = 2;
-  router.push("/products/labels/");
+  router.push("/products/labels");
 };
 </script>
 
@@ -115,8 +115,9 @@ const goToLabel = () => {
   .section-right {
     display: flex;
     flex-direction: column;
+    padding: 8px;
     gap: 50px;
-    max-width: 620px;
+    max-width: 640px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     @media ($breakpoint-desktop) {

@@ -4,7 +4,7 @@
     <div class="container">
       <h1 class="title">
         Повний Каталог Самоклеючих Етикеток
-        <span class="badge label termo-top">ТЕРМОТОП</span>
+        <span class="badge label thermo-top">ТЕРМОТОП</span>
       </h1>
       <p class="description">
         Наш асортимент включає всі типи матеріалів та клею для будь-яких умов
@@ -14,29 +14,29 @@
       <nav class="label-tabs">
         <button
           class="tab-item"
-          :class="{ active: currentLabel === 'thermo-eco' }"
-          @click="handleTabClick('thermo-eco')"
+          :class="{ active: store.currentTab === 'thermo-eco' }"
+          @click="store.setTab('thermo-eco')"
         >
           Термо ЕКО
         </button>
         <button
           class="tab-item"
-          :class="{ active: currentLabel === 'thermo-top' }"
-          @click="handleTabClick('thermo-top')"
+          :class="{ active: store.currentTab === 'thermo-top' }"
+          @click="store.setTab('thermo-top')"
         >
           Термо ТОП
         </button>
         <button
           class="tab-item"
-          :class="{ active: currentLabel === 'semi-gloss' }"
-          @click="handleTabClick('semi-gloss')"
+          :class="{ active: store.currentTab === 'semi-gloss' }"
+          @click="store.setTab('semi-gloss')"
         >
           Напівглянець
         </button>
         <button
           class="tab-item"
-          :class="{ active: currentLabel === 'polypropylene' }"
-          @click="handleTabClick('polypropylene')"
+          :class="{ active: store.currentTab === 'polypropylene' }"
+          @click="store.setTab('polypropylene')"
         >
           Поліпропілен
         </button>
@@ -46,14 +46,14 @@
         <div class="card-header">
           <h2 class="subtitle">
             Термоетикетки ТОП (Thermo TOP)
-            <span class="badge label-termo-top">ПРЯМИЙ ДРУК</span>
+            <span class="badge label-thermo-top">ПРЯМИЙ ДРУК</span>
           </h2>
         </div>
 
         <div class="card-content">
           <div class="image-container">
             <img
-              v-for="img in detailedLabels_termo_top"
+              v-for="img in detailedLabels_thermo_top"
               :key="img.name"
               :src="img.imageUrl"
               :alt="img.title"
@@ -63,12 +63,12 @@
 
           <div class="product-details">
             <h3 class="subtitle">🏷️ Опис Категорії:</h3>
-            <p class="product-description">{{ info_termo_top.description }}</p>
+            <p class="product-description">{{ info_thermo_top.description }}</p>
 
             <h3 class="subtitle">✅ Переваги:</h3>
             <ul class="spec-list">
               <li
-                v-for="(advantage, index) in info_termo_top.advantages"
+                v-for="(advantage, index) in info_thermo_top.advantages"
                 :key="index"
               >
                 {{ advantage }}
@@ -78,7 +78,7 @@
             <h3 class="subtitle">⚠️ Обмеження та Умови Експлуатації:</h3>
             <ul class="spec-list">
               <li
-                v-for="(limitation, index) in info_termo_top.limitations"
+                v-for="(limitation, index) in info_thermo_top.limitations"
                 :key="index"
               >
                 {{ limitation }}
@@ -88,7 +88,7 @@
             <h3 class="subtitle">🎯 Застосування:</h3>
             <ul class="spec-list">
               <li
-                v-for="(application, index) in info_termo_top.applications"
+                v-for="(application, index) in info_thermo_top.applications"
                 :key="index"
               >
                 {{ application }}
@@ -115,7 +115,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="label in detailedLabels_termo_top" :key="label.type">
+            <tr v-for="label in detailedLabels_thermo_top" :key="label.type">
               <td class="ribbon-type">{{ label.title }}</td>
               <td>{{ label.material }}</td>
               <td>{{ label.adhesive }}</td>
@@ -136,34 +136,19 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { ref } from "vue";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "@/components/Button/appButton.vue";
 const router = useRouter();
-
-const path = `${import.meta.env.BASE_URL}`;
+const store = usePrintMarkStore();
+const folder = store.getOptimizedAssetUrl;
 
 // 1. Стан для активного таба
-const currentLabel = ref("thermo-top"); // Встановлюємо цей таб як активний
-
-// 2. Логіка переходу (Вам потрібно адаптувати шляхи!)
-const handleTabClick = (type) => {
-  currentLabel.value = type;
-  // ПРИКЛАД: Використовуйте Vue Router для переходу
-  const routes = {
-    "thermo-eco": "/products/labels/thermo-eco",
-    "thermo-top": "/products/labels/thermo-top",
-    "semi-gloss": "/products/labels/semi-gloss",
-    polypropylene: "/products/labels/polypropylene",
-    // 'polyester': '/labels/polyester'
-  };
-  if (routes[type]) {
-    router.push(routes[type]);
-  }
-};
+store.currentTab = "thermo-top"; // Встановлюємо цей таб як активний
 
 // Групування тексту для Термоетикеток ТОП
-const info_termo_top = {
+const info_thermo_top = {
   description:
     "Термо-ТОП – це білий папір, чутливий до тепла, з двостороннім захисним покриттям. Друк відбувається без риббона (прямий термодрук). Захисний шар робить ці етикетки стійкими до вологи, жиру та помірного механічного впливу, що подовжує їх термін служби.",
   advantages: [
@@ -186,11 +171,11 @@ const info_termo_top = {
 };
 
 // Дані для таблиці
-const detailedLabels_termo_top = ref([
+const detailedLabels_thermo_top = ref([
   {
     type: "thermo-top",
     title: "Термоетикетки ТОП",
-    imageUrl: `${path}/img/label/ThermoTop.png`,
+    imageUrl: folder("label/ThermoTop.png"),
     material: "Термопапір (ТОП)",
     adhesive: "Стандартний або Знімний, Морозостійкий (Removable, Freezer)",
     resistance: "Середня (стійкий до вологи, олій та низьких температур).",
@@ -202,7 +187,7 @@ const detailedLabels_termo_top = ref([
 <style lang="scss" scoped>
 /* УВАГА: Припускаємо, що у вашому main.scss визначені змінні $accent-color */
 $accent-color: #007bff; // Синій
-$termo-color: #2ecc71; // Зелений
+$thermo-color: #2ecc71; // Зелений
 
 .row {
   display: flex;
@@ -256,9 +241,9 @@ $termo-color: #2ecc71; // Зелений
   background-color: $accent-color;
   color: white;
 
-  &.termo-top,
-  &.label-termo-top {
-    background-color: $termo-color;
+  &.thermo-top,
+  &.label-thermo-top {
+    background-color: $thermo-color;
   }
 }
 
@@ -270,7 +255,7 @@ $termo-color: #2ecc71; // Зелений
 .image-container {
   flex: 1;
   min-width: 250px;
-  height: 200px;
+  height: auto;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -294,7 +279,7 @@ $termo-color: #2ecc71; // Зелений
   list-style: disc;
   margin-left: 20px;
   margin-bottom: 20px;
-  color: $termo-color;
+  color: $thermo-color;
 }
 
 .compatibility-table {
@@ -336,11 +321,11 @@ $termo-color: #2ecc71; // Зелений
 
 .ribbon-type {
   font-weight: 500;
-  color: $termo-color;
+  color: $thermo-color;
 }
 
 .note-text {
-  color: $termo-color;
+  color: $thermo-color;
   font-size: 16px;
 }
 
@@ -386,9 +371,9 @@ $termo-color: #2ecc71; // Зелений
   }
 
   &.active {
-    background-color: $termo-color;
+    background-color: $thermo-color;
     color: white;
-    border-color: $termo-color;
+    border-color: $thermo-color;
     font-weight: 700;
   }
 }

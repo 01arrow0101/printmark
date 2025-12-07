@@ -86,20 +86,21 @@
 import { RouterView } from "vue-router";
 import { useRouter } from "vue-router";
 import { useRoute } from "vue-router";
+import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { ref } from "vue";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "../Button/appButton.vue";
 const router = useRouter();
 const route = useRoute();
-
-const path = `${import.meta.env.BASE_URL}`;
+const store = usePrintMarkStore();
+const folder = store.getOptimizedAssetUrl;
 
 const detailedRibbons = ref([
   {
     id: 1,
     type: "wax",
     title: "Воскові Риббони",
-    imageUrl: `${path}/img/ribbon/wax.png`,
+    imageUrl: folder("ribbon/wax.png"),
     fullDescription:
       "Економічний і найпопулярніший варіант для друкування на паперових носіях. Забезпечує високу швидкість друкування і відмінний контраст.",
     compatibility: "Папір (матовий, напівглянцевий, термотрансферний).",
@@ -111,27 +112,27 @@ const detailedRibbons = ref([
     id: 2,
     type: "wax-resin",
     title: "Воск-Смола Риббони",
-    imageUrl: `${path}` + "/img/ribbon/wax-resin.png",
+    imageUrl: folder("ribbon/wax-resin.png"),
     fullDescription:
       "Універсальне рішення. Через додавання смоли, друк стає значно стійкішим до змащення і пошкоджень.",
     compatibility: "Папір (глянцевий, синтетичні етикетки).",
     resistance: "Середня (стійкий до помірного тертя і вологи).",
     application:
       "Транспортна логістика, фармацевтика, маркування продукції з тривалим строком зберігання.",
-      path: "/products/ribbons/wax-resin",
+    path: "/products/ribbons/wax-resin",
   },
   {
     id: 3,
     type: "resin",
     title: "Смоляні Риббони",
-    imageUrl: `${path}` + "/img/ribbon/resin.png",
+    imageUrl: folder("ribbon/resin.png"),
     fullDescription:
       "Максимально стійкі риббони, необхідні для маркування в екстремальних умовах. Друк не стирається навіть при впливі розчинників і високих температур.",
     compatibility: "Синтетичні матеріали (ПП, ПЕТ, ПВХ, нейлон).",
     resistance: "Висока (стійкий до агресивної хімії, температури, стирання).",
     application:
       "Автомобільна промисловість, хімічне виробництво, електроніка.",
-      path: "/products/ribbons/resin",
+    path: "/products/ribbons/resin",
   },
 ]);
 </script>
