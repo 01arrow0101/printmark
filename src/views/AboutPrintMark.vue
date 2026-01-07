@@ -1,15 +1,14 @@
 <script setup>
 import SectionCard from "@/components/About/SectionCard.vue";
 import OurTehnologies from "@/components/About/OurTehnologies.vue";
+import BannerPrintMark from "@/components/Banner/BannerPrintMark.vue";
 </script>
 
 <template>
+  <BannerPrintMark />
   <section class="about-section p-section m-section">
     <div class="container">
       <div class="header-content m-section">
-        <h1 class="hero-title">
-          <span>Про компанію </span>PrintMark
-        </h1>
         <h2 class="subtitle">
           Професійний поріз термотрансферної стрічки та самоклеючих етикеток
         </h2>
@@ -40,7 +39,16 @@ import OurTehnologies from "@/components/About/OurTehnologies.vue";
 
 <style lang="scss" scoped>
 @import "@/assets/main.scss";
-
+// .banner {
+//   width: 100%;
+//   height: 85vh;
+//   background-image: url("/src/assets/img/banner.png");
+//   background-size: cover;
+//   background-position: center;
+//   @media (max-width: 767.98px) {
+//     height: 200px;
+//   }
+// }
 .about-section {
   background-color: #f9fafb;
 }

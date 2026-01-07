@@ -18,9 +18,9 @@
             <appButton @click="goToRibbon">Дізнатись більше</appButton>
           </div>
           <div class="img">
-            <img src="/src/assets/img/ribbon/1.webp" alt="1" />
-            <img src="/src/assets/img/ribbon/2.webp" alt="2" />
-            <img src="/src/assets/img/ribbon/3.webp" alt="3" />
+            <img src="/src/assets/img/ribbon/piramide.webp" alt="1" />
+            <img src="/src/assets/img/ribbon/05dBlack.webp" alt="2" />
+            <img src="/src/assets/img/ribbon/rainbowPiramide.webp" alt="3" />
           </div>
         </div>
         <div class="section-left_bottom">

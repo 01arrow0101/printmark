@@ -100,7 +100,7 @@ const detailedRibbons = ref([
     id: 1,
     type: "wax",
     title: "Воскові Риббони",
-    imageUrl: folder("ribbon/wax.png"),
+    imageUrl: folder("ribbon/waxGreen.png"),
     fullDescription:
       "Економічний і найпопулярніший варіант для друкування на паперових носіях. Забезпечує високу швидкість друкування і відмінний контраст.",
     compatibility: "Папір (матовий, напівглянцевий, термотрансферний).",
@@ -112,7 +112,7 @@ const detailedRibbons = ref([
     id: 2,
     type: "wax-resin",
     title: "Воск-Смола Риббони",
-    imageUrl: folder("ribbon/wax-resin.png"),
+    imageUrl: folder("ribbon/wax.png"),
     fullDescription:
       "Універсальне рішення. Через додавання смоли, друк стає значно стійкішим до змащення і пошкоджень.",
     compatibility: "Папір (глянцевий, синтетичні етикетки).",

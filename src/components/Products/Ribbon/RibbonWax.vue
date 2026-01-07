@@ -182,7 +182,7 @@ const detailedRibbons = ref([
     id: 1,
     type: "wax",
     title: "Воскові Риббони",
-    imageUrl: folder("ribbon/wax.png"),
+    imageUrl: folder("ribbon/black.webp"),
     compatibility: "Папір (матовий, напівглянцевий, термотрансферний).",
     resistance: "Низька (вразливий до вологи, тертя і спирту).",
     application: "Маркування товарів у сухому середовищі, логістика, цінники.",
