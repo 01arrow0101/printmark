@@ -90,9 +90,9 @@ const address = [
 
 const ribbonInfo = [
   { name: "Wax", path: "/products/ribbons/wax" },
-  { name: "Wax/Resin", path: "/products/ribbons/wax-resin" },
+  { name: "Wax - Resin", path: "/products/ribbons/wax-resin" },
   { name: "Resin", path: "/products/ribbons/resin" },
-  { name: "Resin/Textile", path: "/products/ribbons/resin-textile" },
+  { name: "Resin - Textile", path: "/products/ribbons/resin-textile" },
 ];
 
 const labelInfo = [

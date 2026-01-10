@@ -1,5 +1,8 @@
 <template>
-  <div v-if="route.path === '/products/ribbons/resin-textile'" class="ribbon-info-page">
+  <div
+    v-if="route.path === '/products/ribbons/resin-textile'"
+    class="ribbon-info-page"
+  >
     <ButtonBack @action="router.go(-1)" />
 
     <section class="product-info-section">
@@ -11,36 +14,36 @@
           пасуючого типу.
         </p>
 
-          <nav class="tabs">
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'wax' }"
-          @click="store.setTab('wax')"
-        >
-          WAX
-        </button>
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'wax-resin' }"
-          @click="store.setTab('wax-resin')"
-        >
-          WAX-RESIN
-        </button>
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'resin' }"
-          @click="store.setTab('resin')"
-        >
-          RESIN
-        </button>
+        <nav class="tabs">
           <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'resin-textile' }"
-          @click="store.setTab('resin-textile')"
-        >
-          RESIN-TEXTILE
-        </button>
-      </nav>
+            class="tab-item"
+            :class="{ active: store.currentTab === 'wax' }"
+            @click="store.setTab('wax')"
+          >
+            WAX
+          </button>
+          <button
+            class="tab-item"
+            :class="{ active: store.currentTab === 'wax-resin' }"
+            @click="store.setTab('wax-resin')"
+          >
+            WAX-RESIN
+          </button>
+          <button
+            class="tab-item"
+            :class="{ active: store.currentTab === 'resin' }"
+            @click="store.setTab('resin')"
+          >
+            RESIN
+          </button>
+          <button
+            class="tab-item"
+            :class="{ active: store.currentTab === 'resin-textile' }"
+            @click="store.setTab('resin-textile')"
+          >
+            RESIN-TEXTILE
+          </button>
+        </nav>
 
         <div
           v-for="ribbon in detailedRibbons"
@@ -126,6 +129,9 @@ const router = useRouter();
 const route = useRoute();
 const store = usePrintMarkStore();
 const folder = store.getOptimizedAssetUrl;
+
+// 1. Стан для активного таба
+store.currentTab = "resin-textile"; // Встановлюємо цей таб як активний
 
 const detailedRibbons = ref([
   {
