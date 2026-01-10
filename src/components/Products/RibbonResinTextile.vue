@@ -1,6 +1,7 @@
 <template>
-  <div v-if="route.path === '/products/ribbons'" class="ribbon-info-page">
+  <div v-if="route.path === '/products/ribbons/resin-textile'" class="ribbon-info-page">
     <ButtonBack @action="router.go(-1)" />
+
     <section class="product-info-section">
       <div class="container">
         <h1 class="title">Повний Каталог Термотрансферних Риббонів</h1>
@@ -9,6 +10,37 @@
           та умов експлуатації. Використовуйте наше керівництво для вибору
           пасуючого типу.
         </p>
+
+          <nav class="tabs">
+        <button
+          class="tab-item"
+          :class="{ active: store.currentTab === 'wax' }"
+          @click="store.setTab('wax')"
+        >
+          WAX
+        </button>
+        <button
+          class="tab-item"
+          :class="{ active: store.currentTab === 'wax-resin' }"
+          @click="store.setTab('wax-resin')"
+        >
+          WAX-RESIN
+        </button>
+        <button
+          class="tab-item"
+          :class="{ active: store.currentTab === 'resin' }"
+          @click="store.setTab('resin')"
+        >
+          RESIN
+        </button>
+          <button
+          class="tab-item"
+          :class="{ active: store.currentTab === 'resin-textile' }"
+          @click="store.setTab('resin-textile')"
+        >
+          RESIN-TEXTILE
+        </button>
+      </nav>
 
         <div
           v-for="ribbon in detailedRibbons"
@@ -89,7 +121,7 @@ import { useRoute } from "vue-router";
 import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { ref } from "vue";
 import ButtonBack from "@/UI/ButtonBack.vue";
-import appButton from "../Button/appButton.vue";
+import appButton from "/src/components/Button/appButton.vue";
 const router = useRouter();
 const route = useRoute();
 const store = usePrintMarkStore();
@@ -97,58 +129,67 @@ const folder = store.getOptimizedAssetUrl;
 
 const detailedRibbons = ref([
   {
-    id: 1,
-    type: "wax",
-    title: "Воскові Риббони",
-    imageUrl: folder("ribbon/waxGreen.png"),
+    id: 5,
+    type: "silver",
+    title: "Срібні Риббони (Silver)",
+    imageUrl: folder("ribbon/silver.png"),
     fullDescription:
-      "Економічний і найпопулярніший варіант для друкування на паперових носіях. Забезпечує високу швидкість друкування і відмінний контраст.",
-    compatibility: "Папір (матовий, напівглянцевий, термотрансферний).",
-    resistance: "Низька (вразливий до вологи, тертя і спирту).",
-    application: "Маркування товарів у сухому середовищі, логістика, цінники.",
-    path: "/products/ribbons/wax",
+      "Декоративні риббони, що створюють ефектний металевий відблиск. Ідеально підходять для преміального маркування та створення унікального дизайну пакування.",
+    compatibility: "Глянцевий папір, поліпропілен, поліестер.",
+    resistance: "Середня/Висока (стійкий до вицвітання та легкого тертя).",
+    application:
+      "Парфумерія, преміальна косметика, подарункове пакування, сертифікація.",
+    path: "/products/ribbons/resin-textile/silver",
   },
   {
-    id: 2,
-    type: "wax-resin",
-    title: "Воск-Смола Риббони",
-    imageUrl: folder("ribbon/wax.png"),
+    id: 6,
+    type: "gold",
+    title: "Золоті Риббони (Gold)",
+    imageUrl: folder("ribbon/gold.png"),
     fullDescription:
-      "Універсальне рішення. Через додавання смоли, друк стає значно стійкішим до змащення і пошкоджень.",
-    compatibility: "Папір (глянцевий, синтетичні етикетки).",
-    resistance: "Середня (стійкий до помірного тертя і вологи).",
-    application:
-      "Транспортна логістика, фармацевтика, маркування продукції з тривалим строком зберігання.",
-    path: "/products/ribbons/wax-resin",
+      "Надають етикетці розкішного вигляду з яскравим золотим блиском. Часто використовуються для підкреслення високого статусу продукту.",
+    compatibility: "Глянцевий папір, синтетичні матеріали (ПП, ПЕ).",
+    resistance: "Середня/Висока (стійкий до УФ-випромінювання та вологи).",
+    application: "Виноробство, ювелірні вироби, брендування елітної продукції.",
+    path: "/products/ribbons/resin-textile/gold",
   },
   {
-    id: 3,
-    type: "resin",
-    title: "Смоляні Риббони",
-    imageUrl: folder("ribbon/resin.png"),
+    id: 7,
+    type: "metallic-blue",
+    title: "Металік Синій",
+    imageUrl: folder("ribbon/blue-metallic.png"),
     fullDescription:
-      "Максимально стійкі риббони, необхідні для маркування в екстремальних умовах. Друк не стирається навіть при впливі розчинників і високих температур.",
-    compatibility: "Синтетичні матеріали (ПП, ПЕТ, ПВХ, нейлон).",
-    resistance: "Висока (стійкий до агресивної хімії, температури, стирання).",
+      "Кольоровий риббон з металізованим ефектом. Поєднує в собі насичений синій колір та характерний блиск металу.",
+    compatibility: "Паперові етикетки (напівглянець), плівкові матеріали.",
+    resistance: "Середня (стійкий до змазування).",
     application:
-      "Автомобільна промисловість, хімічне виробництво, електроніка.",
-    path: "/products/ribbons/resin",
+      "Дизайнерська етикетка, рекламна продукція, кольорове маркування.",
+    path: "/products/ribbons/resin-textile/blue-metallic",
   },
   {
-    id: 4,
-    type: "resin-textile",
-    title: "Смоляні Риббони для Текстилю",
-    imageUrl: folder("ribbon/resin-textile.png"),
+    id: 8,
+    type: "metallic-green",
+    title: "Металік Зелений",
+    imageUrl: folder("ribbon/green-metallic.png"),
     fullDescription:
-      "Спеціалізований склад для друку на текстильних стрічках. Зображення витримує багаторазове прання, хімчистку та прасування, зберігаючи чіткість і насиченість.",
-    compatibility: "Текстильні стрічки (нейлон, сатин, поліестер).",
-    resistance:
-      "Екстремальна (стійкість до гарячої води, миючих засобів та пари).",
-    application:
-      "Маркування одягу, вшивні ярлики, складники для текстильних виробів.",
-    path: "/products/ribbons/resin-textile",
+      "Металізований риббон яскраво-зеленого кольору. Дозволяє виділити товар на полиці та захистити його від підробок за рахунок специфічного кольору.",
+    compatibility: "Папір, полімери, деякі види картону.",
+    resistance: "Висока чіткість друку та стійкість до зовнішнього впливу.",
+    application: "Екологічні товари, святкове оформлення, захисні наклейки.",
+    path: "/products/ribbons/resin-textile/green-metallic",
   },
-
+  {
+    id: 9,
+    type: "metallic-red",
+    title: "Металік Червоний",
+    imageUrl: folder("ribbon/red-metallic.png"),
+    fullDescription:
+      "Привертає увагу насиченим червоним блиском. Відмінно підходить для акційних пропозицій та маркування особливих партій товарів.",
+    compatibility: "Широкий спектр матеріалів: від паперу до синтетики.",
+    resistance: "Стійкий до механічних пошкоджень та перепадів температур.",
+    application: "Акційні наклейки 'Sale', харчова промисловість, логістика.",
+    path: "/products/ribbons/resin-textile/red-metallic",
+  },
 ]);
 </script>
 
@@ -302,6 +343,39 @@ const detailedRibbons = ref([
   font-size: 16px;
 }
 
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 10px 0;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab-item {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #eee;
+    color: $accent-color;
+  }
+
+  &.active {
+    background-color: $accent-color;
+    color: white;
+    border-color: $accent-color;
+    font-weight: 700;
+  }
+}
 @media (max-width: 768px) {
   .card-content {
     flex-direction: column;

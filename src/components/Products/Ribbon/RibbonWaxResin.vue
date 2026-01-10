@@ -34,6 +34,13 @@
         >
           RESIN
         </button>
+          <button
+          class="tab-item"
+          :class="{ active: store.currentTab === 'resin-textile' }"
+          @click="store.setTab('resin-textile')"
+        >
+          RESIN-TEXTILE
+        </button>
       </nav>
 
       <!-- Карточка продукту -->

@@ -61,7 +61,7 @@
         </div>
       </div>
     </div>
-    <div class="license">© 2024 PrintMark. Всі права захищені.</div>
+    <div class="license">© 2026 PrintMark. Всі права захищені.</div>
   </div>
 </template>
 
@@ -92,6 +92,7 @@ const ribbonInfo = [
   { name: "Wax", path: "/products/ribbons/wax" },
   { name: "Wax/Resin", path: "/products/ribbons/wax-resin" },
   { name: "Resin", path: "/products/ribbons/resin" },
+  { name: "Resin/Textile", path: "/products/ribbons/resin-textile" },
 ];
 
 const labelInfo = [

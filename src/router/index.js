@@ -42,6 +42,44 @@ const router = createRouter({
               component: () =>
                 import("@/components/Products/Ribbon/RibbonResin.vue"),
             },
+            {
+              path: "resin-textile",
+              name: "Resin-Textile",
+              component: () =>
+                import("@/components/Products/RibbonResinTextile.vue"),
+              children: [
+                {
+                  path: "silver",
+                  name: "Silver",
+                  component: () =>
+                    import("@/components/Products/Ribbon/ResinTextile/RibbonSilver.vue"),
+                },
+                {
+                  path: "gold",
+                  name: "Gold",
+                  component: () =>
+                    import("@/components/Products/Ribbon//ResinTextile/RibbonGold.vue"),
+                },
+                {
+                  path: "blue-metallic",
+                  name: "Blue-Metallic",
+                  component: () =>
+                    import("@/components/Products/Ribbon/ResinTextile/RibbonBlueMetallic.vue"),
+                },
+                {
+                  path: "green-metallic",
+                  name: "Green-Metallic",
+                  component: () =>
+                    import("@/components/Products/Ribbon/ResinTextile/RibbonGreenMetallic.vue"),
+                },
+                {
+                  path: "red-metallic",
+                  name: "Red-Metallic",
+                  component: () =>
+                    import("@/components/Products/Ribbon/ResinTextile/RibbonRedMetallic.vue"),
+                },
+              ],
+            },
           ],
         },
         {

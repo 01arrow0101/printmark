@@ -40,6 +40,7 @@ export const usePrintMarkStore = defineStore("printMark", () => {
       wax: "/products/ribbons/wax",
       "wax-resin": "/products/ribbons/wax-resin",
       resin: "/products/ribbons/resin",
+      "resin-textile": "/products/ribbons/resin-textile",
       "thermo-eco": "/products/labels/thermo-eco",
       "thermo-top": "/products/labels/thermo-top",
       "semi-gloss": "/products/labels/semi-gloss",
