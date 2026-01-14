@@ -18,10 +18,9 @@ import SectionOurProduct from "@/components/Home/SectionOurProduct.vue";
 </template>
 <style lang="scss" scoped>
 @import "@/assets/main.scss";
-.bg {
-  background:
-    $bg-gradient,
-    url("/src/assets/img/Gemini_Generated_Image_2la1wy2la1wy2la1.png") no-repeat
-      center / cover;
-}
+// .bg {
+//   background:
+//     $bg-gradient,
+//     url("/src/assets/img/BgHero.webp") no-repeat center / cover;
+// }
 </style>

@@ -2,7 +2,7 @@
   <div class="hero" :class="className">
     <div class="title">
       <h1 class="hero-title" :class="title">
-        <slot name="title" >PrintMark</slot>
+        <slot name="title">PrintMark</slot>
       </h1>
       <h2 class="subtitle">
         <slot name="subtitle"></slot>
@@ -38,13 +38,11 @@ defineProps({
   height: 80vh;
   background:
     $bg-gradient,
-    url("/src/assets/img/BgProducts.png") no-repeat
-      center / cover;
+    url("/src/assets/img/BgHero.webp") no-repeat center / cover;
   text-align: center;
   @media ($breakpoint-tablet) {
     height: auto;
     padding: 24px 16px;
   }
 }
-
 </style>

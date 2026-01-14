@@ -22,7 +22,6 @@ const route = useRoute();
   color: $secondary-color;
   background:
     $bg-gradient,
-    url("/src/assets/img/Gemini_Generated_Image_5saua15saua15sau.png") no-repeat
-      center / cover;
+    url("/src/assets/img/BgProducts.webp") no-repeat center / cover;
 }
 </style>
