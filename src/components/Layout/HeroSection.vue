@@ -38,7 +38,7 @@ defineProps({
   height: 80vh;
   background:
     $bg-gradient,
-    url("/src/assets/img/Gemini_Generated_Image_2la1wy2la1wy2la1.png") no-repeat
+    url("/src/assets/img/Gemini_Generated_Image_2la1wy2la1wy2la1.webp") no-repeat
       center / cover;
   text-align: center;
   @media ($breakpoint-tablet) {

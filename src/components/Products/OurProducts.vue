@@ -9,7 +9,7 @@
         <div class="section-header">
           <div class="our-product_text">
             <p class="subtitle">
-              Ріббони <span>(Термотрансферна стрічка)</span>
+              Риббони <span>(Термотрансферна стрічка)</span>
             </p>
           </div>
           <div class="product-grid mb-32">
