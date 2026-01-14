@@ -36,9 +36,6 @@ defineProps({
   justify-content: center;
   max-width: 100%;
   height: 80vh;
-  background:
-    $bg-gradient,
-    url("/src/assets/img/BgHero.webp") no-repeat center / cover;
   text-align: center;
   @media ($breakpoint-tablet) {
     height: auto;

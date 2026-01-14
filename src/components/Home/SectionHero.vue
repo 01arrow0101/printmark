@@ -31,9 +31,6 @@ const goTo = () => {
   max-width: 100%;
   height: 80vh;
   text-align: center;
-  // background:
-  //   $bg-gradient,
-  //   url("/src/assets/img/BgHero.webp") no-repeat center / cover;
   @media ($breakpoint-tablet) {
     height: auto;
     padding: 24px 16px;
