@@ -21,6 +21,6 @@ import SectionOurProduct from "@/components/Home/SectionOurProduct.vue";
 .bg {
   background:
     $bg-gradient,
-    url("/src/assets/img/BgHero.png") no-repeat center / cover;
+    url("/src/assets/img/BgHero.webp") no-repeat center / cover;
 }
 </style>

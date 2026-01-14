@@ -189,7 +189,7 @@ const detailedRibbons = ref([
     id: 8,
     type: "metallic-green",
     title: "Зелений Металік Риббони",
-    imageUrl: folder("ribbon/green-metallic.png"),
+    imageUrl: folder("ribbon/green-metallic.webp"),
     fullDescription:
       "Преміальний кольоровий риббон на основі смоли з металізованим смарагдовим ефектом для ексклюзивного маркування.",
     compatibility: "Поліпропілен (ПП), Поліестер, глянцеві ламіновані поверхні.",

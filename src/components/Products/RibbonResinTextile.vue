@@ -138,7 +138,7 @@ const detailedRibbons = ref([
     id: 5,
     type: "silver",
     title: "Срібні Риббони (Silver)",
-    imageUrl: folder("ribbon/silver.png"),
+    imageUrl: folder("ribbon/silver.webp"),
     fullDescription:
       "Декоративні риббони, що створюють ефектний металевий відблиск. Ідеально підходять для преміального маркування та створення унікального дизайну пакування.",
     compatibility: "Глянцевий папір, поліпропілен, поліестер.",
@@ -151,7 +151,7 @@ const detailedRibbons = ref([
     id: 6,
     type: "gold",
     title: "Золоті Риббони (Gold)",
-    imageUrl: folder("ribbon/gold.png"),
+    imageUrl: folder("ribbon/gold.webp"),
     fullDescription:
       "Надають етикетці розкішного вигляду з яскравим золотим блиском. Часто використовуються для підкреслення високого статусу продукту.",
     compatibility: "Глянцевий папір, синтетичні матеріали (ПП, ПЕ).",
@@ -163,7 +163,7 @@ const detailedRibbons = ref([
     id: 7,
     type: "metallic-blue",
     title: "Металік Синій",
-    imageUrl: folder("ribbon/blue-metallic.png"),
+    imageUrl: folder("ribbon/blue-metallic.webp"),
     fullDescription:
       "Кольоровий риббон з металізованим ефектом. Поєднує в собі насичений синій колір та характерний блиск металу.",
     compatibility: "Паперові етикетки (напівглянець), плівкові матеріали.",
@@ -176,7 +176,7 @@ const detailedRibbons = ref([
     id: 8,
     type: "metallic-green",
     title: "Металік Зелений",
-    imageUrl: folder("ribbon/green-metallic.png"),
+    imageUrl: folder("ribbon/green-metallic.webp"),
     fullDescription:
       "Металізований риббон яскраво-зеленого кольору. Дозволяє виділити товар на полиці та захистити його від підробок за рахунок специфічного кольору.",
     compatibility: "Папір, полімери, деякі види картону.",
@@ -188,7 +188,7 @@ const detailedRibbons = ref([
     id: 9,
     type: "metallic-red",
     title: "Металік Червоний",
-    imageUrl: folder("ribbon/red-metallic.png"),
+    imageUrl: folder("ribbon/red-metallic.webp"),
     fullDescription:
       "Привертає увагу насиченим червоним блиском. Відмінно підходить для акційних пропозицій та маркування особливих партій товарів.",
     compatibility: "Широкий спектр матеріалів: від паперу до синтетики.",

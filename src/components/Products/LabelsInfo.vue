@@ -288,7 +288,7 @@ const services = ref([
   min-height: 250px;
   background:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3)),
-    url("/src/assets/img/label/labels.png") no-repeat bottom / cover;
+    url("/src/assets/img/label/labels.webp") no-repeat bottom / cover;
 }
 
 @media (max-width: 900px) {

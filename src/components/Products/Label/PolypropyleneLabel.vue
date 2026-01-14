@@ -179,7 +179,7 @@ const detailedLabels_polypropylene = ref([
   {
     type: "polypropylene",
     title: "Поліпропілен (ПП)",
-    imageUrl: folder("label/PP.png"),
+    imageUrl: folder("label/PP.webp"),
     material: "Синтетика (ПП), Білий/Прозорий",
     adhesive: "Посилений, Акриловий",
     resistance: "Висока (стійкий до вологи, олій, розривів та хімікатів).",

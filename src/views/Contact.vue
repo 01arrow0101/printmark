@@ -160,7 +160,7 @@ $background-color: #f8f9fa; // Світло-сірий фон
   width: 100%;
   height: 400px;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.5)), url("/src/assets/img/map/map.png");
+    linear-gradient(rgba(0, 0, 0, 0.5)), url("/src/assets/img/map/map.webp");
   border-radius: 5px;
   display: flex;
   align-items: center;

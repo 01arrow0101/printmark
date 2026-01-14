@@ -100,7 +100,7 @@ const detailedRibbons = ref([
     id: 1,
     type: "wax",
     title: "Воскові Риббони",
-    imageUrl: folder("ribbon/waxGreen.png"),
+    imageUrl: folder("ribbon/waxGreen.webp"),
     fullDescription:
       "Економічний і найпопулярніший варіант для друкування на паперових носіях. Забезпечує високу швидкість друкування і відмінний контраст.",
     compatibility: "Папір (матовий, напівглянцевий, термотрансферний).",
@@ -112,7 +112,7 @@ const detailedRibbons = ref([
     id: 2,
     type: "wax-resin",
     title: "Воск-Смола Риббони",
-    imageUrl: folder("ribbon/wax.png"),
+    imageUrl: folder("ribbon/wax.webp"),
     fullDescription:
       "Універсальне рішення. Через додавання смоли, друк стає значно стійкішим до змащення і пошкоджень.",
     compatibility: "Папір (глянцевий, синтетичні етикетки).",
@@ -125,7 +125,7 @@ const detailedRibbons = ref([
     id: 3,
     type: "resin",
     title: "Смоляні Риббони",
-    imageUrl: folder("ribbon/resin.png"),
+    imageUrl: folder("ribbon/resin.webp"),
     fullDescription:
       "Максимально стійкі риббони, необхідні для маркування в екстремальних умовах. Друк не стирається навіть при впливі розчинників і високих температур.",
     compatibility: "Синтетичні матеріали (ПП, ПЕТ, ПВХ, нейлон).",
@@ -138,7 +138,7 @@ const detailedRibbons = ref([
     id: 4,
     type: "resin-textile",
     title: "Смоляні Риббони для Текстилю",
-    imageUrl: folder("ribbon/resin-textile.png"),
+    imageUrl: folder("ribbon/resin-textile.webp"),
     fullDescription:
       "Спеціалізований склад для друку на текстильних стрічках. Зображення витримує багаторазове прання, хімчистку та прасування, зберігаючи чіткість і насиченість.",
     compatibility: "Текстильні стрічки (нейлон, сатин, поліестер).",
