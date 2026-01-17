@@ -20,23 +20,23 @@ import { RouterLink } from "vue-router";
 import SvgIcon from "@/components/Svg/SvgApp.vue";
 
 const icons = [
-  { name: "производство ", text: "Особисте виробництво", path: "/production" },
+  { name: "виробництво ", text: "Власне виробництво", path: "/production" },
   {
-    name: "этикетка ",
+    name: "етикетка ",
     text: "Рулонні Етикетки на замовлення",
     path: "/products/labels",
   },
   {
-    name: "рибоны",
+    name: "ріббони",
     text: "Широкий асортимент Ріббонов",
     path: "/products/ribbons",
   },
   {
-    name: "размер",
+    name: "розмір",
     text: "Індивідуальні розміри та намотування",
     path: "/custom-sizing",
   },
-  { name: "сертификат", text: "Контроль сировини", path: "/certificates" },
+  { name: "сертифікат", text: "Контроль сировини", path: "/certificates" },
   { name: "доставка", text: "Оперативна Логістика", path: "/delivery" },
 ];
 </script>
