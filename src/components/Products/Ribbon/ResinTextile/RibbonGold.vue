@@ -3,7 +3,7 @@
   <section class="product-info-section">
     <div class="container">
       <h1 class="title">
-        Повний Каталог Термотрансферних Риббонів
+        Повний Каталог Термотрансферних Ріббонів
         <span class="badge">RESIN-TEXTILE</span>
       </h1>
       <p class="description">
@@ -13,41 +13,14 @@
       </p>
 
       <nav class="tabs">
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'wax' }"
-          @click="store.setTab('wax')"
-        >
-          WAX
-        </button>
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'wax-resin' }"
-          @click="store.setTab('wax-resin')"
-        >
-          WAX-RESIN
-        </button>
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'resin' }"
-          @click="store.setTab('resin')"
-        >
-          RESIN
-        </button>
-          <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'resin-textile' }"
-          @click="store.setTab('resin-textile')"
-        >
-          RESIN-TEXTILE
-        </button>
+        <TabsProduct v-model="store.currentTab" />
       </nav>
 
       <!-- Карточка продукту -->
       <div class="product-card">
         <div class="card-header">
           <h2 class="subtitle">
-            RESIN-TEXTILE Gold (Смола-Текстиль Золото) Риббони
+            RESIN-TEXTILE Gold (Смола-Текстиль Золото) Ріббони
             <span class="badge wax">GOLD</span>
           </h2>
         </div>
@@ -109,7 +82,7 @@
         <table class="responsive-table">
           <thead>
             <tr>
-              <th>Тип Риббону</th>
+              <th>Тип Ріббону</th>
               <th>Сумісність</th>
               <th>Стійкість</th>
               <th>Застосування</th>
@@ -138,7 +111,7 @@
           </tbody>
         </table>
         <p class="note-text">
-          *Таблиця допоможе вам швидко підібрати риббон до типу етикетки. Для
+          *Таблиця допоможе вам швидко підібрати Ріббон до типу етикетки. Для
           отримання консультації зв'яжіться з нашим спеціалістом.*
         </p>
       </div>
@@ -152,17 +125,18 @@ import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { ref } from "vue";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "@/components/Button/appButton.vue";
+import TabsProduct from "@/components/Tabs/TabsProduct.vue";
 const router = useRouter();
 const store = usePrintMarkStore();
 const folder = store.getOptimizedAssetUrl;
 
 // 1. Стан для активного таба
-store.currentTab = 'gold' // Тепер активний таб Gold
+store.currentTab = "gold"; // Тепер активний таб Gold
 
 // Груповання тексту для Gold
 const info = {
   description:
-    'Золоті металізовані риббони (Gold) — це вершина декоративного маркування. Вони створюють насичений ефект позолоти, який неможливо відтворити звичайним жовтим кольором. Завдяки високому вмісту металізованого пігменту та смоляній основі (Resin), ці риббони забезпечують дзеркальний блиск і довговічність на синтетичних та глянцевих матеріалах.',
+    "Золоті металізовані Ріббони (Gold) — це вершина декоративного маркування. Вони створюють насичений ефект позолоти, який неможливо відтворити звичайним жовтим кольором. Завдяки високому вмісту металізованого пігменту та смоляній основі (Resin), ці Ріббони забезпечують дзеркальний блиск і довговічність на синтетичних та глянцевих матеріалах.",
   advantages: [
     "Ефект Справжнього Золота: Насичений благородний блиск, що привертає увагу покупця.",
     "Преміум Брендування: Підвищує сприйняття продукту як дорогого та якісного товару.",
@@ -170,7 +144,7 @@ const info = {
     "Висока Адгезія: Відмінно тримається на полімерних плівках та ламінованому картоні.",
   ],
   limitations: [
-    "Найвища вартість серед усіх типів кольорових риббонів.",
+    "Найвища вартість серед усіх типів кольорових Ріббонів.",
     "Вимагають ретельного підбору температури для запобігання перегріву пігменту.",
     "Найкращий ефект досягається тільки на ідеально гладких поверхнях.",
     "Не підходять для матового або пористого паперу.",
@@ -189,14 +163,13 @@ const detailedRibbons = ref([
   {
     id: 6,
     type: "gold",
-    title: "Золоті Металізовані Риббони",
+    title: "Золоті Металізовані Ріббони",
     imageUrl: folder("ribbon/gold.webp"),
     fullDescription:
-      "Спеціалізовані риббони для створення золотого тиснення без використання кліше. Забезпечують стійкий та яскравий результат.",
+      "Спеціалізовані Ріббони для створення золотого тиснення без використання кліше. Забезпечують стійкий та яскравий результат.",
     compatibility: "Глянцевий папір, Поліпропілен (ПП), Поліестер.",
     resistance: "Висока (стійкий до УФ-променів, вологи та тертя).",
-    application:
-      "Ексклюзивна упаковка, брендування, захисне маркування.",
+    application: "Ексклюзивна упаковка, брендування, захисне маркування.",
     color: [
       { name: "Золото", fill: "#D4AF37" },
       { name: "Срібло", fill: "#C0C0C0" },
@@ -211,7 +184,8 @@ const detailedRibbons = ref([
 <style lang="scss" scoped>
 @import "/src/assets/main.scss";
 
-$accent-color: #D4AF37;
+$accent-color: #d4af37;
+
 .row {
   display: flex;
   gap: 8px;

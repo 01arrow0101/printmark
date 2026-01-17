@@ -45,7 +45,7 @@
       <div class="info-block ribbon-quality-block">
         <div class="card-header">
           <h2 class="subtitle">
-            ⚫️ Сертифікація Фарбувальних Стрічок (Риббонів)
+            ⚫️ Сертифікація Фарбувальних Стрічок (Ріббонів)
           </h2>
         </div>
         <div class="card-content quality-grid">
@@ -59,14 +59,14 @@
           <h3 class="cert-header">Сертифікати на відповідність (RoHS, FDA)</h3>
           <div class="button-group">
             <appButton class="view-button" @click="viewCertificate('ribbons')">
-              Переглянути Сертифікати Риббонів
+              Переглянути Сертифікати Ріббонів
             </appButton>
             <a
               class="download-button"
               :href="ribbonCertPath"
-              download="Сертифікати_Риббонів.pdf"
+              download="Сертифікати_Ріббонів.pdf"
             >
-              Завантажити Сертифікати Риббонів
+              Завантажити Сертифікати Ріббонів
             </a>
           </div>
         </div>
@@ -115,17 +115,17 @@ const labelQuality = ref([
   },
 ]);
 
-// Дані: Контроль якості РИББОНІВ
+// Дані: Контроль якості РіббонІВ
 const ribbonQuality = ref([
   {
     title: "Сертифікація RoHS",
     description:
-      "Всі наші риббони відповідають європейським директивам RoHS, що обмежують вміст шкідливих речовин.",
+      "Всі наші Ріббони відповідають європейським директивам RoHS, що обмежують вміст шкідливих речовин.",
   },
   {
     title: "Сумісність з Харчовою Продукцією (FDA)",
     description:
-      "Надаємо сертифікати FDA для певних типів WAX/RESIN та RESIN риббонів, що контактують з первинною упаковкою продуктів харчування.",
+      "Надаємо сертифікати FDA для певних типів WAX/RESIN та RESIN Ріббонів, що контактують з первинною упаковкою продуктів харчування.",
   },
   {
     title: "Якість Барвника",
@@ -146,7 +146,7 @@ const viewCertificate = (type) => {
 <style lang="scss" scoped>
 $accent-color: #007bff;
 $custom-color: #f09830; // Синій
-$ribbon-color: #333; // Чорний для риббонів
+$ribbon-color: #333; // Чорний для Ріббонів
 $label-color: #f09830; // Світло-синій для етикеток
 
 .quality-control-section {

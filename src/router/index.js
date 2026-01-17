@@ -80,6 +80,11 @@ const router = createRouter({
                 },
               ],
             },
+            {
+              path: "hotstamp",
+            name: "HotStamp",
+            component: () =>
+              import("@/components/Products/Ribbon/HotStampRibbon.vue"),},
           ],
         },
         {

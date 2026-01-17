@@ -20,15 +20,15 @@ import { RouterLink } from "vue-router";
 import SvgIcon from "@/components/Svg/SvgApp.vue";
 
 const icons = [
-  { name: "виробництво ", text: "Власне виробництво", path: "/production" },
+  { name: "виробництво", text: "Власне виробництво", path: "/production" },
   {
-    name: "етикетка ",
+    name: "етикетка",
     text: "Рулонні Етикетки на замовлення",
     path: "/products/labels",
   },
   {
-    name: "ріббони",
-    text: "Широкий асортимент Ріббонов",
+    name: "ріббон",
+    text: "Широкий асортимент Ріббонів",
     path: "/products/ribbons",
   },
   {

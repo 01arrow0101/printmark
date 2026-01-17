@@ -7,7 +7,7 @@
         
         <div class="ribbon-block">
           <div class="ribbon-header">
-            <h4 class="product-group-title">РИББОНЫ (Термотрансферная Лента)</h4>
+            <h4 class="product-group-title">РіббонЫ (Термотрансферная Лента)</h4>
           </div>
 
           <div class="ribbon-cards-wrapper">
@@ -17,7 +17,7 @@
               class="ribbon-card"
             >
               <div :class="['ribbon-visual', `ribbon-${ribbon.type}`]">
-                <img :src="ribbon.imageUrl" alt="Риббон" class="ribbon-img">
+                <img :src="ribbon.imageUrl" alt="Ріббон" class="ribbon-img">
               </div>
 
               <h5 class="ribbon-title">{{ ribbon.title }}</h5>
@@ -65,7 +65,7 @@
 <script setup>
 import { ref } from 'vue';
 
-// 1. Данные для секции Риббонов (имитация изображений)
+// 1. Данные для секции Ріббонов (имитация изображений)
 const ribbons = ref([
   {
     id: 1,
@@ -143,7 +143,7 @@ const labelSpecialization = ref(
     gap: 40px;
 }
 
-/* Блок Риббонов занимает большую часть ширины */
+/* Блок Ріббонов занимает большую часть ширины */
 .ribbon-block {
     flex: 3; /* Примерно 60-65% ширины */
 }
@@ -157,7 +157,7 @@ const labelSpecialization = ref(
 }
 
 /* ---------------------------------------------------- */
-/* СТИЛИ ДЛЯ РИББОНОВ */
+/* СТИЛИ ДЛЯ РіббонОВ */
 /* ---------------------------------------------------- */
 .product-group-title {
     font-family: 'Montserrat', sans-serif;
@@ -194,7 +194,7 @@ const labelSpecialization = ref(
     max-width: 100%;
     max-height: 100%;
     display: block;
-    /* На макете риббоны выглядят как рулоны */
+    /* На макете Ріббоны выглядят как рулоны */
 }
 
 .ribbon-title {

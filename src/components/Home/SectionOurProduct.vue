@@ -23,7 +23,10 @@
             <img src="/src/assets/img/ribbon/rainbowPiramide.webp" alt="3" />
           </div>
         </div>
-        <div class="section-left_bottom">
+      </div>
+
+      <div class="section-right">
+        <div class="section-right_top">
           <div class="section-left_title">
             <div class="subtitle">
               Самоклеюча Етикетка <span>(Рулони)</span>
@@ -43,10 +46,7 @@
             <img src="/src/assets/img/label/5.webp" alt="5" />
             <img src="/src/assets/img/label/6.webp" alt="6" />
           </div>
-        </div>
-      </div>
-      <div class="section-right">
-        <div class="section-right_top">
+          <div v-show="partnerIsShow" class="partner">
           <div class="section-right_title">
             <h2 class="title">Наші Партнери</h2>
           </div>
@@ -64,7 +64,13 @@
             індивідуальні рішення для найвимогливіших завдань.
           </div>
         </div>
-        <div class="section-right_bottom">
+
+        </div>
+      </div>
+
+      
+    </div>
+      <div class="section-center m-section">
           <div class="section-right_title">
             <h2 class="title center">Ознайомчі Відео</h2>
           </div>
@@ -77,8 +83,6 @@
             </video>
           </div>
         </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -97,6 +101,8 @@ const goToLabel = () => {
   store.showProduct = 2;
   router.push("/products/labels");
 };
+
+const partnerIsShow = false;
 </script>
 
 <style lang="scss" scoped>

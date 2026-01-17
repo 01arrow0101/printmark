@@ -13,34 +13,7 @@
       </p>
 
       <nav class="tabs">
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'wax' }"
-          @click="store.setTab('wax')"
-        >
-          WAX
-        </button>
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'wax-resin' }"
-          @click="store.setTab('wax-resin')"
-        >
-          WAX-RESIN
-        </button>
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'resin' }"
-          @click="store.setTab('resin')"
-        >
-          RESIN
-        </button>
-          <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'resin-textile' }"
-          @click="store.setTab('resin-textile')"
-        >
-          RESIN-TEXTILE
-        </button>
+        <TabsProduct v-model="store.currentTab" />
       </nav>
 
       <!-- Карточка продукту -->
@@ -154,6 +127,7 @@ import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { ref } from "vue";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "@/components/Button/appButton.vue";
+import TabsProduct from "@/components/Tabs/TabsProduct.vue";
 const router = useRouter();
 const store = usePrintMarkStore();
 const folder = store.getOptimizedAssetUrl;

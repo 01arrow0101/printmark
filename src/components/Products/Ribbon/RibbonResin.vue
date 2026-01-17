@@ -3,7 +3,7 @@
   <section class="product-info-section">
     <div class="container">
       <h1 class="title">
-        Повний Каталог Термотрансферних Риббонів
+        Повний Каталог Термотрансферних Ріббонів
         <span class="badge">RESIN</span>
       </h1>
       <p class="description">
@@ -13,41 +13,14 @@
       </p>
 
       <nav class="tabs">
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'wax' }"
-          @click="store.setTab('wax')"
-        >
-          WAX
-        </button>
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'wax-resin' }"
-          @click="store.setTab('wax-resin')"
-        >
-          WAX-RESIN
-        </button>
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'resin' }"
-          @click="store.setTab('resin')"
-        >
-          RESIN
-        </button>
-          <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'resin-textile' }"
-          @click="store.setTab('resin-textile')"
-        >
-          RESIN-TEXTILE
-        </button>
+        <TabsProduct v-model="store.currentTab" />
       </nav>
 
       <!-- Карточка продукту -->
       <div class="product-card">
         <div class="card-header">
           <h2 class="subtitle">
-            RESIN (Смола) Риббони
+            RESIN (Смола) Ріббони
             <span class="badge wax">RESIN</span>
           </h2>
         </div>
@@ -109,7 +82,7 @@
         <table class="responsive-table">
           <thead>
             <tr>
-              <th>Тип Риббону</th>
+              <th>Тип Ріббону</th>
               <th>Сумісність</th>
               <th>Стійкість</th>
               <th>Застосування</th>
@@ -138,7 +111,7 @@
           </tbody>
         </table>
         <p class="note-text">
-          *Таблиця допоможе вам швидко підібрати риббон до типу етикетки. Для
+          *Таблиця допоможе вам швидко підібрати Ріббон до типу етикетки. Для
           отримання консультації зв'яжіться з нашим спеціалістом.*
         </p>
       </div>
@@ -152,6 +125,7 @@ import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { ref } from "vue";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "@/components/Button/appButton.vue";
+import TabsProduct from "@/components/Tabs/TabsProduct.vue";
 const router = useRouter();
 const store = usePrintMarkStore();
 const folder = store.getOptimizedAssetUrl;
@@ -162,7 +136,7 @@ store.currentTab = 'resin' // Встановлюємо цей таб як акт
 // Груповання тексту
 const info = {
   description:
-    'Риббони RESIN (смола) є нйстійкішим рішенням. Фарбуючий шар складається майже повністю із синтетичних смол, які вимагають найвищої температури нагріву для плавлення та "вживлення" в поверхню етикетки. Вони призначені для друку на синтетичних матеріалах (поліпропілен, поліестер, ПВХ).',
+    'Ріббони RESIN (смола) є нйстійкішим рішенням. Фарбуючий шар складається майже повністю із синтетичних смол, які вимагають найвищої температури нагріву для плавлення та "вживлення" в поверхню етикетки. Вони призначені для друку на синтетичних матеріалах (поліпропілен, поліестер, ПВХ).',
   advantages: [
     "Максимальна Стійкість: Найвищий рівень опору до стирання, подряпин, високих температур та агресивного середовища.",
     "Хімічна Стійкість: Стійкі до бензину, мастил, спиртів, ацетону та багатьох інших розчинників.",
@@ -188,10 +162,10 @@ const info = {
 const detailedRibbons = ref([
   {
     type: "resin",
-    title: "Смоляні Риббони",
+    title: "Смоляні Ріббони",
     imageUrl: folder("ribbon/resin.webp"),
     fullDescription:
-      "Максимально стійкі риббони, необхідні для маркування в екстремальних умовах. Друк не стирається навіть при впливі розчинників і високих температур.",
+      "Максимально стійкі Ріббони, необхідні для маркування в екстремальних умовах. Друк не стирається навіть при впливі розчинників і високих температур.",
     compatibility: "Синтетичні матеріали (ПП, ПЕТ, ПВХ, нейлон).",
     resistance: "Висока (стійкий до агресивної хімії, температури, стирання).",
     application:

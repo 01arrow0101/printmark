@@ -3,7 +3,7 @@
   <section class="product-info-section">
     <div class="container">
       <h1 class="title">
-        Повний Каталог Термотрансферних Риббонів
+        Повний Каталог Термотрансферних Ріббонів
         <span class="badge">RESIN-TEXTILE</span>
       </h1>
       <p class="description">
@@ -13,41 +13,14 @@
       </p>
 
       <nav class="tabs">
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'wax' }"
-          @click="store.setTab('wax')"
-        >
-          WAX
-        </button>
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'wax-resin' }"
-          @click="store.setTab('wax-resin')"
-        >
-          WAX-RESIN
-        </button>
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'resin' }"
-          @click="store.setTab('resin')"
-        >
-          RESIN
-        </button>
-        <button
-          class="tab-item"
-          :class="{ active: store.currentTab === 'resin-textile' }"
-          @click="store.setTab('resin-textile')"
-        >
-          RESIN-TEXTILE
-        </button>
+        <TabsProduct v-model="store.currentTab" />
       </nav>
 
       <!-- Карточка продукту -->
       <div class="product-card">
         <div class="card-header">
           <h2 class="subtitle">
-            RESIN-TEXTILE Green Metallic (Смола-Текстиль Зелений Металік) Риббони
+            RESIN-TEXTILE Green Metallic (Смола-Текстиль Зелений Металік) Ріббони
             <span class="badge wax">GREEN METALLIC</span>
           </h2>
         </div>
@@ -109,7 +82,7 @@
         <table class="responsive-table">
           <thead>
             <tr>
-              <th>Тип Риббону</th>
+              <th>Тип Ріббону</th>
               <th>Сумісність</th>
               <th>Стійкість</th>
               <th>Застосування</th>
@@ -138,7 +111,7 @@
           </tbody>
         </table>
         <p class="note-text">
-          *Таблиця допоможе вам швидко підібрати риббон до типу етикетки. Для
+          *Таблиця допоможе вам швидко підібрати Ріббон до типу етикетки. Для
           отримання консультації зв'яжіться з нашим спеціалістом.*
         </p>
       </div>
@@ -152,6 +125,7 @@ import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { ref } from "vue";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "@/components/Button/appButton.vue";
+import TabsProduct from "@/components/Tabs/TabsProduct.vue";
 const router = useRouter();
 const store = usePrintMarkStore();
 const folder = store.getOptimizedAssetUrl;
@@ -162,7 +136,7 @@ store.currentTab = 'metallic-green' // Активний таб Metallic Green
 // Груповання тексту для Metallic Green
 const info = {
   description:
-    'Риббони Metallic Green (Зелений Металік) — це спеціалізовані смоляні риббони, що забезпечують благородний смарагдовий блиск. Вони ідеально підходять для товарів, де потрібно підкреслити натуральність, екологічність або ексклюзивність. Завдяки Resin-основі, відбиток залишається чітким і яскравим навіть при контакті з оліями, водою чи миючими засобами.',
+    'Ріббони Metallic Green (Зелений Металік) — це спеціалізовані смоляні Ріббони, що забезпечують благородний смарагдовий блиск. Вони ідеально підходять для товарів, де потрібно підкреслити натуральність, екологічність або ексклюзивність. Завдяки Resin-основі, відбиток залишається чітким і яскравим навіть при контакті з оліями, водою чи миючими засобами.',
   advantages: [
     "Благородний Смарагдовий Блиск: Створює ефект дорогого металізованого напилення.",
     "Стійкість до Агресивних Середовищ: Друк не боїться вологи, мастил та спиртових розчинів.",
@@ -188,10 +162,10 @@ const detailedRibbons = ref([
   {
     id: 8,
     type: "metallic-green",
-    title: "Зелений Металік Риббони",
+    title: "Зелений Металік Ріббони",
     imageUrl: folder("ribbon/green-metallic.webp"),
     fullDescription:
-      "Преміальний кольоровий риббон на основі смоли з металізованим смарагдовим ефектом для ексклюзивного маркування.",
+      "Преміальний кольоровий Ріббон на основі смоли з металізованим смарагдовим ефектом для ексклюзивного маркування.",
     compatibility: "Поліпропілен (ПП), Поліестер, глянцеві ламіновані поверхні.",
     resistance: "Висока (стійкість до стирання, вологи та хімічних впливів).",
     application:

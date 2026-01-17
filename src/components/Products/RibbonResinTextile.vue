@@ -7,7 +7,7 @@
 
     <section class="product-info-section">
       <div class="container">
-        <h1 class="title">Повний Каталог Термотрансферних Риббонів</h1>
+        <h1 class="title">Повний Каталог Термотрансферних Ріббонів</h1>
         <p class="description">
           Наш асортимент гарантує ідеальну друкування для будь-якого матеріалу
           та умов експлуатації. Використовуйте наше керівництво для вибору
@@ -15,34 +15,7 @@
         </p>
 
         <nav class="tabs">
-          <button
-            class="tab-item"
-            :class="{ active: store.currentTab === 'wax' }"
-            @click="store.setTab('wax')"
-          >
-            WAX
-          </button>
-          <button
-            class="tab-item"
-            :class="{ active: store.currentTab === 'wax-resin' }"
-            @click="store.setTab('wax-resin')"
-          >
-            WAX-RESIN
-          </button>
-          <button
-            class="tab-item"
-            :class="{ active: store.currentTab === 'resin' }"
-            @click="store.setTab('resin')"
-          >
-            RESIN
-          </button>
-          <button
-            class="tab-item"
-            :class="{ active: store.currentTab === 'resin-textile' }"
-            @click="store.setTab('resin-textile')"
-          >
-            RESIN-TEXTILE
-          </button>
+          <TabsProduct v-model="store.currentTab" />
         </nav>
 
         <div
@@ -91,7 +64,7 @@
           <table class="responsive-table">
             <thead>
               <tr>
-                <th>Тип Риббону</th>
+                <th>Тип Ріббону</th>
                 <th>Сумісність</th>
                 <th>Стійкість</th>
                 <th>Застосування</th>
@@ -107,7 +80,7 @@
             </tbody>
           </table>
           <p class="note-text">
-            *Таблиця допоможе вам швидко підібрати риббон до типу етикетки. Для
+            *Таблиця допоможе вам швидко підібрати Ріббон до типу етикетки. Для
             отримання консультації зв'яжіться з нашим спеціалістом.*
           </p>
         </div>
@@ -125,6 +98,7 @@ import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { ref } from "vue";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "/src/components/Button/appButton.vue";
+import TabsProduct from "@/components/Tabs/TabsProduct.vue";
 const router = useRouter();
 const route = useRoute();
 const store = usePrintMarkStore();
@@ -137,10 +111,10 @@ const detailedRibbons = ref([
   {
     id: 5,
     type: "silver",
-    title: "Срібні Риббони (Silver)",
+    title: "Срібні Ріббони (Silver)",
     imageUrl: folder("ribbon/silver.webp"),
     fullDescription:
-      "Декоративні риббони, що створюють ефектний металевий відблиск. Ідеально підходять для преміального маркування та створення унікального дизайну пакування.",
+      "Декоративні Ріббони, що створюють ефектний металевий відблиск. Ідеально підходять для преміального маркування та створення унікального дизайну пакування.",
     compatibility: "Глянцевий папір, поліпропілен, поліестер.",
     resistance: "Середня/Висока (стійкий до вицвітання та легкого тертя).",
     application:
@@ -150,7 +124,7 @@ const detailedRibbons = ref([
   {
     id: 6,
     type: "gold",
-    title: "Золоті Риббони (Gold)",
+    title: "Золоті Ріббони (Gold)",
     imageUrl: folder("ribbon/gold.webp"),
     fullDescription:
       "Надають етикетці розкішного вигляду з яскравим золотим блиском. Часто використовуються для підкреслення високого статусу продукту.",
@@ -165,7 +139,7 @@ const detailedRibbons = ref([
     title: "Металік Синій",
     imageUrl: folder("ribbon/blue-metallic.webp"),
     fullDescription:
-      "Кольоровий риббон з металізованим ефектом. Поєднує в собі насичений синій колір та характерний блиск металу.",
+      "Кольоровий Ріббон з металізованим ефектом. Поєднує в собі насичений синій колір та характерний блиск металу.",
     compatibility: "Паперові етикетки (напівглянець), плівкові матеріали.",
     resistance: "Середня (стійкий до змазування).",
     application:
@@ -178,7 +152,7 @@ const detailedRibbons = ref([
     title: "Металік Зелений",
     imageUrl: folder("ribbon/green-metallic.webp"),
     fullDescription:
-      "Металізований риббон яскраво-зеленого кольору. Дозволяє виділити товар на полиці та захистити його від підробок за рахунок специфічного кольору.",
+      "Металізований Ріббон яскраво-зеленого кольору. Дозволяє виділити товар на полиці та захистити його від підробок за рахунок специфічного кольору.",
     compatibility: "Папір, полімери, деякі види картону.",
     resistance: "Висока чіткість друку та стійкість до зовнішнього впливу.",
     application: "Екологічні товари, святкове оформлення, захисні наклейки.",

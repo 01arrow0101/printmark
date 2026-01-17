@@ -6,7 +6,13 @@
     <div class="content">
       <address>
         <ul class="address-list">
-          <li
+          <li class="address-list_item">
+            <div class="text">Телефон ( відділ продажу ) : </div>
+            <a target="_blank" href="tel:+380505628414">0505628414</a>
+             <span class="text"> або</span>
+              <a target="_blank" href="tel:+380932527629">0932527629</a>
+            </li>
+          <li 
             v-for="item in address"
             :key="item.name"
             class="address-list_item"
@@ -45,7 +51,7 @@
         </div>
       </div>
     </div>
-    <div class="social">
+    <div v-show="socialIsShow" class="social">
       <div class="social-icon">
         <div
           v-for="icon in socialLinks"
@@ -70,21 +76,17 @@ import { RouterLink } from "vue-router";
 import Logo from "../Logo/AppLogo.vue";
 import SocialIcon from "../Svg/SvgApp.vue";
 
+const socialIsShow = false;
 const address = [
   {
     name: "Адреса виробництва / Офіс : ",
-    text: "вулиця Вінстона Черчилля, 84, корпус 26, Київ, 02000",
-    path: "https://goo.gl/maps/XYZ1234567890",
-  },
-  {
-    name: "Телефон ( відділ продажу ) : ",
-    text: "+380 44 123 4567",
-    path: "tel:+380441234567",
+    text: "вулиця Вінстона Черчилля, 84, корпус 26, Київ, 02094",
+    path: "https://maps.app.goo.gl/YMmepNrLw4x3W6Lm6",
   },
   {
     name: "Email: ",
-    text: "ptintmark@gamil.com",
-    path: "mailto: ptintmark@gamil.com",
+    text: "info@printmark.com.ua",
+    path: "mailto: info@printmark.com.ua",
   },
 ];
 
@@ -93,6 +95,7 @@ const ribbonInfo = [
   { name: "Wax - Resin", path: "/products/ribbons/wax-resin" },
   { name: "Resin", path: "/products/ribbons/resin" },
   { name: "Resin - Textile", path: "/products/ribbons/resin-textile" },
+  { name: "HotStamp", path: "/products/ribbons/hotstamp" },
 ];
 
 const labelInfo = [
