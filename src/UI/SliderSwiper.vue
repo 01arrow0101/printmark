@@ -7,7 +7,8 @@
         v-if="items && items.length > 0"
         :modules="modules"
         :slides-per-view="1"
-        :space-between="30"
+        :space-between="20"
+        :auto-height="false" 
         navigation
         :pagination="{ clickable: true }"
         :breakpoints="breakpoints"
@@ -19,13 +20,13 @@
             
             <video 
               v-if="isVideo(item.src)"
-              class="media-content video-player" 
+              class="media-content" 
               controls 
               preload="metadata"
               playsinline
+              webkit-playsinline
             >
               <source :src="item.src" type="video/mp4" />
-              Ваш браузер не підтримує відео.
             </video>
 
             <img 
@@ -39,10 +40,6 @@
           </div>
         </swiper-slide>
       </swiper>
-      
-      <div v-else class="empty-msg">
-        <p>Контент для слайдера відсутній або завантажується...</p>
-      </div>
     </div>
   </section>
 </template>
@@ -51,25 +48,17 @@
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
-// Імпорт стилів Swiper
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// Визначення пропсів з безпечними значеннями за замовчуванням
 const props = defineProps({
-  title: { 
-    type: String, 
-    default: '' 
-  },
-  items: { 
-    type: Array, 
-    required: true,
-    default: () => [] // Повертає порожній масив, якщо пропс не передано
-  },
+  title: { type: String, default: '' },
+  items: { type: Array, required: true, default: () => [] },
   breakpoints: {
     type: Object,
     default: () => ({
+      '320': { slidesPerView: 1 },
       '768': { slidesPerView: 2 },
       '1024': { slidesPerView: 3 }
     })
@@ -78,24 +67,10 @@ const props = defineProps({
 
 const modules = [Navigation, Pagination, Autoplay];
 
-/**
- * Перевіряє, чи є файл відео формату mp4
- */
-const isVideo = (src) => {
-  if (!src) return false;
-  return src.toLowerCase().endsWith('.mp4');
-};
+const isVideo = (src) => src?.toLowerCase().endsWith('.mp4');
 
-/**
- * Зупиняє всі відео при перемиканні слайдів
- */
 const handleSlideChange = () => {
-  const videos = document.querySelectorAll('.video-player');
-  videos.forEach(video => {
-    if (!video.paused) {
-      video.pause();
-    }
-  });
+  document.querySelectorAll('video').forEach(v => v.pause());
 };
 </script>
 
@@ -103,84 +78,56 @@ const handleSlideChange = () => {
 @import "@/assets/main.scss";
 
 .slider-section {
-  padding: 50px 0;
-  background-color: #f9f9f9;
+  padding: 40px 0;
+  overflow: hidden; // Гарантує, що нічого не вилетить за межі секції
 }
 
-.title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 28px;
-  color: #333;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .universal-swiper {
   width: 100%;
-  padding-bottom: 50px; // Місце для пагінації (точок)
+  padding-bottom: 50px;
 }
 
 .media-card {
   width: 100%;
+  position: relative;
   background: #000;
   border-radius: 12px;
   overflow: hidden;
-  line-height: 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
+  /* Використовуємо padding-bottom для створення фіксованого співвідношення сторін, 
+     це найнадійніший метод для мобільних щоб уникнути "стрибків" висоти */
+  padding-bottom: 56.25%; // Співвідношення 16:9
+  height: 0;
 }
 
 .media-content {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; // Заповнює блок, прибираючи чорні полоси по боках
   display: block;
 }
 
-.empty-msg {
-  text-align: center;
-  padding: 40px;
-  color: #666;
-  border: 2px dashed #ccc;
-  border-radius: 12px;
+// Якщо це відео, краще використовувати contain, щоб не обрізати важливі деталі, 
+// але тоді будуть полоси. Якщо хочеш без полос — залиш cover.
+video.media-content {
+  object-fit: cover; 
 }
 
-/* Кастомізація навігації (стрілки) */
 :deep(.swiper-button-next),
 :deep(.swiper-button-prev) {
   color: $accent-color !important;
-  background: white;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  
-  &::after {
-    font-size: 18px !important;
-    font-weight: 800;
-  }
-
-  &:hover {
-    background: $accent-color;
-    color: white !important;
-  }
-}
-
-/* Кастомізація точок пагінації */
-:deep(.swiper-pagination-bullet) {
-  width: 10px;
-  height: 10px;
-  opacity: 0.5;
+  @media (max-width: 768px) { display: none; }
 }
 
 :deep(.swiper-pagination-bullet-active) {
   background: $accent-color !important;
-  opacity: 1;
-  width: 25px; // Робимо активну точку довшою
-  border-radius: 5px;
 }
 </style>
