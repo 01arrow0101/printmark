@@ -163,7 +163,7 @@ const detailedRibbons = ref([
     type: "hot-stamp",
     id: "hs-01",
     title: "HotStamp Фольга",
-    imageUrl: folder("ribbon/hot-stamp.webp"), // Переконайтеся, що файл є за цим шляхом
+    imageUrl: folder("img/ribbon/hot-stamp.webp"), // Переконайтеся, що файл є за цим шляхом
     fullDescription:
       "Професійна фольга для контактного маркування. Забезпечує відмінну адгезію до складних поверхонь та стійкість до низьких температур (заморозки).",
     compatibility: "Плівки (ПП, ПЕ, ПЕТ), папір, шкіра, ламінат.",

@@ -163,7 +163,7 @@ const detailedRibbons = ref([
   {
     type: "resin",
     title: "Смоляні Ріббони",
-    imageUrl: folder("ribbon/resin.webp"),
+    imageUrl: folder("img/ribbon/resin.webp"),
     fullDescription:
       "Максимально стійкі Ріббони, необхідні для маркування в екстремальних умовах. Друк не стирається навіть при впливі розчинників і високих температур.",
     compatibility: "Синтетичні матеріали (ПП, ПЕТ, ПВХ, нейлон).",

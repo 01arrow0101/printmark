@@ -163,7 +163,7 @@ const detailedRibbons = ref([
     id: 9,
     type: "metallic-red",
     title: "Червоні металеві стрічки",
-    imageUrl: folder("ribbon/red-metallic.webp"),
+    imageUrl: folder("img/ribbon/red-metallic.webp"),
     fullDescription:
       "Преміальна полімерна стрічка з інтенсивним металевим блиском для ексклюзивного дизайну етикетки.",
     compatibility: "Глянцевий папір, поліпропілен (PP), ламінований картон.",

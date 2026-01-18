@@ -172,7 +172,7 @@ const detailedLabels = ref([
   {
     type: "semi-gloss-paper",
     title: "Напівглянцевий Папір",
-    imageUrl: folder("label/SemiGloss.webp"), // Припускаємо, що у вас є зображення
+    imageUrl: folder("img/label/SemiGloss.webp"), // Припускаємо, що у вас є зображення
     material: "Папір (Semi-Gloss)",
     adhesive: "Стандартний Акриловий (Permanent)",
     resistance: "Низька (лише для сухих умов, чутливий до вологи).",

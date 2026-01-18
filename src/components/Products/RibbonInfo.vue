@@ -100,7 +100,7 @@ const detailedRibbons = ref([
     id: 1,
     type: "wax",
     title: "Воскові Ріббони",
-    imageUrl: folder("ribbon/waxGreen.webp"),
+    imageUrl: folder("img/ribbon/waxGreen.webp"),
     fullDescription:
       "Економічний і найпопулярніший варіант для друкування на паперових носіях. Забезпечує високу швидкість друкування і відмінний контраст.",
     compatibility: "Папір (матовий, напівглянцевий, термотрансферний).",
@@ -112,7 +112,7 @@ const detailedRibbons = ref([
     id: 2,
     type: "wax-resin",
     title: "Воск-Смола Ріббони",
-    imageUrl: folder("ribbon/wax.webp"),
+    imageUrl: folder("img/ribbon/wax.webp"),
     fullDescription:
       "Універсальне рішення. Через додавання смоли, друк стає значно стійкішим до змащення і пошкоджень.",
     compatibility: "Папір (глянцевий, синтетичні етикетки).",
@@ -125,7 +125,7 @@ const detailedRibbons = ref([
     id: 3,
     type: "resin",
     title: "Смоляні Ріббони",
-    imageUrl: folder("ribbon/resin.webp"),
+    imageUrl: folder("img/ribbon/resin.webp"),
     fullDescription:
       "Максимально стійкі Ріббони, необхідні для маркування в екстремальних умовах. Друк не стирається навіть при впливі розчинників і високих температур.",
     compatibility: "Синтетичні матеріали (ПП, ПЕТ, ПВХ, нейлон).",
@@ -138,7 +138,7 @@ const detailedRibbons = ref([
     id: 4,
     type: "resin-textile",
     title: "Смоляні Ріббони для Текстилю",
-    imageUrl: folder("ribbon/resin-textile.webp"),
+    imageUrl: folder("img/ribbon/resin-textile.webp"),
     fullDescription:
       "Спеціалізований склад для друку на текстильних стрічках. Зображення витримує багаторазове прання, хімчистку та прасування, зберігаючи чіткість і насиченість.",
     compatibility: "Текстильні стрічки (нейлон, сатин, поліестер).",
@@ -152,7 +152,7 @@ const detailedRibbons = ref([
     id: 5,
     type: "hot-stamp",
     title: "Гаряче Тиснення (HotStamp)",
-    imageUrl: folder("ribbon/hot-stamp.webp"), // переконайтеся, що файл завантажено
+    imageUrl: folder("img/ribbon/hot-stamp.webp"), // переконайтеся, що файл завантажено
     fullDescription:
       "Спеціальна фольга для контактного маркування на термодатерах. Використовується для нанесення дати виробництва, номеру партії та терміну придатності безпосередньо на пакувальну плівку або картон.",
     compatibility: "Гнучка упаковка (BOPP, ПЕ, ПЕТ), папір, ламінований картон.",

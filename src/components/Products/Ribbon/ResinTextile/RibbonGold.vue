@@ -164,7 +164,7 @@ const detailedRibbons = ref([
     id: 6,
     type: "gold",
     title: "Золоті Металізовані Ріббони",
-    imageUrl: folder("ribbon/gold.webp"),
+    imageUrl: folder("img/ribbon/gold.webp"),
     fullDescription:
       "Спеціалізовані Ріббони для створення золотого тиснення без використання кліше. Забезпечують стійкий та яскравий результат.",
     compatibility: "Глянцевий папір, Поліпропілен (ПП), Поліестер.",

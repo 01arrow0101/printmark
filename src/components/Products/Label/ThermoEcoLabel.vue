@@ -174,7 +174,7 @@ const detailedLabels_thermo_eco = ref([
   {
     type: "thermo-eco",
     title: "Термоетикетки ЕКО",
-    imageUrl: folder("label/ThermoEco.png"),
+    imageUrl: folder("img/label/ThermoEco.png"),
     material: "Термопапір (ЕКО)",
     adhesive: "Стандартний Акриловий (Permanent)",
     resistance: "Низька (лише для сухих, чистих умов).",

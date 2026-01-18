@@ -163,7 +163,7 @@ const detailedRibbons = ref([
     id: 7,
     type: "metallic-blue",
     title: "Синій Металік Ріббони",
-    imageUrl: folder("ribbon/blue-metallic.webp"),
+    imageUrl: folder("img/ribbon/blue-metallic.webp"),
     fullDescription:
       "Кольоровий Ріббон преміум-класу, що поєднує стійкість смоли та ефектний синій металевий відблиск.",
     compatibility:

@@ -175,7 +175,7 @@ const detailedLabels_thermo_top = ref([
   {
     type: "thermo-top",
     title: "Термоетикетки ТОП",
-    imageUrl: folder("label/ThermoTop.webp"),
+    imageUrl: folder("img/label/ThermoTop.webp"),
     material: "Термопапір (ТОП)",
     adhesive: "Стандартний або Знімний, Морозостійкий (Removable, Freezer)",
     resistance: "Середня (стійкий до вологи, олій та низьких температур).",

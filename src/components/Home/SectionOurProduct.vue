@@ -85,6 +85,7 @@ import appButton from "../Button/appButton.vue";
 import SliderSwiper from "@/UI/SliderSwiper.vue";
 const store = usePrintMarkStore();
 
+const folder = store.getOptimizedAssetUrl;
 
 const router = useRouter();
 
@@ -98,27 +99,27 @@ const goToLabel = () => {
 
 const items = [
   {
-    src: "/src/assets/videos/1.mp4",
+    src: folder('videos/1.mp4'),
     alt: "Виробництво Ріббонів",
     type: "video",
   },
   {
-    src: "/src/assets/videos/2.mp4",
+    src: folder('videos/2.mp4'),
     alt: "Виробництво Етикеток",
     type: "video",
   },
   {
-    src: "/src/assets/img/ribbon/piramide.webp",
+    src: folder('img/ribbon/piramide.webp'),
     alt: "Нанесення Ріббону на Етикетку",
     type: "video",
   },
   {
-    src: "/src/assets/img/ribbon/rainbowPiramide.webp",
+    src: folder('img/ribbon/rainbowPiramide.webp'),
     alt: "Нанесення Ріббону на Етикетку",
     type: "video",
   },
   {
-    src: "/src/assets/img/ribbon/rainbow.webp",
+    src: folder('img/ribbon/rainbow.webp'),
     alt: "Нанесення Ріббону на Етикетку",
     type: "video",
   },

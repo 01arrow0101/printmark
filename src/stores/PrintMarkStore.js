@@ -12,7 +12,7 @@ export const usePrintMarkStore = defineStore("printMark", () => {
   // Створюємо мапу, яка містить публічні URL всіх файлів у /src/assets/img/
   const allAssetsMap = import.meta.glob(
     // Увага: переконайтеся, що шлях відповідає вашим асетам!
-    "/src/assets/img/**/*.{png,jpg,jpeg,webp}",
+    "/src/assets/**/*.{png,jpg,jpeg,webp,mp4}",
     {
       eager: true,
       query: "?url",
@@ -22,7 +22,7 @@ export const usePrintMarkStore = defineStore("printMark", () => {
 
   const getOptimizedAssetUrl = (currentPath) => {
     // Ключ для пошуку у мапі завжди починається з кореня '/src/'
-    const key = `/src/assets/img/${currentPath}`;
+    const key = `/src/assets/${currentPath}`;
 
     const url = allAssetsMap[key];
     if (!url) {

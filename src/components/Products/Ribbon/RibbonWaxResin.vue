@@ -165,7 +165,7 @@ const detailedRibbons = ref([
   {
     type: "wax-resin",
     title: "Воск-Смола Риббони",
-    imageUrl: folder("ribbon/wax.webp"),
+    imageUrl: folder("img/ribbon/wax.webp"),
     fullDescription:
       "Універсальне рішення. Через додавання смоли, друк стає значно стійкішим до змащення і пошкоджень.",
     compatibility: "Папір (глянцевий, синтетичні етикетки).",

@@ -164,7 +164,7 @@ const detailedRibbons = ref([
     id: 5,
     type: "silver",
     title: "Металізовані Ріббони",
-    imageUrl: folder("ribbon/silver.webp"),
+    imageUrl: folder("img/ribbon/silver.webp"),
     fullDescription:
       "Декоративні Ріббони з металевим ефектом. Поєднують розкішний вигляд із промисловою стійкістю смоляної основи.",
     compatibility: "Глянцевий папір, Поліпропілен (ПП), ПЕТ-плівки.",
