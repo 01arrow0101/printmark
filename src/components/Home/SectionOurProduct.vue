@@ -47,42 +47,34 @@
             <img src="/src/assets/img/label/6.webp" alt="6" />
           </div>
           <div v-show="partnerIsShow" class="partner">
-          <div class="section-right_title">
-            <h2 class="title">Наші Партнери</h2>
+            <div class="section-right_title">
+              <h2 class="title">Наші Партнери</h2>
+            </div>
+            <div class="img m-section">
+              <img src="/src/assets/img/partner/7.webp" alt="7" />
+              <img src="/src/assets/img/partner/8.webp" alt="8" />
+              <img src="/src/assets/img/partner/9.webp" alt="9" />
+            </div>
+            <div class="text">
+              Ми пишаємося довгостроковими та довірчими відносинами з нашими
+              партнерами — провідними компаніями в різних галузях. Їхній вибір
+              на користь PRINTMARK підтверджує високу якість нашої продукції,
+              надійність постачань та професіоналізм нашої команди. Ми цінуємо
+              кожного клієнта і прагнемо до взаємовигідної співпраці, пропонуючи
+              індивідуальні рішення для найвимогливіших завдань.
+            </div>
           </div>
-          <div class="img m-section">
-            <img src="/src/assets/img/partner/7.webp" alt="7" />
-            <img src="/src/assets/img/partner/8.webp" alt="8" />
-            <img src="/src/assets/img/partner/9.webp" alt="9" />
-          </div>
-          <div class="text">
-            Ми пишаємося довгостроковими та довірчими відносинами з нашими
-            партнерами — провідними компаніями в різних галузях. Їхній вибір на
-            користь PRINTMARK підтверджує високу якість нашої продукції,
-            надійність постачань та професіоналізм нашої команди. Ми цінуємо
-            кожного клієнта і прагнемо до взаємовигідної співпраці, пропонуючи
-            індивідуальні рішення для найвимогливіших завдань.
-          </div>
-        </div>
-
         </div>
       </div>
-
-      
     </div>
-      <div class="section-center m-section">
-          <div class="section-right_title">
-            <h2 class="title center">Ознайомчі Відео</h2>
-          </div>
-          <div class="videos">
-            <video class="video" controls style="width: 400px">
-              <source src="/video/1.mp4" type="video/mp4" />
-            </video>
-            <video class="video" controls style="width: 400px">
-              <source src="/video/2.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
+    <div class="section-center m-section">
+      <div class="section-right_title">
+        <h2 class="title center">Ознайомчі Матеріали</h2>
+      </div>
+      <div class="videos">
+        <SliderSwiper :items="items" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -90,7 +82,9 @@
 import { usePrintMarkStore } from "@/stores/PrintMarkStore";
 import { useRouter } from "vue-router";
 import appButton from "../Button/appButton.vue";
+import SliderSwiper from "@/UI/SliderSwiper.vue";
 const store = usePrintMarkStore();
+
 
 const router = useRouter();
 
@@ -102,6 +96,33 @@ const goToLabel = () => {
   router.push("/products/labels");
 };
 
+const items = [
+  {
+    src: "src/assets/videos/1.mp4",
+    alt: "Виробництво Ріббонів",
+    type: "video",
+  },
+  {
+    src: "src/assets/videos/2.mp4",
+    alt: "Виробництво Етикеток",
+    type: "video",
+  },
+  {
+    src: "src/assets/img/ribbon/piramide.webp",
+    alt: "Нанесення Ріббону на Етикетку",
+    type: "video",
+  },
+  {
+    src: "src/assets/img/ribbon/piramide.webp",
+    alt: "Нанесення Ріббону на Етикетку",
+    type: "video",
+  },
+  {
+    src: "src/assets/img/ribbon/piramide.webp",
+    alt: "Нанесення Ріббону на Етикетку",
+    type: "video",
+  },
+];
 const partnerIsShow = false;
 </script>
 

@@ -273,6 +273,8 @@ $label-color: #f09830; // Світло-синій для етикеток
   border: 1px solid $ribbon-color;
   flex-grow: 1;
   min-width: 250px;
+  padding: 12px;
+  border-radius: 4px;
   &:hover {
     background-color: lighten($ribbon-color, 10%);
   }
