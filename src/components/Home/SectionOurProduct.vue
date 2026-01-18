@@ -72,7 +72,7 @@
         <h2 class="title center">Ознайомчі Матеріали</h2>
       </div>
       <div class="videos">
-        <SliderSwiper :items="items" />
+        <SliderSwiper :items="sliderItems" />
       </div>
     </div>
   </div>
@@ -97,7 +97,7 @@ const goToLabel = () => {
   router.push("/products/labels");
 };
 
-const items = [
+const sliderItems = [
   {
     src: folder('videos/1.mp4'),
     alt: "Виробництво Ріббонів",
@@ -124,6 +124,7 @@ const items = [
     type: "video",
   },
 ];
+
 const partnerIsShow = false;
 </script>
 
@@ -187,6 +188,8 @@ const partnerIsShow = false;
     background-color: $bg-color;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    object-position: center;
     @media ($breakpoint-tablet) {
       width: 150px;
     }
