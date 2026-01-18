@@ -172,6 +172,7 @@ const detailedRibbons = ref([
   display: flex;
   gap: 15px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 .product-info-section {
   padding: 40px 0;

@@ -25,6 +25,10 @@ defineProps({
   font-size: $font-size-base;
   font-weight: $font-weight-bold;
   transition: background-color 0.3s ease;
+  @media ($breakpoint-mobile) {
+    padding: 12px 24px;
+    width: 100%;
+  }
 
   &:hover {
     background-color: darken($accent-color, 10%);

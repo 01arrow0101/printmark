@@ -55,7 +55,7 @@ const navItems = [
   background: $bg-color;
   z-index: 1000;
   @media ($breakpoint-mobile){
-  width: 97vw; 
+  width: 100vw; 
   }
 }
 

@@ -1,70 +1,74 @@
 <template>
   <section class="contact-page p-section m-section">
     <div class="container">
-      <h1 class="hero-title"><span>Зв'яжіться з</span> {{ companyName }}</h1>
-      <p class="contact-subtitle subtitle">
-        Наші спеціалісти готові надати вам консультацію та прийняти замовлення
-        на точну порізку ріббонів та етикеток.
-      </p>
+      <div class="hero-block">
+        <h1 class="hero-title"><span>Зв'яжіться з</span> {{ companyName }}</h1>
+        <p class="contact-subtitle subtitle">
+          Наші спеціалісти готові надати вам консультацію та прийняти замовлення
+          на точну порізку ріббонів та етикеток.
+        </p>
+      </div>
 
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h2 class="title">Основні дані</h2>
+      <div class="contact-flex-container">
+        
+        <div class="contact-column">
+          <h2 class="column-title">Основні дані</h2>
 
           <div class="info-item">
             <span class="icon">📍</span>
-            <p class="address">
-              **Адреса виробництва та офісу:**<br />
-              {{ address }}
-            </p>
+            <div class="item-text">
+              <p><strong>Адреса виробництва та офісу:</strong></p>
+              <p>{{ address }}</p>
+            </div>
           </div>
 
           <div class="info-item">
             <span class="icon">📞</span>
-            <div class="phones-list">
-              <p>**Телефони:**</p>
-              <a v-for="tel in phones" :key="tel" :href="`tel:${tel}`" class="phone-link">
-                {{ formatPhone(tel) }}
-              </a>
+            <div class="item-text">
+              <p><strong>Телефони:</strong></p>
+              <div class="links-list">
+                <a v-for="tel in phones" :key="tel" :href="`tel:${tel}`" class="accent-link">
+                  {{ formatPhone(tel) }}
+                </a>
+              </div>
             </div>
           </div>
 
           <div class="info-item">
             <span class="icon">📧</span>
-            <div class="emails-list">
-              <p>**Email:**</p>
-              <div v-for="(mail, index) in emails" :key="index" class="email-row">
-                <span class="email-label">{{ mail.label }}:</span>
-                <a :href="`mailto:${mail.email}`">{{ mail.email }}</a>
+            <div class="item-text">
+              <p><strong>Email:</strong></p>
+              <div class="links-list">
+                <div v-for="(mail, index) in emails" :key="index" class="email-row">
+                  <span class="label"><strong>{{ mail.label }}:</strong></span>
+                  <a :href="`mailto:${mail.email}`" class="accent-link">{{ mail.email }}</a>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="info-item">
             <span class="icon">⏱️</span>
-            <p>
-              **Графік роботи:**<br />
-              {{ schedule.days }}<br />
-              {{ schedule.weekend }}
-            </p>
+            <div class="item-text">
+              <p><strong>Графік роботи:</strong></p>
+              <p>{{ schedule.days }}</p>
+              <p>{{ schedule.weekend }}</p>
+            </div>
           </div>
         </div>
 
-        <div class="map-container">
-          <h2 class="title">Карта проїзду</h2>
-          <p class="map-description">
-            Ви легко знайдете нас за вказаною адресою.
-          </p>
-          <div class="map-placeholder">
-            <a
-              :href="mapLink"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Показати маршрут на карті
-            </a>
+        <div class="contact-column">
+          <h2 class="column-title">Карта проїзду</h2>
+          <p class="map-desc">Ви легко знайдете нас за вказаною адресою.</p>
+          <div class="map-wrapper">
+            <div class="map-placeholder">
+              <a :href="mapLink" target="_blank" rel="noopener noreferrer" class="map-btn">
+                Показати маршрут
+              </a>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -88,7 +92,6 @@ const schedule = {
   weekend: 'Субота, Неділя: Вихідні'
 };
 
-// Функція для красивого форматування номера (наприклад, 050 562 84 14)
 const formatPhone = (phone) => {
   return phone.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4');
 };
@@ -97,147 +100,140 @@ const formatPhone = (phone) => {
 <style lang="scss" scoped>
 @import "@/assets/main.scss";
 
-$secondary-color: #333;
-$background-color: #f8f9fa;
-
 .contact-page {
   background-color: #fff;
+  overflow: hidden;
 }
 
-.hero-title {
+.hero-block {
   text-align: center;
-  margin-bottom: 10px;
-  color: $accent-color;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 2px #000;
-  & span {
-    font-size: 36px;
-    color: $secondary-color;
-    text-shadow: none;
+  margin-bottom: 40px;
+
+  .hero-title {
+    color: $accent-color;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+    span {
+      display: block;
+      font-size: 32px;
+      color: #333;
+      text-shadow: none;
+      text-transform: none;
+    }
   }
 }
 
-.contact-subtitle {
-  text-align: center;
-  color: #6c757d;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
+.contact-flex-container {
+  display: flex;
+  justify-content: bween;
+  gap: 60px;
+  align-items: stretch; // Змушує обидві колонки бути однакової висоти
 
   @media (max-width: 992px) {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-  @media ($breakpoint-mobile) {
-    gap: 32px;
+    flex-direction: column;
+    gap: 40px;
   }
 }
 
-.title {
+.contact-column {
+  flex: 1; // Обидві колонки завжди мають однакову ширину 50/50
+  display: flex;
+  flex-direction: column;
+}
+
+.column-title {
   color: $accent-color;
-  margin-bottom: 30px;
+  font-size: 24px;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
 .info-item {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 25px;
-  padding-left: 15px;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-left: 10px;
   border-left: 3px solid $accent-color;
 
   .icon {
-    font-size: 24px;
-    margin-right: 15px;
-    line-height: 1.5;
+    font-size: 22px;
+    line-height: 1.2;
   }
 
-  .phones-list, .emails-list {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    
-    p {
-      margin-bottom: 2px;
-      font-weight: bold;
-    }
-  }
-
-  .phone-link, .email-row {
-    font-size: 20px;
-    color: $secondary-color;
-    text-decoration: none;
-    
-    a {
-      color: $accent-color;
-      text-decoration: none;
-      font-weight: 500;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  .email-label {
-    margin-right: 8px;
-    font-weight: 500;
-  }
-
-  .phone-link {
-    color: $accent-color;
-    font-weight: 500;
-    &:hover {
-      text-decoration: underline;
-    }
+  .item-text {
+    p { margin: 0; line-height: 1.6; color: #444; }
+    strong { color: #000; }
   }
 }
 
-.map-container {
-  padding: 20px;
-  background-color: $background-color;
-  border-radius: 8px;
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.accent-link {
+  color: $accent-color;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: 0.2s;
+
+  &:hover {
+    color: darken($accent-color, 15%);
+    text-decoration: underline;
+  }
+}
+
+.email-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.map-wrapper {
+  flex-grow: 1; // Дозволяє карті розтягуватися по висоті лівої колонки
 }
 
 .map-placeholder {
   width: 100%;
-  height: 400px;
-  background-image: url("@/assets/img/map/map.png"); 
-  background-image: image-set(
-    url("@/assets/img/map/map.webp") type("image/webp"),
-    url("@/assets/img/map/map.png") type("image/png")
-  );
-  background-size: cover;
-  background-position: center;
-  border-radius: 5px;
+  min-height: 400px;
+  height: 100%;
+  background: #f4f4f4 url("@/assets/img/map/map.png") center/cover no-repeat;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 
-  &::before {
+  &::after {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 5px;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+    border-radius: 10px;
   }
 
-  a {
+  .map-btn {
     position: relative;
-    z-index: 1;
-    padding: 12px 25px;
-    background-color: $accent-color;
+    z-index: 10;
+    background: $accent-color;
     color: white;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 700;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
     transition: 0.3s;
 
     &:hover {
-      background-color: darken($accent-color, 10%);
-      transform: scale(1.05);
+      background: #333;
+      transform: translateY(-2px);
     }
   }
 }
