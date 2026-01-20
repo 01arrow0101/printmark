@@ -11,10 +11,10 @@
           <div class="pm-banner__divider"></div>
           <div class="pm-banner__text">
             <span class="pm-banner__specialists"
-              >THERMAL TRANSFER RIBBON SPECIALISTS</span
+              >THERMAL TRANSFER TECHNOLOGY</span
             >
             <span class="pm-banner__types"
-              >Wax | Wax-Resin | Resin | Resin-Textile</span
+              >Wax | Wax-Resin | Resin | HotStamp | Textile | In-Line | Label</span
             >
           </div>
         </div>

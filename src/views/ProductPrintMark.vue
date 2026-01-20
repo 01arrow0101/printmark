@@ -9,7 +9,7 @@ const route = useRoute();
 <template>
   <HeroSection class-name="bg"
     ><template #subtitle
-      >Іновації в термотрансферній Друці</template
+      >Інноваційні технології у сфері термотрнасферного друку</template
     ></HeroSection
   >
   <OurProductsSection v-if="route.path === '/products'" />
@@ -17,11 +17,4 @@ const route = useRoute();
 </template>
 
 <style lang="scss" scoped>
-@import "@/assets/main.scss";
-.bg {
-  color: $secondary-color;
-  background:
-    $bg-gradient,
-    url("/src/assets/img/BgProducts.webp") no-repeat center / cover;
-}
 </style>

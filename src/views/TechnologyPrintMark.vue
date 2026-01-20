@@ -1,18 +1,16 @@
 <template>
-  <HeroSection>
-    <template #title>
-      <span class="hero-title-first">Точна Порізка від</span> PrintMark
-    </template>
-    <template #subtitle
-      >Інноваційні рішення у порізці термотрансферних рібонів та
-      етикеток</template
-    >
-  </HeroSection>
+  <HeroSection class-name="bg"
+    ><template #subtitle
+      >Інноваційні технології у сфері термотрнасферного друку</template
+    ></HeroSection
+  >
 
   <section class="our-technologies p-section m-section">
     <div class="container">
       <div class="our-product_title">
-        <h2 class="title">Наші Технології Порізки</h2>
+        <h2 class="title">
+          Інноваційні технології у сфері термотрнасферного друку
+        </h2>
       </div>
 
       <div class="product-section">
@@ -192,11 +190,6 @@ const equipments = [
 }
 
 /* Hero section specific styles (можливо, потребують доопрацювання для кращого візуального ефекту) */
-.hero {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.5)),
-    url("/src/assets/img/bg/tehnology/bgTehology.webp") no-repeat center / cover;
-}
 
 .hero_text p {
   font-size: 1.5rem;

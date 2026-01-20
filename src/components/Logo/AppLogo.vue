@@ -1,8 +1,6 @@
 <template>
 <div class="logo">
       <router-link class="logo-link" to="/">
-        <!-- <div class="square">PM</div>
-        <span>PrintMark</span> -->
         <img src="/src/assets/img/logo.png" alt="PrintMark Logo"  style="width: 240px;"/>
       </router-link>
     </div>

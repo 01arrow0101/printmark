@@ -1,11 +1,15 @@
 <script setup>
 import SectionCard from "@/components/About/SectionCard.vue";
 import OurTehnologies from "@/components/About/OurTehnologies.vue";
-import BannerPrintMark from "@/components/Banner/BannerPrintMark.vue";
+import HeroSection from "@/components/Layout/HeroSection.vue";
 </script>
 
 <template>
-  <BannerPrintMark />
+    <HeroSection class-name="bg">
+      <template #subtitle
+        >Інноваційні технології у сфері термотрнасферного друку</template
+      >
+    </HeroSection>
   <section class="about-section p-section m-section">
     <div class="container">
       <div class="header-content m-section">
@@ -39,16 +43,6 @@ import BannerPrintMark from "@/components/Banner/BannerPrintMark.vue";
 
 <style lang="scss" scoped>
 @import "@/assets/main.scss";
-// .banner {
-//   width: 100%;
-//   height: 85vh;
-//   background-image: url("/src/assets/img/banner.png");
-//   background-size: cover;
-//   background-position: center;
-//   @media (max-width: 767.98px) {
-//     height: 200px;
-//   }
-// }
 .about-section {
   background-color: #f9fafb;
 }

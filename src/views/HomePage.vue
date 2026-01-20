@@ -8,8 +8,7 @@ import SectionOurProduct from "@/components/Home/SectionOurProduct.vue";
   <main>
     <HeroSection class-name="bg">
       <template #subtitle
-        >Інноваційні технології у сфері термотрнасферного друку та
-        етикетки</template
+        >Інноваційні технології у сфері термотрнасферного друку</template
       >
     </HeroSection>
     <SectionIcons />
@@ -17,10 +16,4 @@ import SectionOurProduct from "@/components/Home/SectionOurProduct.vue";
   </main>
 </template>
 <style lang="scss" scoped>
-@import "@/assets/main.scss";
-.bg {
-  background:
-    $bg-gradient,
-    url("/src/assets/img/BgHero.webp") no-repeat center / cover;
-}
 </style>

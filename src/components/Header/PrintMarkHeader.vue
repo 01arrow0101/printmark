@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="logo">
-      <Logo />
+       <LogoPrint />
     </div>
     <div class="open-menu">
       <button class="burger-btn" @click="showMenu" aria-label="Open menu">
@@ -23,7 +23,7 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import { usePrintMarkStore } from "@/stores/PrintMarkStore";
-import Logo from "../Logo/AppLogo.vue";
+import LogoPrint from "../Logo/LogoPrint.vue";
 
 const store = usePrintMarkStore();
 const navItems = [
@@ -132,9 +132,13 @@ const showMenu = () => (store.showBurgerMenu = true);
 
 .item-link {
   color: $secondary-color;
+  font-size: $font-size-subtitle;
   font-family: $font-family-base;
   font-weight: $font-weight-medium;
   transition: color 0.3s ease;
+  @media (max-width: 991.98px){
+  font-size: $font-size-base; 
+  }
   &:hover {
     color: $accent-color;
   }
