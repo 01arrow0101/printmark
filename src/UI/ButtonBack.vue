@@ -24,6 +24,9 @@ defineEmits(["action"]);
   justify-content: end;
   align-items: center;
   z-index: 999;
+  @media (max-width: 991.98px) {
+    margin-left: 32px;
+  }
 }
 .back {
   display: flex;
