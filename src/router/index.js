@@ -52,39 +52,50 @@ const router = createRouter({
                   path: "silver",
                   name: "Silver",
                   component: () =>
-                    import("@/components/Products/Ribbon/ResinTextile/RibbonSilver.vue"),
+                    import(
+                      "@/components/Products/Ribbon/ResinTextile/RibbonSilver.vue"
+                    ),
                 },
                 {
                   path: "gold",
                   name: "Gold",
                   component: () =>
-                    import("@/components/Products/Ribbon//ResinTextile/RibbonGold.vue"),
+                    import(
+                      "@/components/Products/Ribbon//ResinTextile/RibbonGold.vue"
+                    ),
                 },
                 {
                   path: "blue-metallic",
                   name: "Blue-Metallic",
                   component: () =>
-                    import("@/components/Products/Ribbon/ResinTextile/RibbonBlueMetallic.vue"),
+                    import(
+                      "@/components/Products/Ribbon/ResinTextile/RibbonBlueMetallic.vue"
+                    ),
                 },
                 {
                   path: "green-metallic",
                   name: "Green-Metallic",
                   component: () =>
-                    import("@/components/Products/Ribbon/ResinTextile/RibbonGreenMetallic.vue"),
+                    import(
+                      "@/components/Products/Ribbon/ResinTextile/RibbonGreenMetallic.vue"
+                    ),
                 },
                 {
                   path: "red-metallic",
                   name: "Red-Metallic",
                   component: () =>
-                    import("@/components/Products/Ribbon/ResinTextile/RibbonRedMetallic.vue"),
+                    import(
+                      "@/components/Products/Ribbon/ResinTextile/RibbonRedMetallic.vue"
+                    ),
                 },
               ],
             },
             {
               path: "hotstamp",
-            name: "HotStamp",
-            component: () =>
-              import("@/components/Products/Ribbon/HotStampRibbon.vue"),},
+              name: "HotStamp",
+              component: () =>
+                import("@/components/Products/Ribbon/HotStampRibbon.vue"),
+            },
           ],
         },
         {
@@ -124,6 +135,11 @@ const router = createRouter({
       path: "/technology",
       name: "technology",
       component: () => import("../views/TechnologyPrintMark.vue"),
+    },
+    {
+      path: "/in-line",
+      name: "In-Line",
+      component: () => import("../views/InLinePrintMark.vue"),
     },
     {
       path: "/contacts",

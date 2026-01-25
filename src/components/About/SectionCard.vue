@@ -57,7 +57,7 @@ $card-gradient: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
 }
 
 .feature-card {
-  background: $card-gradient;
+  background: $bg-color;
   border-radius: 0.5rem;
   padding: 1.5rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -76,12 +76,12 @@ $card-gradient: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
 }
 
 .subtitle {
-  color: $primary-color;
+  color: $accent-color;
   margin-bottom: 0.5rem;
 }
 
 .feature-text {
-  color: $primary-color;
+  color: $secondary-color;
   font-family: $font-family-italic;
 }
 </style>

@@ -231,7 +231,8 @@ const equipments = [
 }
 
 .product-card {
-  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.8));
+  // background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.8));
+  background: $bg-color;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -254,7 +255,7 @@ const equipments = [
 
 .card_title h3 {
   font-size: 1.5rem;
-  color: $primary-color;
+  color: $accent-color;
   margin-bottom: 15px;
 }
 
