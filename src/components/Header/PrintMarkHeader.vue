@@ -30,6 +30,7 @@ const navItems = [
   { name: "Головна", link: "/" },
   { name: "Про Нас", link: "/about" },
   { name: "Продукція", link: "/products" },
+  { name: "In-Line", link: "/in-line" },
   { name: "Технології", link: "/technology" },
   { name: "Контакти", link: "/contacts" },
 ];
