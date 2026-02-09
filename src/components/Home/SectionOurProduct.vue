@@ -1,10 +1,10 @@
 <template>
   <div class="container">
+    <h2 class="title center">Наша продукція</h2>
     <div class="section m-section">
       <div class="section-left">
         <div class="section-left_top">
           <div class="section-left_title">
-            <h2 class="title">Наша продукція</h2>
             <div class="subtitle">
               Ріббони <span>(Термотрансферна Стрічка)</span>
             </div>
@@ -135,6 +135,7 @@ const partnerIsShow = false;
   display: flex;
   justify-content: space-between;
   gap: 50px;
+  padding-top: 40px;
   @media ($breakpoint-desktop) {
     text-align: center;
     flex-direction: column;
