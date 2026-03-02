@@ -83,7 +83,6 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useRoute } from "vue-router";
 import { RouterView } from "vue-router";
-import backgrounIMG from "@/assets/img/label/4.webp";
 import ButtonBack from "@/UI/ButtonBack.vue";
 import appButton from "../Button/appButton.vue";
 const route = useRoute();
@@ -107,15 +106,15 @@ const labelMaterials = ref([
     application: "Косметика, побутова хімія, маркування електроніки.",
     path: "/products/labels/polypropylene",
   },
-  {
-    title: "Спеціальні",
-    type: "(Пломби/Текстиль)",
-    icon: "🔒",
-    description:
-      "Для спеціфічних завдань, таких як контроль відкриття (VOID) або маркування одягу.",
-    application: "Гарантійний контроль, інвентаризація, легка промисловість.",
-    path: "/products/labels/thermo-top",
-  },
+  // {
+  //   title: "Спеціальні",
+  //   type: "(Пломби/Текстиль)",
+  //   icon: "🔒",
+  //   description:
+  //     "Для спеціфічних завдань, таких як контроль відкриття (VOID) або маркування одягу.",
+  //   application: "Гарантійний контроль, інвентаризація, легка промисловість.",
+  //   path: "/products/labels/thermo-top",
+  // },
 ]);
 
 const services = ref([
