@@ -8,7 +8,6 @@
         :modules="modules"
         :slides-per-view="1"
         :space-between="20"
-        :auto-height="false" 
         navigation
         :pagination="{ clickable: true }"
         :breakpoints="breakpoints"
@@ -18,13 +17,22 @@
         <swiper-slide v-for="(item, index) in items" :key="index" class="media-slide">
           <div class="media-card">
             
+            <iframe 
+              v-if="isYouTube(item.src)"
+              :src="item.src"
+              class="media-content video-style"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+
             <video 
-              v-if="isVideo(item.src)"
-              class="media-content" 
+              v-else-if="isVideo(item.src)"
+              class="media-content video-style" 
               controls 
               preload="metadata"
               playsinline
-              webkit-playsinline
             >
               <source :src="item.src" type="video/mp4" />
             </video>
@@ -32,12 +40,13 @@
             <img 
               v-else 
               :src="item.src" 
-              :alt="item.alt || 'media content'" 
-              class="media-content"
+              :alt="item.alt || 'PrintMark image'" 
+              class="media-content image-style"
               loading="lazy"
             >
 
           </div>
+          <p v-if="item.alt" class="slide-caption">{{ item.alt }}</p>
         </swiper-slide>
       </swiper>
     </div>
@@ -54,13 +63,13 @@ import 'swiper/css/pagination';
 
 const props = defineProps({
   title: { type: String, default: '' },
-  items: { type: Array, required: true, default: () => [] },
+  items: { type: Array, required: true },
   breakpoints: {
     type: Object,
     default: () => ({
       '320': { slidesPerView: 1 },
       '768': { slidesPerView: 2 },
-      '1024': { slidesPerView: 3 }
+      '1200': { slidesPerView: 2 }
     })
   }
 });
@@ -68,6 +77,7 @@ const props = defineProps({
 const modules = [Navigation, Pagination, Autoplay];
 
 const isVideo = (src) => src?.toLowerCase().endsWith('.mp4');
+const isYouTube = (src) => src?.includes('youtube.com') || src?.includes('youtu.be');
 
 const handleSlideChange = () => {
   document.querySelectorAll('video').forEach(v => v.pause());
@@ -77,31 +87,16 @@ const handleSlideChange = () => {
 <style lang="scss" scoped>
 @import "@/assets/main.scss";
 
-.slider-section {
-  padding: 40px 0;
-  overflow: hidden; // Гарантує, що нічого не вилетить за межі секції
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.universal-swiper {
-  width: 100%;
-  padding-bottom: 50px;
-}
+.slider-section { width: 100%; overflow: hidden; }
+.universal-swiper { padding-bottom: 50px; }
 
 .media-card {
   width: 100%;
   position: relative;
-  background: #000;
+  background: #000; // Чорний фон для полів зображення
   border-radius: 12px;
   overflow: hidden;
-  /* Використовуємо padding-bottom для створення фіксованого співвідношення сторін, 
-     це найнадійніший метод для мобільних щоб уникнути "стрибків" висоти */
-  padding-bottom: 56.25%; // Співвідношення 16:9
+  padding-bottom: 56.25%; /* 16:9 */
   height: 0;
 }
 
@@ -111,18 +106,29 @@ const handleSlideChange = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; // Заповнює блок, прибираючи чорні полоси по боках
-  display: block;
+  border: none;
 }
 
-// Якщо це відео, краще використовувати contain, щоб не обрізати важливі деталі, 
-// але тоді будуть полоси. Якщо хочеш без полос — залиш cover.
-video.media-content {
-  object-fit: cover; 
+// Стиль для відео (на весь блок)
+.video-style {
+  object-fit: cover;
 }
 
-:deep(.swiper-button-next),
-:deep(.swiper-button-prev) {
+// Стиль для фото (збереження пропорцій)
+.image-style {
+  object-fit: contain; // Картинка не розтягується, видно її реальну форму
+  background-color: #1a1a1a; 
+}
+
+.slide-caption {
+  text-align: center;
+  margin-top: 12px;
+  color: $accent-color;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+:deep(.swiper-button-next), :deep(.swiper-button-prev) {
   color: $accent-color !important;
   @media (max-width: 768px) { display: none; }
 }
