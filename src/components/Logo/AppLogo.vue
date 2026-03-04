@@ -1,7 +1,7 @@
 <template>
 <div class="logo">
       <router-link class="logo-link" to="/">
-        <img src="/src/assets/img/logo.png" alt="PrintMark Logo"  style="width: 240px;"/>
+        <img src="/src/assets/img/logo.webp" alt="PrintMark Logo"  style="width: 240px;"/>
       </router-link>
     </div>
 </template>

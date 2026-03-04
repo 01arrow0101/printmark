@@ -1,7 +1,7 @@
 <template>
   <div class="logo-wrapper">
     <div class="logo-main">
-      <img src="@/assets/img/logo-ribbons.png" alt="PrintMark Logo" class="logo-img" />
+      <img src="@/assets/img/logo-ribbons.webp" alt="PrintMark Logo" class="logo-img" />
       
       <div class="logo-text-content">
         <h1 class="brand-name">PrintMark</h1>
