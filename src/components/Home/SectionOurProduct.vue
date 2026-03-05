@@ -89,11 +89,11 @@ const goToLabel = () => {
 
 const sliderItems = [
   {
-    src: "https://www.youtube.com/embed/5iPvj4XNKxc?si=m3Qhl8-5Sk7z_mDg",
+    src: "https://www.youtube.com/embed/5iPvj4XNKxc?si=m3Qhl8-5Sk7z_mDg&rel=0",
     alt: "Відео: Виробництво Ріббонів",
   },
   {
-    src: "https://www.youtube.com/embed/98yDrlaaMuM?si=lPIjCdyKbCvxpBOG",
+    src: "https://www.youtube.com/embed/98yDrlaaMuM?si=lPIjCdyKbCvxpBOG&rel=0",
     alt: "Відео: Виробництво Етикеток",
   },
   {

@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="logo">
-       <LogoPrint />
+      <LogoPrint />
     </div>
     <div class="open-menu">
       <button class="burger-btn" @click="showMenu" aria-label="Open menu">
@@ -133,12 +133,12 @@ const showMenu = () => (store.showBurgerMenu = true);
 
 .item-link {
   color: $secondary-color;
-  font-size: $font-size-subtitle;
+  font-size: $font-size-base;
   font-family: $font-family-base;
   font-weight: $font-weight-medium;
   transition: color 0.3s ease;
-  @media (max-width: 991.98px){
-  font-size: $font-size-base; 
+  @media (max-width: 991.98px) {
+    font-size: $font-size-base;
   }
   &:hover {
     color: $accent-color;
