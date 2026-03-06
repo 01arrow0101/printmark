@@ -1,13 +1,17 @@
 <template>
   <div class="logo-wrapper">
     <div class="logo-main">
-      <img src="@/assets/img/logo-ribbons.webp" alt="PrintMark Logo" class="logo-img" />
-      
+      <router-link to="/">
+        <img
+          src="@/assets/img/logo-ribbons.webp"
+          alt="PrintMark Logo"
+          class="logo-img"
+      /></router-link>
       <div class="logo-text-content">
-        <h1 class="brand-name">PrintMark</h1>
+        <router-link to="/"> <h1 class="brand-name">PrintMark</h1></router-link>
         <div class="divider"></div>
         <p class="tagline">THERMAL TRANSFER TECHNOLOGY</p>
-        
+
         <nav class="material-links">
           <router-link to="/products/ribbons/wax">Wax</router-link>
           <span class="sep">|</span>
@@ -17,7 +21,9 @@
           <span class="sep">|</span>
           <router-link to="/products/ribbons/hotstamp">HotStamp</router-link>
           <span class="sep">|</span>
-          <router-link to="/products/ribbons/resin-textile">Textile</router-link>
+          <router-link to="/products/ribbons/resin-textile"
+            >Textile</router-link
+          >
           <span class="sep">|</span>
           <router-link to="/in-line">In-Line</router-link>
           <span class="sep">|</span>
@@ -29,9 +35,14 @@
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/main.scss';
+@import "@/assets/main.scss";
 // Використовуємо кольори вашого бренду
-$gold-gradient: linear-gradient(to bottom, #f9eeb2 0%, #d4af37 50%, #a67c00 100%);
+$gold-gradient: linear-gradient(
+  to bottom,
+  #f9eeb2 0%,
+  #d4af37 50%,
+  #a67c00 100%
+);
 $text-gray: #cccccc;
 
 .logo-wrapper {
@@ -49,7 +60,7 @@ $text-gray: #cccccc;
 .logo-img {
   height: 120px; // Налаштуйте під ваш розмір
   width: auto;
-  filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 
 .logo-text-content {
