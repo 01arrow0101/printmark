@@ -180,6 +180,10 @@ const detailedRibbons = ref([
   display: flex;
   gap: 15px;
   margin-top: 20px;
+  @media ($breakpoint-tablet) {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .product-info-section {
   padding: 40px 0;

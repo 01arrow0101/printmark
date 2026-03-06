@@ -147,7 +147,6 @@ const folder = store.getOptimizedAssetUrl;
 // 1. Стан для активного таба
 store.currentTab = "thermo-eco"; // Встановлюємо цей таб як активний
 
-
 // Групування тексту для Термоетикеток ЕКО
 const info_thermo_eco = {
   description:
@@ -174,7 +173,7 @@ const detailedLabels_thermo_eco = ref([
   {
     type: "thermo-eco",
     title: "Термоетикетки ЕКО",
-    imageUrl: folder("img/label/ThermoEco.png"),
+    imageUrl: folder("img/label/ThermoEco.webp"),
     material: "Термопапір (ЕКО)",
     adhesive: "Стандартний Акриловий (Permanent)",
     resistance: "Низька (лише для сухих, чистих умов).",
