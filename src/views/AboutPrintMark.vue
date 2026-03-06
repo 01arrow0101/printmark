@@ -13,9 +13,9 @@ import HeroSection from "@/components/Layout/HeroSection.vue";
   <section class="about-section p-section m-section">
     <div class="container">
       <div class="header-content m-section">
-        <h2 class="title">
+        <!-- <h2 class="title">
           Професійний поріз термотрансферної стрічки та самоклеючих етикеток
-        </h2>
+        </h2> -->
         <p class="description">
           <span>Принтмарк</span> — це виробничо-торгова компанія заснована в
           2011 році. Наша мета — практичне застосування накопиченого нами
