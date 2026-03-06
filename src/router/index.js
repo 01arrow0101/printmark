@@ -203,7 +203,7 @@ const router = createRouter({
       name: "In-Line",
       component: () => import("../views/InLinePrintMark.vue"),
       meta: {
-        title: "In-Line ріббони для Videojet, Markem-Imaje, Domino | PrintMark",
+        title: "In-Line ріббони Near-Edge для Videojet, Domino | PrintMark",
       },
     },
     {
