@@ -105,7 +105,7 @@ const sliderItems = [
     alt: "Фото: Кольорова гама",
   },
   {
-    src: folder("img/ribbon/rainbow.webp"),
+    src: folder("img/ribbon/resin-textile.webp"),
     alt: "Фото: Асортимент",
   },
 ];

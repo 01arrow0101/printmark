@@ -15,6 +15,7 @@
             item.name
           }}</router-link>
         </li>
+        <li class="item-link"><a href="https://forms.gle/Rx4B3zCi2DPynKrP6" target="_blank" rel="noopener noreferrer">Зробити замовлення</a></li>
       </ul>
     </nav>
   </header>
