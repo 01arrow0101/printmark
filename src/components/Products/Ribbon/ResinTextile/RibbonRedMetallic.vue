@@ -176,6 +176,7 @@ const detailedRibbons = ref([
       { name: "Зелений Металік", fill: "#32CD32" },
       { name: "Золото", fill: "#FFD700" },
       { name: "Срібло", fill: "#C0C0C0" },
+      { name: "Чорний", fill: "#000000" },
     ],
   },
 ]);

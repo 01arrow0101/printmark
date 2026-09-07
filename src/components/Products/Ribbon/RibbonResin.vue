@@ -173,8 +173,8 @@ const detailedRibbons = ref([
     color: [
       { name: "Чорний", fill: "#000000" },
       { name: "Червоний", fill: "#FF0000" },
-      { name: "Синій", fill: "#0000FF" },
-      { name: "Зелений", fill: "#008000" },
+      // { name: "Синій", fill: "#0000FF" },
+      // { name: "Зелений", fill: "#008000" },
       { name: "Білий", fill: "#FFFFFF" },
     ],
   },
