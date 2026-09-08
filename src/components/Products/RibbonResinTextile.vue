@@ -170,6 +170,18 @@ const detailedRibbons = ref([
     application: "Акційні наклейки 'Sale', харчова промисловість, логістика.",
     path: "/products/ribbons/resin-textile/red-metallic",
   },
+  {
+    id: 10,
+    type: "black",
+    title: "Чорний Resin Textile",
+    imageUrl: folder("img/ribbon/black.webp"),
+    fullDescription:
+      "Спеціалізований термотрансферний ріббон на основі смоли, розроблений для друку на текстильних стрічках (нейлон, сатин, поліестер). Забезпечує максимально чіткий та стійкий друк інформації.",
+    compatibility: "Текстильні матеріали: нейлон, сатин, поліестер, силікон.",
+    resistance: "Висока стійкість до багаторазового прання (до 90°C), хімчистки, прасування та стирання.",
+    application: "Текстильні ярлики, вшивчики для одягу, розмірники, доглядні бірки (care labels).",
+    path: "/products/ribbons/resin-textile/black",
+  },
 ]);
 </script>
 

@@ -130,6 +130,18 @@ const router = createRouter({
                       "Купити ріббони RESIN-TEXTILE ЗОЛОТО (термотрансферна стрічка) | PrintMark",
                   },
                 },
+                         {
+                  path: "black",
+                  name: "Black",
+                  component: () =>
+                    import(
+                      "@/components/Products/Ribbon/ResinTextile/RibbonResinTextileBlack.vue"
+                    ),
+                  meta: {
+                    title:
+                      "Купити ріббони RESIN-TEXTILE ЧОРНИЙ (термотрансферна стрічка) | PrintMark",
+                  },
+                },
               ],
             },
             {
