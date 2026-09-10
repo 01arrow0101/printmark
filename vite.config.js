@@ -31,6 +31,7 @@ export default defineConfig({
         "/products/ribbons/resin-textile/blue-metallic",
         "/products/ribbons/resin-textile/red-metallic",
         "/products/ribbons/resin-textile/green-metallic",
+        "/products/ribbons/resin-textile/black",
         "/products/ribbons/hotstamp",
         "/products/labels/semi-gloss",
         "/products/labels/polypropylene",
