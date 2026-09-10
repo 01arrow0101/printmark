@@ -8,10 +8,11 @@
       </h1>
       <p class="description">
         Ми використовуємо лише **сертифіковану сировину** від перевірених
-        європейських виробників. Кожен етап виробництва проходить ретельну
+        європейських та вітчизняних виробників. Кожен етап виробництва проходить ретельну
         перевірку, що підтверджується відповідними документами.
       </p>
 
+      <!-- БЛОК 1: ЕТИКЕТКИ -->
       <div class="info-block label-quality-block">
         <div class="card-header">
           <h2 class="subtitle">
@@ -42,10 +43,11 @@
         </div>
       </div>
 
+      <!-- БЛОК 2: РІББОНИ -->
       <div class="info-block ribbon-quality-block">
         <div class="card-header">
           <h2 class="subtitle">
-            ⚫️ Сертифікація Фарбувальних Стрічок (Ріббонів)
+            ⚫️ Сертифікація Фарбувальних Стрічок (Ріббонів) та PPWR
           </h2>
         </div>
         <div class="card-content quality-grid">
@@ -56,7 +58,7 @@
         </div>
 
         <div class="certificate-buttons">
-          <h3 class="cert-header">Сертифікати на відповідність (RoHS, FDA)</h3>
+          <h3 class="cert-header">Сертифікати на відповідність (RoHS, FDA, PPWR)</h3>
           <div class="button-group">
             <appButton class="view-button" @click="viewCertificate('ribbons')">
               Переглянути Сертифікати Ріббонів
@@ -67,6 +69,37 @@
               download="Сертифікати_Ріббонів.pdf"
             >
               Завантажити Сертифікати Ріббонів
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- БЛОК 3: ГІГІЄНА (САНІТАРНИЙ ВИСНОВОК) -->
+      <div class="info-block hygiene-quality-block">
+        <div class="card-header">
+          <h2 class="subtitle">
+            🛡️ Державна Санітарно-Епідеміологічна Експертиза
+          </h2>
+        </div>
+        <div class="card-content quality-grid">
+          <div v-for="qc in hygieneQuality" :key="qc.title" class="qc-card">
+            <h3 class="qc-title">{{ qc.title }}</h3>
+            <p>{{ qc.description }}</p>
+          </div>
+        </div>
+
+        <div class="certificate-buttons">
+          <h3 class="cert-header">Офіційний висновок СЕС України</h3>
+          <div class="button-group">
+            <appButton class="view-button view-button-hygiene" @click="viewCertificate('hygiene')">
+              Переглянути Висновок СЕС
+            </appButton>
+            <a
+              class="download-button download-button-hygiene"
+              :href="hygieneCertPath"
+              download="Санітарний_Висновок.pdf"
+            >
+              Завантажити Висновок СЕС
             </a>
           </div>
         </div>
@@ -94,6 +127,7 @@ const basePath = import.meta.env.BASE_URL.endsWith('/')
 // Динамічні шляхи для <a> тегів
 const labelCertPath = computed(() => basePath + 'docs/label_certificates.pdf');
 const ribbonCertPath = computed(() => basePath + 'docs/ribbon_certificates.pdf');
+const hygieneCertPath = computed(() => basePath + 'docs/hygiene_conclusion.pdf'); // Шлях до файлу гігієни
 
 
 // Дані: Контроль якості ЕТИКЕТОК
@@ -115,12 +149,12 @@ const labelQuality = ref([
   },
 ]);
 
-// Дані: Контроль якості РіббонІВ
+// Дані: Контроль якості Ріббонів (включно з новими даними PPWR з попереднього файлу)
 const ribbonQuality = ref([
   {
-    title: "Сертифікація RoHS",
+    title: "Сертифікація RoHS та Регламент PPWR",
     description:
-      "Всі наші Ріббони відповідають європейським директивам RoHS, що обмежують вміст шкідливих речовин.",
+      "Всі стрічки відповідають європейським директивам RoHS та регламенту ЄС 2024/40 про упаковку та відходи (PPWR), обмежуючи вміст шкідливих речовин, важких металів та PFAS.",
   },
   {
     title: "Сумісність з Харчовою Продукцією (FDA)",
@@ -134,20 +168,41 @@ const ribbonQuality = ref([
   },
 ]);
 
-// ВИПРАВЛЕНО: Використовуємо window.open з динамічним шляхом
+// Дані: Санітарно-гігієнічний висновок (Третій файл)
+const hygieneQuality = ref([
+  {
+    title: "Державна Експертиза України",
+    description:
+      "Продукція (стрічка барвника в рулонах) пройшла державну санітарно-епідеміологічну експертизу в Інституті медицини праці імені Ю.І. Кундієва НАМН України.",
+  },
+  {
+    title: "Відповідність Санітарному Законодавству",
+    description:
+      "Матеріали повністю відповідають чинним нормам санітарного законодавства України та допущені до використання у заявленій сфері застосування.",
+  },
+  {
+    title: "Безпека та Контроль",
+    description:
+      "Висновок підтверджує безпеку використання витратних матеріалів згідно з встановленими технічними умовами (ТУ У 32.9-37847756-001:2020).",
+  },
+]);
+
+// Використовуємо window.open з динамічним шляхом для всіх типів
 const viewCertificate = (type) => {
-  const path = type === "labels" ? labelCertPath.value : ribbonCertPath.value;
+  let path = labelCertPath.value;
+  if (type === "ribbons") path = ribbonCertPath.value;
+  if (type === "hygiene") path = hygieneCertPath.value;
   
-  // Використовуємо window.open для коректного відкриття PDF-файлу в новій вкладці
   window.open(path, '_blank'); 
 };
 </script>
 
 <style lang="scss" scoped>
 $accent-color: #007bff;
-$custom-color: #f09830; // Синій
+$custom-color: #f09830; // Помаранчевий
 $ribbon-color: #333; // Чорний для Ріббонів
-$label-color: #f09830; // Світло-синій для етикеток
+$label-color: #f09830; // Колір для етикеток
+$hygiene-color: #00897b; // Зеленуватий/Бірюзовий для гігієни (санітарний блок)
 
 .quality-control-section {
   padding: 40px 0;
@@ -235,6 +290,18 @@ $label-color: #f09830; // Світло-синій для етикеток
   }
 }
 
+.hygiene-quality-block {
+  .subtitle {
+    color: $hygiene-color;
+  }
+  .qc-card {
+    border-top-color: $hygiene-color;
+  }
+  .cert-header {
+    color: $hygiene-color;
+  }
+}
+
 /* Стилі для Кнопок Сертифікатів */
 .certificate-buttons {
   margin-top: 30px;
@@ -264,6 +331,14 @@ $label-color: #f09830; // Світло-синій для етикеток
   min-width: 250px;
 }
 
+.view-button-hygiene {
+  background-color: $hygiene-color;
+  border-color: $hygiene-color;
+  &:hover {
+    background-color: darken($hygiene-color, 5%);
+  }
+}
+
 .download-button {
   display: flex;
   justify-content: center;
@@ -275,8 +350,17 @@ $label-color: #f09830; // Світло-синій для етикеток
   min-width: 250px;
   padding: 12px;
   border-radius: 4px;
+  text-decoration: none;
   &:hover {
     background-color: lighten($ribbon-color, 10%);
+  }
+}
+
+.download-button-hygiene {
+  background-color: #555;
+  border-color: #555;
+  &:hover {
+    background-color: #444;
   }
 }
 
