@@ -8,7 +8,7 @@ import Sitemap from "vite-plugin-sitemap";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "printmark",
+  base: "/",
   plugins: [
     vue(),
     vueDevTools(),
