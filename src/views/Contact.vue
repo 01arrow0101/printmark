@@ -95,7 +95,7 @@ const companyName = "PrintMark";
 const address =
   "вулиця Вінстона Черчилля, 84, корпус 26, 1-й поверх, Київ, 02094";
 const mapLink =
-  "https://www.google.com/maps/search/?api=1&query=Вінстона+Черчилля+84+Київ";
+  "https://maps.app.goo.gl/j319mjsy4Be6WnJZ6";
 
 const phones = ["0505628414", "0932527629"];
 

@@ -7,14 +7,16 @@
       </div>
     </div>
     <div class="logo"></div>
-    <nav v-for="item in navItems" :key="item.name" class="nav">
-      <ul class="nav-list">
+    <nav  class="nav">
+      <ul v-for="item in navItems" :key="item.name" class="nav-list">
         <li class="nav-list_item">
           <router-link class="link" :to="item.link" @click.native="store.showBurgerMenu = false">{{
             item.name
           }}</router-link>
         </li>
       </ul>
+        <div class="link"><a href="https://forms.gle/r9sCFkwVSuAPPFeE8" target="_blank" rel="noopener noreferrer">Зробити замовлення</a></div>
+
     </nav>
   </div>
 </template>
@@ -53,7 +55,7 @@ const navItems = [
 
   border-radius: 0 16px 16px 0;
   background: $bg-color;
-  z-index: 1000;
+  z-index: 9999;
   @media ($breakpoint-mobile){
   width: 100vw; 
   }
@@ -72,6 +74,15 @@ const navItems = [
 .btn-close{
   padding: 4px 8px;
 }
+.nav{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+
 .link {
   color: $secondary-color;
   text-decoration: none;
